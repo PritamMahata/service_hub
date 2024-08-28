@@ -2,7 +2,7 @@
   <div class="header-main">
     <div class="container">
       <a href="#" class="header-logo">
-        <img src="./assets/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
+        <img src="./assets/images/logo/logo.svg" width="120" height="36">
       </a>
       <div class="header-search-container">
         <input type="search" name="search" class="search-field" placeholder="Search your service...">

@@ -61,7 +61,7 @@ require_once('./assets/components/sub_components/slidebar.php');
 ?>
 <div class="login_box">
     <div class="newsletter-img">
-        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+        <img src="./assets/images/newsletter.png"  width="400" height="400">
     </div>
     <div class="login_form">
         <?php

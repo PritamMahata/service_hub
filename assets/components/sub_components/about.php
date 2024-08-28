@@ -5,7 +5,7 @@
       <h2 class="title">About Us</h2>
       <!-- CTA -->
       <div class="cta-container">
-        <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
+        <img src="./assets/images/cta-banner.jpg" class="cta-banner">
         <a href="#" class="cta-content">
           <p class="discount">25% Discount</p>
           <h2 class="cta-title">Service Title</h2>
@@ -69,44 +69,44 @@
         <div class="testimonial-card">
           <div class="testimonial-main">
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="testimonial-card-details">
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/testimonial-1.jpg"  class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Lorem ipsum</p>
               <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
             </div>
           </div>
           <p class="testimonial-name">Lorem ipsum</p>
           <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
-          <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+          <img src="./assets/images/icons/quotes.svg"  class="quotation-img" width="26">
           <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.</p>
         </div>
       </div>

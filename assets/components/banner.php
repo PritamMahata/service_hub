@@ -3,7 +3,7 @@
     <div class="container">
       <div class="slider-container has-scrollbar">
         <div class="slider-item">
-          <img src="./assets/images/banner-1.jpg" alt="Lorem ipsum dolor sit" class="banner-img">
+          <img src="./assets/images/banner-1.jpg"  class="banner-img">
           <div class="banner-content">
             <p class="banner-subtitle">Lorem ipsum </p>
             <h2 class="banner-title">Lorem ipsum dolor sit amet consecrate</h2>
@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="slider-item">
-          <img src="./assets/images/banner-2.jpg" alt="Lorem ipsum dolor sit" class="banner-img">
+          <img src="./assets/images/banner-2.jpg" class="banner-img">
           <div class="banner-content">
             <p class="banner-subtitle">Lorem ipsum </p>
             <h2 class="banner-title">Lorem ipsum dolor sit amet consecrate</h2>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="slider-item">
-          <img src="./assets/images/banner-3.jpg" alt="Lorem ipsum dolor sit" class="banner-img">
+          <img src="./assets/images/banner-3.jpg"  class="banner-img">
           <div class="banner-content">
             <p class="banner-subtitle">Sale Offer</p>
             <h2 class="banner-title">Lorem ipsum dolor sit amet consecrate</h2>

@@ -137,7 +137,7 @@
     </div>
     <!-- <div class="footer-bottom">
       <div class="container">
-        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+        <img src="./assets/images/payment.png" class="payment-img">
         <p class="copyright"> Copyright &copy; <a href="#">Service Hub</a> all rights reserved. </p>
       </div>
     </div> -->

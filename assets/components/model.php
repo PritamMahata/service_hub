@@ -6,13 +6,13 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <div class="newsletter-img">
-        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+        <img src="./assets/images/newsletter.png" width="400" height="400">
       </div>
       <div class="newsletter">
         <form action="#">
           <div class="newsletter-header">
             <h3 class="newsletter-title">Subscribe Newsletter.</h3>
-            <p class="newsletter-desc"> Subscribe the <b>Anon</b> to get latest elements and discount update. </p>
+            <p class="newsletter-desc"> Subscribe the <b>service hub</b> to get latest service and discount update. </p>
           </div>
           <input type="email" name="email" class="email-field" placeholder="Email Address" required>
           <button type="submit" class="btn-newsletter">Subscribe</button>

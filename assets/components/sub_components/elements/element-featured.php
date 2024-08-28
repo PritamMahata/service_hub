@@ -4,7 +4,7 @@
             <div class="showcase-container">
               <div class="showcase">
                 <div class="showcase-banner">
-                  <img src="./assets/images/services/img_5.jpg" alt="Lorem ipsum dolor sit amet consecrate" class="showcase-img">
+                  <img src="./assets/images/services/img_5.jpg" class="showcase-img">
                 </div>
                 <div class="showcase-content">
                   <div class="showcase-rating">
@@ -60,7 +60,7 @@
             <div class="showcase-container">
               <div class="showcase">
                 <div class="showcase-banner">
-                  <img src="./assets/images/services/img_1.jpg" alt="Lorem ipsum dolor sit amet consecrate"
+                  <img src="./assets/images/services/img_1.jpg"
                     class="showcase-img">
                 </div>
                 <div class="showcase-content">

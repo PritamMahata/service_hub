@@ -3,7 +3,7 @@
         <div class="blog-container has-scrollbar">
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives"
+              <img src="./assets/images/blog-1.jpg"
                 width="300" class="blog-banner">
             </a>
             <div class="blog-content">
@@ -17,7 +17,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+              <img src="./assets/images/blog-2.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
@@ -31,7 +31,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
+              <img src="./assets/images/blog-3.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
@@ -45,7 +45,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+              <img src="./assets/images/blog-4.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">

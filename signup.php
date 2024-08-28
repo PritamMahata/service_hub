@@ -25,7 +25,7 @@
     <div class="container">
         <div class="login_box">
             <div class="newsletter-img">
-                <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+                <img src="./assets/images/newsletter.png" width="400" height="400">
             </div>
             <div style="min-width:350px" class="form_style">
                 <form action="#">

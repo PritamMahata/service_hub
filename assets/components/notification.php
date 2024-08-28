@@ -4,7 +4,7 @@
       <ion-icon name="close-outline"></ion-icon>
     </button>
     <div class="toast-banner">
-      <img src="./assets/images/services/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+      <img src="./assets/images/services/jewellery-1.jpg" width="80" height="70">
     </div>
     <div class="toast-detail">
       <p class="toast-message"> Someone in new just bought </p>

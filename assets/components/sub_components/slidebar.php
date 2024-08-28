@@ -10,7 +10,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/cable.png" alt="clothes" width="20" height="20"
+                  <img src="./assets/images/icons/cable.png" width="20" height="20"
                     class="menu-title-img">
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -49,7 +49,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/paint-roller.png" alt="footwear" class="menu-title-img" width="20"
+                  <img src="./assets/images/icons/paint-roller.png" class="menu-title-img" width="20"
                     height="20">
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -88,7 +88,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/plumber.png" alt="clothes" class="menu-title-img" width="20"
+                  <img src="./assets/images/icons/plumber.png" class="menu-title-img" width="20"
                     height="20">
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -121,7 +121,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/sign.png" alt="perfume" class="menu-title-img" width="20"
+                  <img src="./assets/images/icons/sign.png" class="menu-title-img" width="20"
                     height="20">
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -160,7 +160,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/home.png" alt="cosmetics" class="menu-title-img" width="20"
+                  <img src="./assets/images/icons/home.png"  class="menu-title-img" width="20"
                     height="20">
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -199,7 +199,7 @@
             <li class="sidebar-menu-category">
               <button class="sidebar-accordion-menu" data-accordion-btn>
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/electronics.png" alt="Lorem ipsum" class="menu-title-img" width="20"
+                  <img src="./assets/images/icons/electronics.png"  class="menu-title-img" width="20"
                     height="20">
 
                   <p class="menu-title">Lorem ipsum</p>
@@ -237,7 +237,7 @@
               <button class="sidebar-accordion-menu" data-accordion-btn>
 
                 <div class="menu-title-flex">
-                  <img src="./assets/images/icons/car-wash.png" alt="bags" class="menu-title-img" width="20" height="20">
+                  <img src="./assets/images/icons/car-wash.png" class="menu-title-img" width="20" height="20">
 
                   <p class="menu-title">Lorem ipsum</p>
                 </div>
@@ -292,7 +292,7 @@
             <div class="showcase-container">
               <div class="showcase">
                 <a href="#" class="showcase-img-box">
-                  <img src="./assets/images/services/img_1.jpg" alt="baby fabric shoes" width="75" height="75"
+                  <img src="./assets/images/services/img_1.jpg" width="75" height="75"
                     class="showcase-img">
                 </a>
                 <div class="showcase-content">
@@ -318,7 +318,7 @@
               </div>
               <div class="showcase">
                 <a href="#" class="showcase-img-box">
-                  <img src="./assets/images/services/img_2.jpg" alt="men's hoodies t-shirt" class="showcase-img"
+                  <img src="./assets/images/services/img_2.jpg" class="showcase-img"
                     width="75" height="75">
                 </a>
                 <div class="showcase-content">
@@ -343,7 +343,7 @@
               </div>
               <div class="showcase">
                 <a href="#" class="showcase-img-box">
-                  <img src="./assets/images/services/img_3.jpg" alt="girls t-shirt" class="showcase-img" width="75"
+                  <img src="./assets/images/services/img_3.jpg" class="showcase-img" width="75"
                     height="75">
                 </a>
                 <div class="showcase-content">
@@ -367,7 +367,7 @@
               </div>
               <div class="showcase">
                 <a href="#" class="showcase-img-box">
-                  <img src="./assets/images/services/img_4.jpg" alt="woolen hat for men" class="showcase-img" width="75"
+                  <img src="./assets/images/services/img_4.jpg"  class="showcase-img" width="75"
                     height="75">
                 </a>
                 <div class="showcase-content">

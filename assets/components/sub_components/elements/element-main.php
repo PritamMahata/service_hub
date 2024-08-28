@@ -5,7 +5,7 @@
   <div class="element-grid">
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_1.jpg" alt="Mens Winter Leathers Jackets" width="300"
+        <img src="./assets/images/services/img_1.jpg" width="300"
           class="element-img default">
         <p class="showcase-badge">15%</p>
         <div class="showcase-actions">
@@ -40,8 +40,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_2.jpg" alt="Pure Garment Dyed Cotton Shirt"
-          class="element-img default" width="300">
+        <img src="./assets/images/services/img_2.jpg" class="element-img default" width="300">
 
         <p class="showcase-badge angle black">sale</p>
         <div class="showcase-actions">
@@ -77,7 +76,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_3.jpg" alt="MEN Yarn Fleece Full-Zip Jacket"
+        <img src="./assets/images/services/img_3.jpg"
           class="element-img default" width="300">
         <div class="showcase-actions">
           <button class="btn-action">
@@ -112,7 +111,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_4.jpg" alt="Black Floral Wrap Midi Skirt"
+        <img src="./assets/images/services/img_4.jpg"
           class="element-img default" width="300">
         <p class="showcase-badge angle pink">new</p>
         <div class="showcase-actions">
@@ -148,7 +147,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_5.jpg" alt="Casual Men's Brown shoes"
+        <img src="./assets/images/services/img_5.jpg"
           class="element-img default" width="300">
         <div class="showcase-actions">
           <button class="btn-action">
@@ -183,7 +182,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_6.jpg" alt="Pocket Watch Leather Pouch"
+        <img src="./assets/images/services/img_6.jpg"
           class="element-img default" width="300">
         <p class="showcase-badge angle black">sale</p>
         <div class="showcase-actions">
@@ -219,7 +218,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_7.jpg" alt="Smart watch Vital Plus"
+        <img src="./assets/images/services/img_7.jpg"
           class="element-img default" width="300">
         <div class="showcase-actions">
           <button class="btn-action">
@@ -254,7 +253,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_8.jpg" alt="Women's Party Wear Shoes"
+        <img src="./assets/images/services/img_8.jpg"
           class="element-img default" width="300">
         <p class="showcase-badge angle black">sale</p>
         <div class="showcase-actions">
@@ -290,7 +289,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_9.jpg" alt="Mens Winter Leathers Jackets"
+        <img src="./assets/images/services/img_9.jpg"
           class="element-img default" width="300">
         <div class="showcase-actions">
           <button class="btn-action">
@@ -325,7 +324,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_10.jpg" alt="Trekking & Running Shoes - black"
+        <img src="./assets/images/services/img_10.jpg"
           class="element-img default" width="300">
         <p class="showcase-badge angle black">sale</p>
         <div class="showcase-actions">
@@ -361,7 +360,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_11.jpg" alt="Men's Leather Formal Wear shoes"
+        <img src="./assets/images/services/img_11.jpg"
           class="element-img default" width="300">
         <div class="showcase-actions">
           <button class="btn-action">
@@ -396,7 +395,7 @@
     </div>
     <div class="showcase">
       <div class="showcase-banner">
-        <img src="./assets/images/services/img_12.jpg" alt="Better Basics French Terry Sweatshorts"
+        <img src="./assets/images/services/img_12.jpg"
           class="element-img default" width="300">
         <p class="showcase-badge angle black">sale</p>
         <div class="showcase-actions">
