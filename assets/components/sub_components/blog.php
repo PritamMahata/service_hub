@@ -7,9 +7,9 @@
                 width="300" class="blog-banner">
             </a>
             <div class="blog-content">
-              <a href="#" class="blog-category">Fashion</a>
+              <a href="#" class="blog-category">Lorem</a>
               <a href="#">
-                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+                <h3 class="blog-title">Lorem ipsum dolor sit amet consecrate</h3>
               </a>
               <p class="blog-meta"> By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
               </p>
@@ -21,9 +21,9 @@
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
-              <a href="#" class="blog-category">Clothes</a>
+              <a href="#" class="blog-category">lorem</a>
               <h3>
-                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+                <a href="#" class="blog-title">Lorem ipsum dolor sit amet consecrate</a>
               </h3>
               <p class="blog-meta"> By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
               </p>
@@ -35,9 +35,9 @@
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
-              <a href="#" class="blog-category">Shoes</a>
+              <a href="#" class="blog-category">lorem</a>
               <h3>
-                <a href="#" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+                <a href="#" class="blog-title">Lorem ipsum dolor sit amet consecrate</a>
               </h3>
               <p class="blog-meta"> By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
               </p>
@@ -49,9 +49,9 @@
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
-              <a href="#" class="blog-category">Electronics</a>
+              <a href="#" class="blog-category">Lorem</a>
               <h3>
-                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+                <a href="#" class="blog-title">Lorem ipsum dolor sit amet consecrate</a>
               </h3>
               <p class="blog-meta"> By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
               </p>
