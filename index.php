@@ -23,7 +23,7 @@
 <div class="overlay" data-overlay></div>
 <?php
 require_once('./assets/components/header.php');
-require_once('./assets/components/model.php');
+//require_once('./assets/components/model.php');
 require_once('./assets/components/banner.php');
 require_once('./assets/components/main.php');
 require_once('./assets/components/sub_components/about.php');
