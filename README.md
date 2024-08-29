@@ -4,7 +4,7 @@
 
 ## Table of Contents
 - [Features](#features)
-- [Tech Stack](#Tech stack)
+- [Tech Stack](#Tech Stack)
 - [Installation](#installation)
 - [Database Schema](#database-schema)
 - [Usage](#usage)
