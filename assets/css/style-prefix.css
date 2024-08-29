@@ -187,7 +187,7 @@ body::-webkit-scrollbar-thumb:hover {
   text-transform: capitalize;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 /*-----------------------------------*\
@@ -860,7 +860,7 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: var(--border-radius-md);
   overflow: auto hidden;
   -webkit-scroll-snap-type: inline mandatory;
-  -ms-scroll-snap-type: inline mandatory;
+  /*-ms-scroll-snap-type: inline mandatory;*/
   scroll-snap-type: inline mandatory;
   overscroll-behavior-inline: contain;
 }
@@ -920,8 +920,8 @@ body::-webkit-scrollbar-thumb:hover {
 .banner-btn {
   background: var(--salmon-pink);
   color: var(--white);
-  width: -webkit-max-content;
-  width: -moz-max-content;
+  /*width: -webkit-max-content;*/
+  /*width: -moz-max-content;*/
   width: max-content;
   font-size: var(--fs-11);
   font-weight: var(--weight-600);
@@ -958,7 +958,7 @@ body::-webkit-scrollbar-thumb:hover {
   gap: 10px;
   overflow: auto hidden;
   -webkit-scroll-snap-type: inline mandatory;
-  -ms-scroll-snap-type: inline mandatory;
+  /*-ms-scroll-snap-type: inline mandatory;*/
   scroll-snap-type: inline mandatory;
   overscroll-behavior-inline: contain;
 }
@@ -1299,7 +1299,7 @@ body::-webkit-scrollbar-thumb:hover {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   -webkit-scroll-snap-type: inline mandatory;
-  -ms-scroll-snap-type: inline mandatory;
+  /*-ms-scroll-snap-type: inline mandatory;*/
   scroll-snap-type: inline mandatory;
 }
 
@@ -1351,8 +1351,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .element-minimal .showcase-category {
-  width: -webkit-max-content;
-  width: -moz-max-content;
+  /*width: -webkit-max-content;*/
+  /*width: -moz-max-content;*/
   width: max-content;
   color: var(--davys-gray);
   font-size: var(--fs-8);
@@ -1408,7 +1408,7 @@ body::-webkit-scrollbar-thumb:hover {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   -webkit-scroll-snap-type: inline mandatory;
-  -ms-scroll-snap-type: inline mandatory;
+  /*-ms-scroll-snap-type: inline mandatory;*/
   scroll-snap-type: inline mandatory;
 }
 
@@ -1591,6 +1591,15 @@ body::-webkit-scrollbar-thumb:hover {
 .element-main {
   margin-bottom: 30px;
 }
+.element-split{
+  display: flex;
+  max-width: 900px;
+  padding: 10px;
+  margin: 20px auto;
+  justify-content: space-between ;
+  align-items: center;
+}
+
 
 .element-grid {
   display: -ms-grid;
@@ -1897,8 +1906,8 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  /*width: -webkit-fit-content;*/
+  /*width: -moz-fit-content;*/
   width: fit-content;
   padding: 15px 20px;
   text-align: center;
@@ -3081,7 +3090,7 @@ footer {
   }
 
   .slider-item {
-    height: 380px;
+    height: 420px;
   }
 
   .banner-content {
