@@ -5,7 +5,7 @@ function test() {
   let text = e.options[e.selectedIndex].text;
   console.log(value);
   console.log(text);
-  if (value == 2) {
+  if (value === 2) {
     check.style.display = "block";
   } else {
     check.style.display = "none";
