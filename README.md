@@ -9,7 +9,6 @@
 - [Database Schema](#database-schema)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -62,6 +61,3 @@
 
 ## Contributing
 We welcome contributions! Please fork the repository and create a pull request with your proposed changes.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
