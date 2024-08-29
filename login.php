@@ -1,4 +1,5 @@
 <?php
+global $conn;
 $showAlert = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'env/config.php';
@@ -61,14 +62,14 @@ require_once('./assets/components/sub_components/slidebar.php');
 ?>
 <div class="login_box">
     <div class="newsletter-img">
-        <img src="./assets/images/newsletter.png"  width="400" height="400">
+        <img src="./assets/images/newsletter.png" width="400" height="400">
     </div>
     <div class="login_form">
         <?php
-        if ($showAlert == true) {
-            echo "<h1>You are login sucessfully</h1>";
+        if ($showAlert) {
+            echo "<h1>You are login successful</h1>";
         } else {
-            echo "<h1>Failed to login</h1>";
+            echo "<h1>Failed to log in</h1>";
         }
         ?>
         <form method="post">
