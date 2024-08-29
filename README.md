@@ -44,10 +44,6 @@
     bash
     cd php_project
     
-3. Install PHP dependencies:
-    bash
-    composer install
-    
 
 ## Database Schema
 - *Users*: Stores provider and client information.
