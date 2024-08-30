@@ -3,9 +3,9 @@ function test() {
   let check = document.getElementById("check");
   let value = e.value;
   let text = e.options[e.selectedIndex].text;
-  console.log(value);
-  console.log(text);
-  if (value === 2) {
+  // console.log(value);
+  // console.log(text);
+  if (value == 2) {
     check.style.display = "block";
   } else {
     check.style.display = "none";
@@ -58,6 +58,3 @@ for (let i = 0; i < accordionBtn.length; i++) {
     this.classList.toggle("active");
   });
 }
-
-
-
