@@ -1,5 +1,5 @@
-login 
-signp 
+login design - done
+signp design - done
 admin page design (html css) 
 profile page design (html css) 
 product view page (html css) 
