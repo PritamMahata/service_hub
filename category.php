@@ -13,15 +13,14 @@
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <div class="overlay" data-overlay></div>
 <?php
 require_once('./assets/components/header.php'); // HEADER
-//   require_once('./assets/components/model.php'); // model
+// require_once('./assets/components/model.php'); // model
 // require_once('./assets/components/notification.php'); // notification
 require_once('./assets/components/main.php');
 require_once('./assets/components/sub_components/slidebar.php');
