@@ -1,10 +1,16 @@
+login 
+signup
+
 admin page design (html css)
 profile page design (html css)
 product view page (html css)
 Cart page design (html css)
-payment gateway (html css)
+
 Database table creation (MySQL)
+
 Fetch service details card from database (php, MySQL)
 Add to Cart functionality (JavaScript)
 Booking functionality (php)
+
+payment gateway (html css)
 Payment functionality (php, MySQL)
