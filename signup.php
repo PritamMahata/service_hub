@@ -31,38 +31,38 @@
                     <div class="col_field">
                         <div class="row_field">
                             <label class="newsletter-title">First Name</label>
-                            <input type="text" name="email" class="email-field" placeholder="Email-id" required>
+                            <input type="text" name="fname" class="email-field" placeholder="First Name" required>
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Middle Name</label>
-                            <input type="text" name="email" class="email-field" placeholder="Password" required>
+                            <input type="text" name="mname" class="email-field" placeholder="Middle Name" required>
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Last Name</label>
-                            <input type="text" name="email" class="email-field" placeholder="Password" required>
+                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" class="email-field" placeholder="Password" required>
+                        <input type="email" name="email" class="email-field" placeholder="E-mail ID" required>
                     </div>
                     <label class="newsletter-title">Password</label>
-                    <input type="password" name="email" class="email-field" placeholder="Password" required>
-                    <label class="newsletter-title">Confirm password</label>
-                    <input type="password" name="email" class="email-field" placeholder="Password" required>
+                    <input type="password" name="password" class="email-field" placeholder="Password" required>
+                    <label class="newsletter-title">Confirm Password</label>
+                    <input type="password" name="cpassword" class="email-field" placeholder="Confirm Password" required>
                     <div class="col_field">
                         <div class="row_field">
                             <label class="newsletter-title">Contact Number</label>
-                            <input type="number" name="email" class="email-field" placeholder="Password" required>
+                            <input type="number" name="con_num" class="email-field" placeholder="Contact Number" required>
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Alternate Number</label>
-                            <input type="number" name="email" class="email-field" placeholder="Password" required>
+                            <input type="number" name="alt_num" class="email-field" placeholder="Alternate Number" required>
                         </div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Address</label>
-                        <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                        <textarea id="w3review" name="address" rows="4" cols="50"></textarea>
                     </div>
                     <br>
                     <label class="newsletter-title">Account Type</label>
@@ -72,18 +72,18 @@
                     </select>
                     <br>
                     <div id="check" style="display: none;">
-                        <label class="newsletter-title">PAN card</label>
-                        <input type="text" name="email" class="email-field" placeholder="Password" required>
-                        <label class="newsletter-title">Bank Account details</label>
+                        <label class="newsletter-title">PAN Card</label>
+                        <input type="text" name="pan_card" class="email-field" placeholder="PAN Card Number" required>
+                        <label class="newsletter-title">Bank Account Details</label>
                         <br>
                         <label class="newsletter-title">Account Number</label>
-                        <input type="text" name="email" class="email-field" placeholder="Password" required>
-                        <label class="newsletter-title">IFSC code</label>
-                        <input type="text" name="email" class="email-field" placeholder="Password" required>
-                    </div>
+                        <input type="text" name="acc_num" class="email-field" placeholder="Account Number" required>
+                        <label class="newsletter-title">IFSC Code</label>
+                        <input type="text" name="ifsc" class="email-field" placeholder="IFSC Code" required>
+                    </div><br>
                     <div class="container flex_div">
                         <button type="submit" class="btn-newsletter">Sign Up</button>
-                        <button type="submit" class="btn-newsletter">Log in</button>
+                        <!-- <button type="submit" class="btn-newsletter">Log in</button> -->
                     </div>
                 </form>
             </div>
