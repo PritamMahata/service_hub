@@ -1,10 +1,16 @@
-admin page design (html css)
-profile page design (html css)
-product view page (html css)
-Cart page design (html css)
-payment gateway (html css)
-Database table creation (MySQL)
-Fetch service details card from database (php, MySQL)
-Add to Cart functionality (JavaScript)
-Booking functionality (php)
+login 
+signp 
+admin page design (html css) 
+profile page design (html css) 
+product view page (html css) 
+Cart page design (html css) 
+payment gateway (html css) 
+Database table creation (MySQL) 
+Fetch service details card from database (php, MySQL) 
+Add to Cart functionality (JavaScript) 
+Booking functionality (php) 
 Payment functionality (php, MySQL)
+
+
+service INSERT query:-
+INSERT INTO `services` (`sname`, `srating`, `sprice`, `sduration`, `sdes`, `scategory`, `simage`, `sattraction`, `sdiscount`) VALUES ('Car wash', '4', '800', '2 hr', 'This is car wash service description', '1', './assets/images/services/img_4.jpg', 'sale', '15');
