@@ -377,7 +377,7 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-border-radius: var(--border-radius-sm);
   border-radius: var(--border-radius-sm);
   border: 3px solid var(--border-color);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .btn-newsletter {
@@ -431,13 +431,43 @@ body::-webkit-scrollbar-thumb:hover {
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   z-index: 5;
-  -webkit-animation: slideInOut 10s ease-in-out infinite;
-  animation: slideInOut 10s ease-in-out infinite;
+  -webkit-animation: slideInOut 5s ease-in-out ;
+  animation: slideInOut 5s ease-in-out;
 }
 
+@-webkit-keyframes slideIn {
+  0%{
+    -webkit-transform: translateX(-webkit-calc(-100% - 40px));
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0;
+    visibility: hidden;
+  }
+
+100%{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes slideIn {
+  0%{
+    -webkit-transform: translateX(-webkit-calc(-100% - 40px));
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0;
+    visibility: hidden;
+  }
+
+100%{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
 @-webkit-keyframes slideInOut {
   0%,
-  45%,
   100% {
     -webkit-transform: translateX(-webkit-calc(-100% - 40px));
     transform: translateX(calc(-100% - 40px));
@@ -445,8 +475,7 @@ body::-webkit-scrollbar-thumb:hover {
     visibility: hidden;
   }
 
-  50%,
-  95% {
+  50%{
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
