@@ -2,6 +2,7 @@
 include './env/config.php';
 $sql = "SELECT * FROM services";
 $result = $conn->query($sql);
+
 ?>
 <div class="element-main">
     <div class="container">
@@ -13,6 +14,7 @@ $result = $conn->query($sql);
         </div>
     </div>
 
+    <!-- offers -->
     <!--<p class="showcase-badge">15%</p>
     <p class="showcase-badge angle black">sale</p>
     <p class="showcase-badge angle pink">new</p> 
@@ -23,21 +25,18 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $count = 0;
             while ($row = $result->fetch_assoc()) {
-                if ($count >= 6) {
-                    echo "<h1>$count</h1>";
-                    $count++;
+                $end = isset($end) ? $end : $row;
+                if ($count >= $end) {
                     break;
                 }
                 echo "<div class='showcase'>";
                 echo "<div class='showcase-banner'>";
                 echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
                 // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
-                if (!isset($row['sdiscount']) and $row['sattraction'] == 0) {
-                    echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "%" . "</p>";
-                } else {
-                    echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "%" . "</p>";
+                if (isset($row['sdiscount'])) {
+                    echo "<p class='showcase-badge'>" . ($row['sdiscount']) . "%" . "</p>";
+                    // echo "<p class='showcase-badge'>" . gettype((int)($row['sdiscount'])) . "%" . "</p>";
                 }
-
                 echo "<div class='showcase-actions'>";
                 echo "<button class='btn-action'>";
                 echo "<ion-icon name='heart-outline'></ion-icon>";
@@ -65,11 +64,12 @@ $result = $conn->query($sql);
                 }
                 echo "</div>";
                 echo "<div class='price-box'>";
-                echo "<p class='price'>$" . htmlspecialchars($row['sprice']) . "</p>";
+                echo "<p class='price'>$" . (($row['sprice'])-((int)($row['sdiscount'])/100)*(int)($row['sprice'])) . "</p>";
                 echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
+                $count++;
             }
         } else {
             echo "No services found.";
