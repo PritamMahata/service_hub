@@ -1,15 +1,89 @@
+<?php
+include './env/config.php';
+$sql = "SELECT * FROM services";
+$result = $conn->query($sql);
+?>
 <div class="element-main">
     <div class="container">
         <div class="element-split">
             <h2 class="title">Our Services</h2>
-            <a href="./category.php"><h2 class="title">view all >></h2></a>
+            <a href="./category.php">
+                <h2 class="title">view all >></h2>
+            </a>
         </div>
     </div>
+
+    <!--<p class="showcase-badge">15%</p>
+    <p class="showcase-badge angle black">sale</p>
+    <p class="showcase-badge angle pink">new</p> 
+    -->
+
     <div class="element-grid">
+        <?php
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while ($row = $result->fetch_assoc()) {
+                if ($count >= 6) {
+                    echo "<h1>$count</h1>";
+                    $count++;
+                    break;
+                }
+                echo "<div class='showcase'>";
+                echo "<div class='showcase-banner'>";
+                echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
+                // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
+                if (!isset($row['sdiscount']) and $row['sattraction'] == 0) {
+                    echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "%" . "</p>";
+                } else {
+                    echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "%" . "</p>";
+                }
+
+                echo "<div class='showcase-actions'>";
+                echo "<button class='btn-action'>";
+                echo "<ion-icon name='heart-outline'></ion-icon>";
+                echo "</button>";
+                echo "<button class='btn-action'>";
+                echo "<ion-icon name='eye-outline'></ion-icon>";
+                echo "</button>";
+                echo "<button class='btn-action'>";
+                echo "<ion-icon name='bag-add-outline'></ion-icon>";
+                echo "</button>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='showcase-content'>";
+                echo "<a href='#' class='showcase-category'>" . htmlspecialchars($row['sname']) . "</a>";
+                echo "<h3>";
+                echo "<a href='#' class='showcase-title'>" . htmlspecialchars($row['sdes']) . "</a>";
+                echo "</h3>";
+                echo "<div class='showcase-rating'>";
+                $i = 0;
+                for ($i; $i < htmlspecialchars($row['srating']); $i++) {
+                    echo "<ion-icon name='star'></ion-icon>";
+                }
+                for ($i; $i < 5; $i++) {
+                    echo "<ion-icon name='star-outline'></ion-icon>";
+                }
+                echo "</div>";
+                echo "<div class='price-box'>";
+                echo "<p class='price'>$" . htmlspecialchars($row['sprice']) . "</p>";
+                echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+        } else {
+            echo "No services found.";
+        }
+        $conn->close();
+        ?>
+    </div>
+
+
+    <!-- <div class="element-grid">
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_1.jpg" width="300"
-                     class="element-img default">
+                    class="element-img default">
                 <p class="showcase-badge">15%</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -44,7 +118,6 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_2.jpg" class="element-img default" width="300">
-
                 <p class="showcase-badge angle black">sale</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -79,8 +152,7 @@
         </div>
         <div class="showcase">
             <div class="showcase-banner">
-                <img src="./assets/images/services/img_3.jpg"
-                     class="element-img default" width="300">
+                <img src="./assets/images/services/img_3.jpg" class="element-img default" width="300">
                 <div class="showcase-actions">
                     <button class="btn-action">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -115,7 +187,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_4.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <p class="showcase-badge angle pink">new</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -151,7 +223,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_5.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <div class="showcase-actions">
                     <button class="btn-action">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -186,7 +258,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_6.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <p class="showcase-badge angle black">sale</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -222,7 +294,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_7.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <div class="showcase-actions">
                     <button class="btn-action">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -257,7 +329,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_8.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <p class="showcase-badge angle black">sale</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -293,7 +365,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_9.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <div class="showcase-actions">
                     <button class="btn-action">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -328,7 +400,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_10.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <p class="showcase-badge angle black">sale</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -364,7 +436,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_11.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <div class="showcase-actions">
                     <button class="btn-action">
                         <ion-icon name="heart-outline"></ion-icon>
@@ -399,7 +471,7 @@
         <div class="showcase">
             <div class="showcase-banner">
                 <img src="./assets/images/services/img_12.jpg"
-                     class="element-img default" width="300">
+                    class="element-img default" width="300">
                 <p class="showcase-badge angle black">sale</p>
                 <div class="showcase-actions">
                     <button class="btn-action">
@@ -432,5 +504,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
