@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label class="newsletter-title">Password</label>
                     <div class="sidebyside">
                         <input type="password" name="password" class="email-field" id="password" placeholder="Password" required>
-                        <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye"></ion-icon>
+                        <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye" onclick="lshowHide();"></ion-icon>
                     </div>
                 </div>
                 <div class="container flex_div">
