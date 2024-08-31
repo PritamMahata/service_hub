@@ -20,3 +20,4 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con
 
 detailing :
 use input pattern in html with css
+this is a test message
