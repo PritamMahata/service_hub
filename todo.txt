@@ -1,9 +1,9 @@
-login design - done
-signp design - done
-admin page design (html css) 
-profile page design (html css) 
+login design /typography - done
+signp design /typography - done
 product view page (html css) 
 Cart page design (html css) 
+admin page design (html css) 
+profile page design (html css) 
 payment gateway (html css) 
 Database table creation (MySQL) 
 Fetch service details card from database (php, MySQL) 
@@ -15,19 +15,8 @@ Payment functionality (php, MySQL)
 service INSERT query:-
 INSERT INTO `services` (`sname`, `srating`, `sprice`, `sduration`, `sdes`, `scategory`, `simage`, `sattraction`, `sdiscount`) VALUES ('Car wash', '4', '800', '2 hr', 'This is car wash service description', '1', './assets/images/services/img_4.jpg', 'sale', '15');
 =======
-login 
-signup
+registration query
+INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `acc_type`, `pan_card`, `acc_num`, `ifsc`, `ucreate`) VALUES (NULL, 'pritam', NULL, 'mahata', 'pritam@gmial.com', '@pritam123', '6473829847', '6473829847', 'sonarpur ghasiara', NULL, NULL, NULL, NULL, current_timestamp());
 
-admin page design (html css)
-profile page design (html css)
-product view page (html css)
-Cart page design (html css)
-
-Database table creation (MySQL)
-
-Fetch service details card from database (php, MySQL)
-Add to Cart functionality (JavaScript)
-Booking functionality (php)
-
-payment gateway (html css)
-Payment functionality (php, MySQL)
+detailing :
+use input pattern in html with css
