@@ -17,8 +17,90 @@ INSERT INTO `services` (`sname`, `srating`, `sprice`, `sduration`, `sdes`, `scat
 =======
 registration query
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `acc_type`, `pan_card`, `acc_num`, `ifsc`, `ucreate`) VALUES (NULL, 'pritam', NULL, 'mahata', 'pritam@gmial.com', '@pritam123', '6473829847', '6473829847', 'sonarpur ghasiara', NULL, NULL, NULL, NULL, current_timestamp());
+=======
+Provider query
+INSERT INTO `provider` (`pid`, `fname`, `mname`, `lname`, `gender`, `age`, `email`, `con_num`, `alt_num`, `address`, `password`, `acc_type`, `pan_card`, `acc_num`, `ifsc`, `experience`, `photo`, `certificate`, `aadhaar`) VALUES (NULL, 'asljdlj', 'asjdlasjdl', 'sdjalkdjsla', '', '12', 'pritam@gmail.com', '2345678904', '2345678904', '213/dsf  sdfsdfsd/sdfsf', 'sdfsfsdf', 'provider', '12qwe12341', '234234242', 'jwe34234234', 'fsdf sfs fsaf ', '', '', '');
 
 detailing :
 use input pattern in html with css
-this is a test message
-this is new message
+implement lazy load image for faster image load 
+custom 404 page
+search suggetion
+
+
+<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?php echo $yourAddress; ?>&output=embed" style="
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+"></iframe>
+
+
+<?php
+include './env/config.php';
+
+$serviceID = isset($_GET['serviceId']) ? $_GET['serviceId'] : 0;
+$sql = "SELECT * FROM services where sid = " . $serviceID . ";";
+$result = $conn->query($sql);
+$yourAddress = "kolkata, sonarpur, ghasiara";
+?>
+
+<!-- <?php
+        if ($result->num_rows == 1 && $serviceID != 0) {
+            $row = $result->fetch_assoc();
+            echo "<div class = 'element-grid login_box container' style='max-width: none;'>";
+            echo "<div class='sidebyside'>";
+            echo "<div class='showcase-banner' style='width:40%'>";
+            echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
+            // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
+            if (isset($row['sdiscount'])) {
+                echo "<p class='showcase-badge'>" . ($row['sdiscount']) . "%" . "</p>";
+                // echo "<p class='showcase-badge'>" . gettype((int)($row['sdiscount'])) . "%" . "</p>";
+            }
+            echo "</div>";
+            echo "<div class='showcase-content'>";
+            echo "<a href='#' class='showcase-category'>" . htmlspecialchars($row['sname']) . "</a>";
+            echo "<h3>";
+            echo "<a href='#' class='showcase-title'>" . htmlspecialchars($row['sdes']) . "</a>";
+            echo "</h3>";
+            echo "<div class='showcase-rating'>";
+            $i = 0;
+            for ($i; $i < htmlspecialchars($row['srating']); $i++) {
+                echo "<ion-icon name='star'></ion-icon>";
+            }
+            for ($i; $i < 5; $i++) {
+                echo "<ion-icon name='star-outline'></ion-icon>";
+            }
+            echo "</div>";
+            echo "<div class='price-box'>";
+            echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>";
+            echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "No services found.";
+        }
+        $conn->close();
+        ?> -->
+
+
+
+
+// bug 
+date option deselect in model.php
+
+<?php
+              for ($i = date("j"); $i <= 8; $i++) {
+                echo '<input type="radio" name="rd1" id="_' . $i . '">';
+              }
+              for ($i = date("j"); $i <= 8; $i++) {
+                echo
+                '<label for="_' . $i . '" class="box __' . $i . ' style="background: #ddd; margin: 5px; padding: 10px 12px; display: flex; border-radius: 5px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; min-width: fit-content;"">
+                      <div class="plan">
+                        <div class="yearly">' . $i . '</div>
+                        <div class="yearly">' . date("M") . '</div>
+                      </div> 
+                    </label>';
+              }
+              ?>
