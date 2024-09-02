@@ -1,4 +1,5 @@
 <?php
+session_start();
 $showAlert = false;
 $msg = '<h3 style = "color:coral;">Invalid Credentials<h3>';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -65,14 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form method="post">
                 <div class="row_field">
                     <label class="newsletter-title">E-mail ID </label>
-                    <input type="email" name="email" class="email-field" placeholder="Email" required>
+                    <input type="email" name="email" id="email" class="email-field" placeholder="Email" required>
                 </div>
 
 
                 <div class="row_field">
                     <label class="newsletter-title">Password</label>
                     <div class="sidebyside">
-                        <input type="password" name="password" class="email-field" id="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="email-field" id="password" placeholder="Password" required>
                         <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye" onclick="lshowHide();"></ion-icon>
                     </div>
                 </div>
