@@ -1,0 +1,111 @@
+.card {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card .title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.card .content {
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.card label.box {
+  background: #ddd;
+  margin: 5px;
+  padding: 5px 12px;
+  display: flex;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: fit-content;
+}
+
+#_1:checked ~ label.__1,
+#_2:checked ~ label.__2,
+#_3:checked ~ label.__3,
+#_4:checked ~ label.__4,
+#_5:checked ~ label.__5,
+#_6:checked ~ label.__6,
+#_7:checked ~ label.__7,
+#_8:checked ~ label.__8,
+#_9:checked ~ label.__9,
+#_10:checked ~ label.__10,
+#_11:checked ~ label.__11,
+#_12:checked ~ label.__12,
+#_13:checked ~ label.__13,
+#_41:checked ~ label.__14,
+#_15:checked ~ label.__15,
+#_16:checked ~ label.__16,
+#_17:checked ~ label.__17,
+#_18:checked ~ label.__18,
+#_19:checked ~ label.__19,
+#_20:checked ~ label.__20,
+#_21:checked ~ label.__21,
+#_22:checked ~ label.__22,
+#_23:checked ~ label.__23,
+#_21:checked ~ label.__24,
+#_25:checked ~ label.__25,
+#_26:checked ~ label.__26,
+#_27:checked ~ label.__27,
+#_28:checked ~ label.__28,
+#_29:checked ~ label.__29,
+#_20:checked ~ label.__20,
+#_31:checked ~ label.__31,
+#_32:checked ~ label.__32,
+#_33:checked ~ label.__33,
+#_31:checked ~ label.__34,
+#_35:checked ~ label.__35,
+#_36:checked ~ label.__36,
+#_37:checked ~ label.__37,
+#_38:checked ~ label.__38,
+#_39:checked ~ label.__39,
+#_30:checked ~ label.__30,
+#_31:checked ~ label.__31,
+#_32:checked ~ label.__32,
+#_33:checked ~ label.__33,
+#_34:checked ~ label.__34 {
+  border-color: #8e49e8;
+  background: #d5bbf7;
+}
+
+.card label.box:hover {
+  background: #d5bbf7;
+}
+
+.card label.box .plan {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card input[type="radio"] {
+  display: none;
+}
+
+
+.card .content::-webkit-scrollbar {
+  width: 15px;
+}
+
+.card .content::-webkit-scrollbar-track {
+  background: var(--white);
+  border-left: 1px solid var(--border-color);
+}
+
+.card .content::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.card .content::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
