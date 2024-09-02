@@ -13,12 +13,10 @@ function test() {
 }
 //password show hide
 let leye_btn = document.getElementById("leye-btn");
-// let eye = document.getElementById("eye");
 let password = document.getElementById("password");
 let cpassword = document.getElementById("cpassword");
 
 function lshowHide() {
-  console.log("hello");
   if (password.type === "password") {
     password.type = "text";
     leye_btn.name = "eye";
@@ -33,7 +31,6 @@ let scpassword = document.getElementById("scpassword");
 let seye_btn = document.getElementById("seye-btn");
 
 function sshowHide() {
-  console.log("hello");
   if (spassword.type === "password" && scpassword.type === "password") {
     spassword.type = "text";
     scpassword.type = "text";
