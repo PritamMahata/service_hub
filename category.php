@@ -1,3 +1,8 @@
+<?php
+require_once('./env/config.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,19 +22,19 @@
 </head>
 
 <body>
-<div class="overlay" data-overlay></div>
-<?php
-require_once('./assets/components/header.php'); // HEADER
-// require_once('./assets/components/model.php'); // model
-// require_once('./assets/components/notification.php'); // notification
-require_once('./assets/components/main.php');
-require_once('./assets/components/sub_components/slidebar.php');
-require_once('./assets/components/footer.php');
-?>
-<script src="./assets/js/script.js"></script>
-<!-- ionicon link -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div class="overlay" data-overlay></div>
+    <?php
+    require_once('./assets/components/header.php'); // HEADER
+    // require_once('./assets/components/model.php'); // model
+    // require_once('./assets/components/notification.php'); // notification
+    require_once('./assets/components/main.php');
+    require_once('./assets/components/sub_components/slidebar.php');
+    require_once('./assets/components/footer.php');
+    ?>
+    <script src="./assets/js/script.js"></script>
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
