@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,6 @@
 <body>
     <div class="overlay" data-overlay></div>
     <?php
-    $end = 8;
     require_once('./assets/components/header.php');
     //require_once('./assets/components/model.php');
     require_once('./assets/components/banner.php');
