@@ -1,3 +1,7 @@
+<?php
+session_start();
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/relog.css">
+    <link rel="stylesheet" href="./assets/css/option.css">
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +29,7 @@
     <?php
     require_once('./assets/components/header.php');
     require_once('./assets/components/sub_components/slidebar.php');
+    require_once('./assets/components/model.php');
     require_once('./assets/components/servicedes.php');
     require_once('./assets/components/footer.php');
     ?>
