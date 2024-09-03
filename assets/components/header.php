@@ -1,6 +1,9 @@
 <?php
-session_start();
-$isLoggedIn = isset($_SESSION['uid']);
+if (isset($_SESSION['email'])) {
+  $isLoggedIn = true;
+} else {
+  $isLoggedIn = false;
+}
 ?>
 <header>
   <div class="header-main">
@@ -15,31 +18,21 @@ $isLoggedIn = isset($_SESSION['uid']);
         </button>
       </div>
       <div class="header-user-actions">
-        <!-- wishlist -->
-        <!-- <button class="action-btn">
-          <ion-icon name="heart"></ion-icon>
-          <span class="count">5</span>
-        </button> -->
-        <button class="action-btn">
-          <ion-icon name="cart"></ion-icon>
-          <span class="count">2</span>
-        </button>
-
-        <?php if ($isLoggedIn) { ?>
-          <button class="action-btn" onclick="window.location.href = './logout.php'">
-            <ion-icon name="log-out-outline"></ion-icon>
+        <?php
+        if ($isLoggedIn) { ?>
+          <button class="action-btn" onclick="window.location.href = './task.php'">
+            <ion-icon name="calendar"></ion-icon>
+            <span class="count">2</span>
+          </button>
+          <button class="action-btn" onclick="window.location.href = './profile.php'">
+            <ion-icon name="person-circle-outline"></ion-icon>
           </button>
         <?php } else { ?>
           <button class="action-btn" onclick="window.location.href = './login.php'">
             <ion-icon name="log-in-outline"></ion-icon>
           </button>
-        <?php } ?>
-
-        <!-- <button class="action-btn">
-          <ion-icon name="person-circle-outline"></ion-icon>
-        </button> -->
-
-
+        <?php }
+        ?>
       </div>
     </div>
   </div>
