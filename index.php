@@ -29,8 +29,8 @@ session_start();
     //require_once('./assets/components/model.php');
     require_once('./assets/components/banner.php');
     require_once('./assets/components/main.php');
-    require_once('./assets/components/sub_components/about.php');
     require_once('./assets/components/sub_components/blog.php');
+    require_once('./assets/components/sub_components/about.php');
     require_once('./assets/components/footer.php');
     ?>
     <script src="./assets/js/script.js"></script>
