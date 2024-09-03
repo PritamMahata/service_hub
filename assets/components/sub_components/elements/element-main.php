@@ -2,7 +2,7 @@
 include './env/config.php';
 $sql = "SELECT * FROM services";
 $result = $conn->query($sql);
-
+$end = 8;
 ?>
 <div class="element-main">
     <div class="container">
@@ -29,7 +29,7 @@ $result = $conn->query($sql);
                 if ($count >= $end) {
                     break;
                 }
-                echo "<div class='showcase'>";
+                echo "<div class='showcase' onclick='goToDetails(" . $row['sid'] . ")'>";
                 echo "<div class='showcase-banner'>";
                 echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
                 // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
@@ -64,7 +64,7 @@ $result = $conn->query($sql);
                 }
                 echo "</div>";
                 echo "<div class='price-box'>";
-                echo "<p class='price'>$" . (($row['sprice'])-((int)($row['sdiscount'])/100)*(int)($row['sprice'])) . "</p>";
+                echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>";
                 echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
                 echo "</div>";
                 echo "</div>";
@@ -77,8 +77,6 @@ $result = $conn->query($sql);
         $conn->close();
         ?>
     </div>
-
-
     <!-- <div class="element-grid">
         <div class="showcase">
             <div class="showcase-banner">
@@ -506,3 +504,8 @@ $result = $conn->query($sql);
         </div>
     </div> -->
 </div>
+<script>
+    function goToDetails(serviceId) {
+        window.location.href = "serviceView.php?serviceId=" + serviceId;
+    }
+</script>
