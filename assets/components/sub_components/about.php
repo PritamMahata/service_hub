@@ -85,7 +85,7 @@
                             <ion-icon name="rocket-outline"></ion-icon>
                         </div>
                         <div class="service-content">
-                            <h3 class="service-title">Next Day Service</h3>
+                            <h3 class="service-title">Fastest Service</h3>
                             <p class="service-desc">fastest Service</p>
                         </div>
                     </a>
