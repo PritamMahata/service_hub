@@ -77,8 +77,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye" onclick="lshowHide();"></ion-icon>
                     </div>
                 </div>
-                <div class="container flex_div">
-                    <button type="submit" class="btn-newsletter">Log in</button>
+                <div class="col_field">
+                    <div class="container flex_div">
+                        <button class="btn-newsletter disable" onclick="window.location.href = './index.php'">Back</button>
+                    </div>
+                    <div class="container flex_div">
+                        <button type="submit" class="btn-newsletter">Log in</button>
+                    </div>
                 </div>
             </form>
         </div>
