@@ -45,6 +45,7 @@
 
   /* own style */
   --test: hsl(0deg 0% 100% / 62%);
+  --banner-content-color: rgb(241 241 241 / 49%);
 }
 
 /*-----------------------------------*\
@@ -81,6 +82,15 @@ ion-icon,
 button,
 a {
   display: block;
+}
+
+.disable{
+  color: #1d1d1d !important;
+  background-color: rgb(228 228 228) !important;
+}
+
+.disable:hover{
+  background-color: #4b4b4b62 !important;
 }
 
 span {
@@ -245,8 +255,8 @@ body::-webkit-scrollbar-thumb:hover {
   visibility: hidden;
   pointer-events: none;
   z-index: 10;
-  -webkit-animation: popup 1s ease-in-out 5s forwards;
-  animation: popup 1s ease-in-out 5s forwards;
+  -webkit-animation: popup 0.8s ease-in-out forwards;
+  animation: popup 0.8s ease-in-out forwards;
 }
 
 @-webkit-keyframes popup {
@@ -296,15 +306,36 @@ body::-webkit-scrollbar-thumb:hover {
 
 .modal-content {
   position: relative;
-  max-width: 350px;
+  height: 80%;
+  width: 90%;
+  max-width: 550px;
   margin: 20px;
   background: var(--white);
   -webkit-border-radius: var(--border-radius-md);
   border-radius: var(--border-radius-md);
-  overflow: hidden;
+  overflow-y: scroll;
   z-index: 2;
-  -webkit-animation: scaleUp 0.5s ease-in-out 5s forwards;
-  animation: scaleUp 0.5s ease-in-out 5s forwards;
+  /* -webkit-animation: scaleUp 0.5s ease-in-out 5s forwards;
+  animation: scaleUp 0.5s ease-in-out 5s forwards; */
+}
+.modal-content::-webkit-scrollbar {
+  width: 15px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--white);
+  border-left: 1px solid var(--border-color);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
 }
 
 @-webkit-keyframes scaleUp {
@@ -330,7 +361,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .modal-close-btn {
-  position: absolute;
+  position: sticky;
+  float: right;
   top: 15px;
   right: 15px;
   background: var(--salmon-pink);
@@ -350,7 +382,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .newsletter {
-  padding: 50px 30px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -431,19 +463,19 @@ body::-webkit-scrollbar-thumb:hover {
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   z-index: 5;
-  -webkit-animation: slideInOut 5s ease-in-out ;
+  -webkit-animation: slideInOut 5s ease-in-out;
   animation: slideInOut 5s ease-in-out;
 }
 
 @-webkit-keyframes slideIn {
-  0%{
+  0% {
     -webkit-transform: translateX(-webkit-calc(-100% - 40px));
     transform: translateX(calc(-100% - 40px));
     opacity: 0;
     visibility: hidden;
   }
 
-100%{
+  100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
@@ -452,14 +484,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideIn {
-  0%{
+  0% {
     -webkit-transform: translateX(-webkit-calc(-100% - 40px));
     transform: translateX(calc(-100% - 40px));
     opacity: 0;
     visibility: hidden;
   }
 
-100%{
+  100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
@@ -475,7 +507,7 @@ body::-webkit-scrollbar-thumb:hover {
     visibility: hidden;
   }
 
-  50%{
+  50% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
@@ -915,7 +947,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .banner-content {
-  background: var(--border-color);
+  background: var(--banner-content-color);
   backdrop-filter: blur(5px);
   position: absolute;
   bottom: 25px;
@@ -1515,14 +1547,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 .element-featured .add-cart-btn {
   background: var(--salmon-pink);
-  padding: 8px 15px;
+  padding: 15px 125px;
   color: var(--white);
   font-weight: var(--fs-9);
   font-weight: var(--weight-700);
   text-transform: uppercase;
   -webkit-border-radius: var(--border-radius-md);
   border-radius: var(--border-radius-md);
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   -webkit-transition: var(--transition-timing);
   -o-transition: var(--transition-timing);
   transition: var(--transition-timing);
@@ -2546,8 +2578,7 @@ footer {
   }
 
   .banner-content {
-    background: none;
-    background: var(--border-color);
+    background: var(--banner-content-color);
     backdrop-filter: blur(5px);
     position: absolute;
     bottom: 25px;
@@ -2650,7 +2681,7 @@ footer {
    * #MODAL 
    */
 
-  .modal-content {
+  /* .modal-content {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2663,14 +2694,10 @@ footer {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-  }
-
-  .newsletter-img {
-    display: block;
-  }
+  } */
 
   .newsletter {
-    text-align: left;
+    text-align: center;
   }
 
   /**
@@ -2700,7 +2727,7 @@ footer {
   .banner-content {
     max-width: 380px;
     height: fit-content;
-    background: var(--border-color);
+    background: var(--banner-content-color);
     backdrop-filter: blur(5px);
     position: absolute;
     bottom: 25px;
@@ -2824,6 +2851,9 @@ footer {
 
   .footer-nav-list:not(:last-child) {
     margin-bottom: 0;
+  }
+  .newsletter-img {
+    display: block;
   }
 }
 
@@ -3134,7 +3164,7 @@ footer {
     left: 75px;
     max-width: 400px;
     height: fit-content;
-    background: var(--border-color);
+    background: var(--banner-content-color);
     backdrop-filter: blur(5px);
     position: absolute;
     bottom: 25px;
@@ -3510,7 +3540,7 @@ footer {
     left: 110px;
     max-width: 460px;
     height: fit-content;
-    background: var(--border-color);
+    background: var(--banner-content-color);
     backdrop-filter: blur(5px);
     position: absolute;
     bottom: 25px;
