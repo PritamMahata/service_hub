@@ -26,6 +26,7 @@ use input pattern in html with css
 implement lazy load image for faster image load 
 custom 404 page
 search suggetion
+add sound 
 
 
 <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?php echo $yourAddress; ?>&output=embed" style="
@@ -43,47 +44,6 @@ $sql = "SELECT * FROM services where sid = " . $serviceID . ";";
 $result = $conn->query($sql);
 $yourAddress = "kolkata, sonarpur, ghasiara";
 ?>
-
-<!-- <?php
-        if ($result->num_rows == 1 && $serviceID != 0) {
-            $row = $result->fetch_assoc();
-            echo "<div class = 'element-grid login_box container' style='max-width: none;'>";
-            echo "<div class='sidebyside'>";
-            echo "<div class='showcase-banner' style='width:40%'>";
-            echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
-            // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
-            if (isset($row['sdiscount'])) {
-                echo "<p class='showcase-badge'>" . ($row['sdiscount']) . "%" . "</p>";
-                // echo "<p class='showcase-badge'>" . gettype((int)($row['sdiscount'])) . "%" . "</p>";
-            }
-            echo "</div>";
-            echo "<div class='showcase-content'>";
-            echo "<a href='#' class='showcase-category'>" . htmlspecialchars($row['sname']) . "</a>";
-            echo "<h3>";
-            echo "<a href='#' class='showcase-title'>" . htmlspecialchars($row['sdes']) . "</a>";
-            echo "</h3>";
-            echo "<div class='showcase-rating'>";
-            $i = 0;
-            for ($i; $i < htmlspecialchars($row['srating']); $i++) {
-                echo "<ion-icon name='star'></ion-icon>";
-            }
-            for ($i; $i < 5; $i++) {
-                echo "<ion-icon name='star-outline'></ion-icon>";
-            }
-            echo "</div>";
-            echo "<div class='price-box'>";
-            echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>";
-            echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-        } else {
-            echo "No services found.";
-        }
-        $conn->close();
-        ?> -->
-
 
 
 
@@ -104,3 +64,28 @@ date option deselect in model.php
                     </label>';
               }
               ?>
+
+Account type deleted code 
+<br>
+<label class="newsletter-title">Account Type</label>
+                    <select class="email-field" name="acc_type" id="acc_type" onchange="test()">
+                        <option value="1">Consumer</option>
+                        <option value="2">Provider</option>
+                    </select>
+                    <br>
+                    <div id="check" style="display: none;">
+                        <div class="row_field">
+                            <label class="newsletter-title">PAN Card</label>
+                            <input type="text" name="pan_card" class="email-field" placeholder="PAN Card Number" required>
+                        </div>
+                        <div class="row_field">
+                            <label class="newsletter-title">Bank Account Details</label>
+                            <br>
+                            <label class="newsletter-title">Account Number</label>
+                            <input type="text" name="acc_num" class="email-field" placeholder="Account Number" required>
+                        </div>
+                        <div class="row_field">
+                            <label class="newsletter-title">IFSC Code</label>
+                            <input type="text" name="ifsc" class="email-field" placeholder="IFSC Code" required>
+                        </div>
+                    </div>
