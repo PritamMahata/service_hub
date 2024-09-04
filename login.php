@@ -2,6 +2,10 @@
 session_start();
 $showAlert = false;
 $msg = '<h3 style = "color:coral;">Invalid Credentials<h3>';
+if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
+    header("Location: profile.php");
+    exit();
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'env/config.php';
     $email = $_POST['email'];
@@ -12,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = mysqli_fetch_assoc($result);
         if ($password == $user['password']) {
             $_SESSION['email'] = $email;
+            $_SESSION['isLogin'] = true;
             header("Location: index.php");
             exit();
         } else {
