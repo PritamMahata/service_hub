@@ -1656,7 +1656,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   min-width: 100%;
   padding: 10px;
-  margin: 20px auto;
+  margin: 20px auto 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -1691,6 +1691,7 @@ body::-webkit-scrollbar-thumb:hover {
 .element-grid .showcase:hover {
   -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+  cursor: pointer;
 }
 
 .element-grid .showcase-banner {
@@ -3103,7 +3104,7 @@ footer {
     left: 0;
     width: 200px;
     background: var(--white);
-    padding: 20px 0;
+    padding: 8px 0;
     -webkit-border-radius: var(--border-radius-md);
     border-radius: var(--border-radius-md);
     border: 3px solid var(--border-color);
@@ -3130,6 +3131,9 @@ footer {
     pointer-events: all;
   }
 
+  .dropdown-list .dropdown-item {
+    padding: 6px 0;
+  }
   .dropdown-list .dropdown-item a {
     color: var(--sonic-silver);
     font-size: var(--fs-7);
