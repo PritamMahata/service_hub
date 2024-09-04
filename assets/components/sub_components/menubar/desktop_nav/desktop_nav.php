@@ -1,3 +1,10 @@
+<?php
+require_once('./env/config.php');
+$sql = "SELECT category.cname AS category_name, sub_category.subcatname AS subcategory_name FROM category
+        JOIN sub_category ON category.cid = sub_category.category_id
+        ORDER BY category.cname ASC, sub_category.subcatname ASC;";
+$result = $conn->query($sql);
+?>
 <nav class="desktop-navigation-menu">
   <div class="container">
     <ul class="desktop-menu-category-list">
@@ -6,184 +13,114 @@
       </li>
       <li class="menu-category">
         <a href="./category.php" class="menu-title">Categories</a>
-        <div class="dropdown-panel">
-          <ul class="dropdown-panel-list">
-            <li class="menu-title">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">
-                <img src="./assets/images/electronics-banner-1.jpg" width="250"
-                  height="119">
-              </a>
-            </li>
-          </ul>
-          <ul class="dropdown-panel-list">
-            <li class="menu-title">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">
-                <img src="./assets/images/mens-banner.jpg" width="250" height="119">
-              </a>
-            </li>
-          </ul>
-          <ul class="dropdown-panel-list">
-            <li class="menu-title">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">
-                <img src="./assets/images/womens-banner.jpg" width="250" height="119">
-              </a>
-            </li>
-          </ul>
-          <ul class="dropdown-panel-list">
-            <li class="menu-title">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li class="panel-list-item">
-              <a href="#">
-                <img src="./assets/images/electronics-banner-2.jpg"  width="250" height="119">
-              </a>
-            </li>
-          </ul>
-        </div>
       </li>
-      <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
+
+      <?php
+      $categories = [];
+      while ($row = $result->fetch_assoc()) {
+        $categories[$row['category_name']][] = $row['subcategory_name'];
+      }
+
+      // Display in HTML
+      $count = 0;
+      foreach ($categories as $category_name => $subcategories) {
+        if ($count >= 5) {
+          break;
+        }
+        echo '<li class="menu-category">';
+        echo '<a href="#" class="menu-title">' . htmlspecialchars($category_name) . '</a>';
+        $count++;
+        // Check if there are subcategories to display
+        if (!empty($subcategories[0])) {
+          echo '<ul class="dropdown-list">';
+          foreach ($subcategories as $subcategory_name) {
+            echo '<li class="dropdown-item"><a href="#">' . htmlspecialchars($subcategory_name) . '</a></li>';
+          }
+          echo '</ul>';
+        }
+
+        echo '</li>';
+      }
+
+      $conn->close();
+
+
+      ?>
+
+      <!-- <li class="menu-category">
+        <a href="#" class="menu-title">category1</a>
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
         </ul>
       </li>
       <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
+        <a href="#" class="menu-title">category2</a>
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
         </ul>
       </li>
       <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
+        <a href="#" class="menu-title">category3</a>
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
         </ul>
       </li>
       <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
+        <a href="#" class="menu-title">category4</a>
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
           <li class="dropdown-item">
-            <a href="#">Lorem ipsum</a>
+            <a href="#">sub category</a>
           </li>
         </ul>
       </li>
       <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
+        <a href="#" class="menu-title">category5</a>
       </li>
       <li class="menu-category">
-        <a href="#" class="menu-title">Lorem ipsum</a>
-      </li>
+        <a href="#" class="menu-title">category6</a>
+      </li> -->
     </ul>
   </div>
 </nav>
