@@ -1,3 +1,15 @@
+<?php
+$serviceID = $_GET['serviceId'];
+$sql = "SELECT * FROM services WHERE sid = $serviceID";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+} else {
+    echo "0 results";
+}
+?>
+
 <div class="element-featured container">
     <div class="showcase-wrapper has-scrollbar">
         <div class="showcase-container" style="padding:10px;">
