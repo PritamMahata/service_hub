@@ -29,7 +29,7 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
     <?php
     require_once('./assets/components/header.php');
     require_once('./assets/components/sub_components/slidebar.php');
-    require_once('./assets/components/model.php');
+    require_once('./assets/components/modal.php');
     require_once('./assets/components/servicedes.php');
     require_once('./assets/components/footer.php');
     ?>
