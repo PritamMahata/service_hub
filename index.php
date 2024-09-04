@@ -1,5 +1,6 @@
 <?php
 session_start();
+$end = 8;
 ?>
 <!DOCTYPE html>
 <html lang="en">
