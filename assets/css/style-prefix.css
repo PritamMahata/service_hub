@@ -84,12 +84,12 @@ a {
   display: block;
 }
 
-.disable{
+.disable {
   color: #1d1d1d !important;
   background-color: rgb(228 228 228) !important;
 }
 
-.disable:hover{
+.disable:hover {
   background-color: #4b4b4b62 !important;
 }
 
@@ -592,6 +592,33 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+.sidebyside {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: -webkit-fill-available;
+}
+.relog_text {
+  font-size: small;
+  /* position: absolute; */
+  /* opacity: 0; */
+  text-align: center;
+  width: max-content;
+  color: whitesmoke;
+}
+.relog_btn {
+  gap: 0 !important;
+  border-radius: 10px;
+  background: var(--salmon-pink);
+  padding: 2px 7px;
+  -o-transition: var(--transition-timing);
+  transition: var(--transition-timing);
+}
+.relog_btn:hover {
+  background: var(--eerie-black);
+  color: var(--white);
+}
 
 .header-top,
 .header-user-actions,
@@ -2940,7 +2967,7 @@ footer {
     position: relative;
     font-size: 35px;
     color: var(--onyx);
-    padding: 5px;
+    padding: 3px 10px 3px 1px;
   }
 
   .header-user-actions .count {
@@ -2988,7 +3015,7 @@ footer {
     font-size: var(--fs-7);
     font-weight: var(--weight-600);
     text-transform: uppercase;
-    padding: 15px 0;
+    padding: 10px 0;
     -webkit-transition: var(--transition-timing);
     -o-transition: var(--transition-timing);
     transition: var(--transition-timing);

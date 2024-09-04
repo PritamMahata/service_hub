@@ -1,5 +1,11 @@
 /* login */
-.form_heading{
+.header-user-actions:hover .relog_btn {
+  cursor: pointer;
+  opacity: 1;
+  animation: fadeIn 0.5s;
+}
+
+.form_heading {
   margin: 12px auto;
   text-align: center;
   font-weight: 700;
