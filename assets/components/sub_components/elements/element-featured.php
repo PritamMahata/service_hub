@@ -1,12 +1,17 @@
-<div class="element-featured">
-  <h2 class="title">Deal of the day</h2>
+<div class="element-featured container">
   <div class="showcase-wrapper has-scrollbar">
-    <div class="showcase-container">
+    <div class="showcase-container" style="padding:10px;">
       <div class="showcase">
         <div class="showcase-banner">
           <img src="./assets/images/services/img_5.jpg" class="showcase-img">
         </div>
         <div class="showcase-content">
+          <a href="#">
+            <h3 class="showcase-title" style="font-size: 1.6rem;">Lorem ipsum dolor sit amet consecrate</h3>
+          </a>
+          <p class="showcase-desc" style="font-size: 1rem;"> Lorem ipsum dolor sit amet consecrate Lorem ipsum dolor dolor sit amet
+            consectetur Lorem ipsum dolor
+          </p>
           <div class="showcase-rating">
             <ion-icon name="star"></ion-icon>
             <ion-icon name="star"></ion-icon>
@@ -14,100 +19,63 @@
             <ion-icon name="star-outline"></ion-icon>
             <ion-icon name="star-outline"></ion-icon>
           </div>
-          <a href="#">
-            <h3 class="showcase-title">Lorem ipsum dolor sit amet consecrate</h3>
-          </a>
-          <p class="showcase-desc"> Lorem ipsum dolor sit amet consecrate Lorem ipsum dolor dolor sit amet
-            consectetur Lorem ipsum dolor </p>
           <div class="price-box">
             <p class="price">$150.00</p>
             <del>$200.00</del>
           </div>
-          <button class="add-cart-btn">add to cart</button>
-          <div class="showcase-status">
-            <div class="wrapper">
-              <p> already sold: <b>20</b>
-              </p>
-              <p> available: <b>40</b>
-              </p>
-            </div>
-            <div class="showcase-status-bar"></div>
-          </div>
           <div class="countdown-box">
-            <p class="countdown-desc"> Hurry Up! Offer ends in: </p>
+            <p class="countdown-desc">Date Available</p>
             <div class="countdown">
               <div class="countdown-content">
-                <p class="display-number">360</p>
-                <p class="display-text">Days</p>
+                <p class="display-number">03</p>
+                <p class="display-text">Aug</p>
               </div>
               <div class="countdown-content">
-                <p class="display-number">24</p>
-                <p class="display-text">Hours</p>
+                <p class="display-number">03</p>
+                <p class="display-text">Aug</p>
               </div>
               <div class="countdown-content">
-                <p class="display-number">59</p>
-                <p class="display-text">Min</p>
+                <p class="display-number">03</p>
+                <p class="display-text">Aug</p>
               </div>
               <div class="countdown-content">
-                <p class="display-number">00</p>
-                <p class="display-text">Sec</p>
+                <p class="display-number">03</p>
+                <p class="display-text">Aug</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="showcase-container">
-      <div class="showcase">
-        <div class="showcase-banner">
-          <img src="./assets/images/services/img_1.jpg"
-            class="showcase-img">
-        </div>
-        <div class="showcase-content">
-          <div class="showcase-rating">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
+
+          <div class="container" style="margin:30px 0">
+            <ul>
+              <li class="showcase-list">
+                <div class="sidebyside">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                  <p> Lorem ipsum dolor sit amet consecrate</p>
+                </div>
+              </li>
+              <li class="showcase-list">
+                <div class="sidebyside">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                  <p> Lorem ipsum dolor sit amet consecrate</p>
+                </div>
+              </li>
+              <li class="showcase-list">
+                <div class="sidebyside">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                  <p> Lorem ipsum dolor sit amet consecrate</p>
+                </div>
+              </li>
+              <li class="showcase-list">
+                <div class="sidebyside">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                  <p> Lorem ipsum dolor sit amet consecrate</p>
+                </div>
+              </li>
+
+            </ul>
           </div>
-          <h3 class="showcase-title">
-            <a href="#" class="showcase-title">Lorem ipsum dolor sit amet</a>
-          </h3>
-          <p class="showcase-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet
-            consectetur Lorem ipsum dolor </p>
-          <div class="price-box">
-            <p class="price">$1990.00</p>
-            <del>$2000.00</del>
-          </div>
-          <button class="add-cart-btn">add to cart</button>
-          <div class="showcase-status">
-            <div class="wrapper">
-              <p> already sold: <b>15</b> </p>
-              <p> available: <b>40</b> </p>
-            </div>
-            <div class="showcase-status-bar"></div>
-          </div>
-          <div class="countdown-box">
-            <p class="countdown-desc">Hurry Up! Offer ends in:</p>
-            <div class="countdown">
-              <div class="countdown-content">
-                <p class="display-number">360</p>
-                <p class="display-text">Days</p>
-              </div>
-              <div class="countdown-content">
-                <p class="display-number">24</p>
-                <p class="display-text">Hours</p>
-              </div>
-              <div class="countdown-content">
-                <p class="display-number">59</p>
-                <p class="display-text">Min</p>
-              </div>
-              <div class="countdown-content">
-                <p class="display-number">00</p>
-                <p class="display-text">Sec</p>
-              </div>
-            </div>
+          <div class="sidebyside" style="justify-content: center; margin-top: 16px; ">
+            <button class="add-cart-btn" name="book_btn" id="book_btn">Book now</button>
           </div>
         </div>
       </div>
