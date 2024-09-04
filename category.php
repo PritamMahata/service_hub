@@ -1,6 +1,7 @@
 <?php
 require_once('./env/config.php');
 session_start();
+$category_title = false;
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +14,8 @@ session_start();
     <title>ServiceHUB</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
-    <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
-    <!-- google font link -->
+    <!-- <link rel="stylesheet" href="./assets/css/relog.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ session_start();
     <div class="overlay" data-overlay></div>
     <?php
     require_once('./assets/components/header.php'); // HEADER
-    // require_once('./assets/components/model.php'); // model
+    // require_once('./assets/components/modal.php'); // modal
     // require_once('./assets/components/notification.php'); // notification
     require_once('./assets/components/main.php');
     require_once('./assets/components/sub_components/slidebar.php');
