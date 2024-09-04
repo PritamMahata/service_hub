@@ -12,10 +12,16 @@ if (isset($_SESSION['email'])) {
         <img src="./assets/images/logo/logo.png" width="120" height="36">
       </a>
       <div class="header-search-container">
-        <input type="search" name="search" class="search-field" placeholder="Search your service...">
+        <form action="category.php" method="GET">
+          <input type="search" name="search" class="search-field" placeholder="Search your service...">
+          <button class="search-btn" type="submit">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </form>
+        <!-- <input type="search" name="search" class="search-field" placeholder="Search your service...">
         <button class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
-        </button>
+        </button> -->
       </div>
       <div class="header-user-actions">
         <?php
