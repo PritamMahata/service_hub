@@ -42,7 +42,7 @@ $result = $conn->query($sql);
         echo '</li>';
       }
 
-      $conn->close();
+      // $conn->close();
 
 
       ?>
