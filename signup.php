@@ -10,6 +10,7 @@
     <title>ServiceHUB</title>
     <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/relog.css">
+    <link rel="stylesheet" href="./assets/css/option.css">
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,37 +42,21 @@
                     $fname = $_POST['fname'];
                     $mname = $_POST['mname'];
                     $lname = $_POST['lname'];
-                    $gender = NULL;
-                    $age = NULL;
                     $email = $_POST['email'];
+                    $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $con_num = $_POST['con_num'];
                     $alt_num = $_POST['alt_num'];
                     $address = $_POST['address'];
-                    $password = $_POST['password'];
-                    $acc_type = $_POST['acc_type'];
-                    $pan_card = $_POST['pan_card'];
-                    $acc_num = $_POST['acc_num'];
-                    $ifsc = $_POST['ifsc'];
-                    $experience = NULL;
-                    $photo = NULL;
-                    $certificate = NULL;
-                    $aadhaar = NULL;
-                    $sql = "INSERT INTO PROVIDER (fname, mname, lname, gender, age, email, con_num, alt_num, address, password, acc_type, pan_card, acc_num, ifsc, experience, photo, certificate, aadhaar) VALUES ('$fname', '$mname', '$lname', '$gender', '$age', '$email', $con_num, $alt_num, '$address', '$password', '$acc_type', '$pan_card', $acc_num, '$ifsc', '$experience', '$photo', '$certificate', '$aadhaar')";
+
+                    $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password) VALUES ('$fname', '$mname', '$lname','$email', $con_num, $alt_num, '$address', '$hashed_password')";
                     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     if ($res == 1) {
-                        echo "<script>alert('Registration is Successfull')</script>";
                 ?>
-                        <br>
-                        <div class="alert alert-success">
-                            Registration is Successfull
-                        </div>
+
                     <?php
                     } else {
                     ?>
-                        <br>
-                        <div class="alert alert-danger">
-                            Registration is Unsuccessfull
-                        </div>
+
                 <?php
                     }
                 }
@@ -84,7 +69,7 @@
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Middle Name</label>
-                            <input type="text" name="mname" class="email-field" placeholder="Middle Name" required>
+                            <input type="text" name="mname" class="email-field" placeholder="Middle Name">
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Last Name</label>
@@ -115,7 +100,7 @@
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Alternate Number</label>
-                            <input type="number" name="alt_num" class="email-field" placeholder="Alternate Number" required>
+                            <input type="number" name="alt_num" class="email-field" placeholder="Alternate Number">
                         </div>
                     </div>
                     <div class="row_field">

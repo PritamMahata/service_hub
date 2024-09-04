@@ -14,7 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
-        if ($password == $user['password']) {
+        $hashed_password_from_db = $user['password'];
+        echo "<br>";
+        echo $password;
+        if (password_verify($password, $hashed_password_from_db)) {
             $_SESSION['email'] = $email;
             $_SESSION['isLogin'] = true;
             header("Location: index.php");
