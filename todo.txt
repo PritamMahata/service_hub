@@ -48,44 +48,60 @@ $yourAddress = "kolkata, sonarpur, ghasiara";
 
 
 // bug 
-date option deselect in model.php
+date option deselect in modal.php
+close button
 
 <?php
-              for ($i = date("j"); $i <= 8; $i++) {
-                echo '<input type="radio" name="rd1" id="_' . $i . '">';
-              }
-              for ($i = date("j"); $i <= 8; $i++) {
-                echo
-                '<label for="_' . $i . '" class="box __' . $i . ' style="background: #ddd; margin: 5px; padding: 10px 12px; display: flex; border-radius: 5px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; min-width: fit-content;"">
-                      <div class="plan">
-                        <div class="yearly">' . $i . '</div>
-                        <div class="yearly">' . date("M") . '</div>
-                      </div> 
-                    </label>';
-              }
-              ?>
+  for ($i = date("j"); $i <= 8; $i++) {
+    echo '<input type="radio" name="rd1" id="_' . $i . '">';
+  }
+  for ($i = date("j"); $i <= 8; $i++) {
+    echo
+    '<label for="_' . $i . '" class="box __' . $i . ' style="background: #ddd; margin: 5px; padding: 10px 12px; display: flex; border-radius: 5px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; min-width: fit-content;"">
+          <div class="plan">
+            <div class="yearly">' . $i . '</div>
+            <div class="yearly">' . date("M") . '</div>
+          </div> 
+        </label>';
+  }
+?>
 
 Account type deleted code 
 <br>
 <label class="newsletter-title">Account Type</label>
-                    <select class="email-field" name="acc_type" id="acc_type" onchange="test()">
-                        <option value="1">Consumer</option>
-                        <option value="2">Provider</option>
-                    </select>
-                    <br>
-                    <div id="check" style="display: none;">
-                        <div class="row_field">
-                            <label class="newsletter-title">PAN Card</label>
-                            <input type="text" name="pan_card" class="email-field" placeholder="PAN Card Number" required>
-                        </div>
-                        <div class="row_field">
-                            <label class="newsletter-title">Bank Account Details</label>
-                            <br>
-                            <label class="newsletter-title">Account Number</label>
-                            <input type="text" name="acc_num" class="email-field" placeholder="Account Number" required>
-                        </div>
-                        <div class="row_field">
-                            <label class="newsletter-title">IFSC Code</label>
-                            <input type="text" name="ifsc" class="email-field" placeholder="IFSC Code" required>
-                        </div>
-                    </div>
+  <select class="email-field" name="acc_type" id="acc_type" onchange="test()">
+      <option value="1">Consumer</option>
+      <option value="2">Provider</option>
+  </select>
+  <br>
+  <div id="check" style="display: none;">
+    <div class="row_field">
+        <label class="newsletter-title">PAN Card</label>
+        <input type="text" name="pan_card" class="email-field" placeholder="PAN Card Number" required>
+    </div>
+    <div class="row_field">
+        <label class="newsletter-title">Bank Account Details</label>
+        <br>
+        <label class="newsletter-title">Account Number</label>
+        <input type="text" name="acc_num" class="email-field" placeholder="Account Number" required>
+    </div>
+    <div class="row_field">
+        <label class="newsletter-title">IFSC Code</label>
+        <input type="text" name="ifsc" class="email-field" placeholder="IFSC Code" required>
+    </div>
+  </div>
+
+
+changes needed
+logo 
+select time change
+
+
+profile 
+1. Details
+2. Edit info
+3. photo
+
+Admin Page 
+1. provider and client details 
+  admin can delete,ban  
