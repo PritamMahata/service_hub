@@ -63,7 +63,7 @@
 
 
         <div class="row_field">
-          <label class="newsletter-title">Select Date</label>
+          <label class="newsletter-title">Select Time</label>
           <div class="card">
             <div class="content">
               <input type="radio" name="rd2" id="_32">
