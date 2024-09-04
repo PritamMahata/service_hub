@@ -34,8 +34,13 @@ if (isset($_SESSION['email'])) {
             <ion-icon name="person-circle-outline"></ion-icon>
           </button>
         <?php } else { ?>
-          <button class="action-btn" onclick="window.location.href = './login.php'">
-            <ion-icon name="log-in-outline"></ion-icon>
+          <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './signup.php'">
+            <ion-icon name="person-add-sharp" style="color: white;"></ion-icon>
+            <h6 class="relog_text">Sign Up</h6>
+          </button>
+          <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './login.php'">
+            <ion-icon name="log-in-outline" style="color: white;"></ion-icon>
+            <h6 class="relog_text">Login</h6>
           </button>
         <?php }
         ?>
