@@ -7,7 +7,7 @@
   </div>
   <ul class="mobile-menu-category-list">
     <li class="menu-category">
-      <a href="#" class="menu-title">Home</a>
+      <a href="./index.php" class="menu-title">Home</a>
     </li>
     <li class="menu-category">
       <button class="accordion-menu" data-accordion-btn>
@@ -110,26 +110,26 @@
   </ul>
   <div class="menu-bottom">
     <ul class="menu-social-container">
-      <li>
-        <a href="#" class="social-link">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="social-link">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="social-link">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="social-link">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
-      </li>
+      <?php
+      if ($isLoggedIn) { ?>
+        <li>
+          <a href="./profile.php" class="social-link">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </a>
+        </li>
+      <?php } else { ?>
+        <li>
+          <a href="./login.php" class="social-link">
+            <ion-icon name="calendar-outline"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a href="./signup.php" class="social-link">
+            <ion-icon name="calendar-outline"></ion-icon>
+          </a>
+        </li>
+      <?php }
+      ?>
     </ul>
   </div>
 </nav>
