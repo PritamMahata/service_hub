@@ -3023,6 +3023,7 @@ footer {
 
   .desktop-menu-category-list .menu-category > .menu-title:hover {
     color: var(--salmon-pink);
+    text-decoration: none;
   }
 
   .desktop-menu-category-list .menu-category > .menu-title::after {
