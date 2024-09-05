@@ -14,6 +14,7 @@ if ($emailID) {
             // Process the user data
         } else {
             echo "Unauthorized access";
+            header("Location: login.php");
         }
     } else {
         echo "Error executing query: " . $stmt->error;
@@ -22,6 +23,7 @@ if ($emailID) {
     $stmt->close();
 } else {
     echo "Unauthorized access";
+    header("Location: login.php");
 }
 
 ?>
@@ -96,7 +98,7 @@ if ($emailID) {
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" value="<?php echo $p_row['fname']." ".$p_row['fname']." ".$p_row['lname']?>">
+                                    <input type="text" class="form-control mb-1" value="<?php echo $p_row['fname'] . " " . $p_row['fname'] . " " . $p_row['lname'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Name</label>
@@ -344,8 +346,11 @@ if ($emailID) {
             </div>
         </div>
         <div class="text-right m-3">
-            <button type="button" class="btn btn-primary">Save changes</button>&nbsp; <button type="button"
-                class="btn btn-default">Cancel</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            &nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+            &nbsp;
+            <a href="./assets/components/logout.php">logout</a>
         </div>
     </div>
     <?php
