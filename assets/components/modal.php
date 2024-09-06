@@ -92,7 +92,7 @@
 
 
         <div class="container flex_div">
-          <button type="reset" name="ok" class="btn-newsletter disable">Cancel</button>
+          <button type="reset" name="ok" class="btn-newsletter disable" CloseBtn>Cancel</button>
           <button type="submit" name="ok" class="btn-newsletter">Book Now</button>
         </div>
       </form>
@@ -105,6 +105,7 @@
   const modal = document.querySelector("[data-modal]");
   const modalCloseBtn = document.querySelector("[data-modal-close]");
   const modalCloseOverlay = document.querySelector("[data-modal-overlay]");
+  const CloseBtn = document.querySelector("[CloseBtn]");
   // modal function
   const modalCloseFunc = function() {
     modal.classList.add("closed");
@@ -113,4 +114,5 @@
   // modal eventListener
   modalCloseOverlay.addEventListener("click", modalCloseFunc);
   modalCloseBtn.addEventListener("click", modalCloseFunc);
+  CloseBtn.addEventListener("click", modalCloseFunc);
 </script>
