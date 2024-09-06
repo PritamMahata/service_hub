@@ -14,7 +14,7 @@ let hotlines = [
 const hotline = document.getElementById("hotline");
 let index = 0;
 function updateHotline() {
-  hotline.innerHTML = `<h2>${hotlines[index]}</h2>`;
+  hotline.innerHTML = `${hotlines[index]}`;
   index = (index + 1) % hotlines.length;
 }
 updateHotline();
