@@ -58,7 +58,7 @@ include('mail.php');
                         $res = 0;
                     }
                     if ($res == 1) { 
-                        toast("success", send_mail($email,$v_code));
+                        toast("success", send_mail($email,$v_code, $fname, $lname));
                         ?>
                         <!-- <script>
                             setTimeout(() => {

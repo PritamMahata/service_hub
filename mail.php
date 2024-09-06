@@ -7,7 +7,7 @@ require 'PHPMailer/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function send_mail($email, $v_code)
+function send_mail($email, $v_code, $fname, $lname)
 {
     $mail = new PHPMailer(true);
     try {

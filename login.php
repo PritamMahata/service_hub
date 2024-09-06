@@ -14,13 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
         $hashed_password_from_db = $user['password'];
-        if (password_verify($password, $hashed_password_from_db)) {
-            $_SESSION['email'] = $email;
-            $_SESSION['isLogin'] = true;
-            header("Location: index.php");
-            exit();
+        if ($user['isverified'] == 0) {
+            toast('danger', 'Email not verified');
+            // exit();
         } else {
-            toast('danger', 'Invalid Credentials');
+            if (password_verify($password, $hashed_password_from_db)) {
+                $_SESSION['email'] = $email;
+                $_SESSION['isLogin'] = true;
+                header("Location: index.php");
+                exit();
+            } else {
+                toast('danger', 'Invalid Credentials');
+            }
         }
     } else {
         toast('danger', 'Invalid Credentials');
