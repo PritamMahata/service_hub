@@ -1,5 +1,7 @@
 <?php require("./env/config.php");
-require_once('./assets/components/toast.php'); ?>
+require_once('./assets/components/toast.php'); 
+include('mail.php'); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,24 +46,25 @@ require_once('./assets/components/toast.php'); ?>
                     $lname = $_POST['lname'];
                     $email = $_POST['email'];
                     $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                    $v_code = bin2hex(random_bytes(16));
                     $con_num = $_POST['con_num'];
                     $alt_num = $_POST['alt_num'];
                     $address = $_POST['address'];
-
-                    $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password) VALUES ('$fname', '$mname', '$lname','$email', $con_num, $alt_num, '$address', '$hashed_password')";
+                    $res = 0;
+                    $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password,v_code) VALUES ('$fname', '$mname', '$lname','$email', $con_num, $alt_num, '$address', '$hashed_password', '$v_code')";
                     try {
                         $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     } catch (Exception $e) {
                         $res = 0;
                     }
                     if ($res == 1) { 
-                        toast("success", "Account Created Successfully");
+                        toast("success", send_mail($email,$v_code));
                         ?>
-                        <script>
+                        <!-- <script>
                             setTimeout(() => {
                                 window.location.href = "./login.php";
                             }, 5000);
-                        </script>
+                        </script> -->
                     <?php
                     } else { 
                         toast("danger", "Account Creation Failed");
