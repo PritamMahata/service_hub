@@ -10,13 +10,12 @@ if (isset($_GET['email']) && isset($_GET['v_code'])) {
                 $sql = "UPDATE users SET isverified = 1 WHERE email = '$_GET[email]'";
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
-                    // echo "Email verified successfully";
                     header("Location: login.php");
                 } else {
-                    echo "Email verification failed";
+                    header("Location: signup.php");
                 }
             } else {
-                echo "Email verification failed";
+                header("Location: signup.php");
             }
         }
     }
