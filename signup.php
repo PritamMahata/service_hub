@@ -1,4 +1,5 @@
-<?php require("./env/config.php"); ?>
+<?php require("./env/config.php");
+require_once('./assets/components/toast.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +15,7 @@
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -49,15 +49,22 @@
                     $address = $_POST['address'];
 
                     $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password) VALUES ('$fname', '$mname', '$lname','$email', $con_num, $alt_num, '$address', '$hashed_password')";
-                    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                    if ($res == 1) {
-                ?>
-
+                    try {
+                        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    } catch (Exception $e) {
+                        $res = 0;
+                    }
+                    if ($res == 1) { 
+                        toast("success", "Account Created Successfully");
+                        ?>
+                        <script>
+                            setTimeout(() => {
+                                window.location.href = "./login.php";
+                            }, 5000);
+                        </script>
                     <?php
-                    } else {
-                    ?>
-
-                <?php
+                    } else { 
+                        toast("danger", "Account Creation Failed");
                     }
                 }
                 ?>
@@ -82,13 +89,13 @@
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
-                        <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" required>
+                        <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" autocomplete="on" required>
                     </div>
 
                     <div class="row_field">
                         <label class="newsletter-title">Confirm Password</label>
                         <div class="sidebyside">
-                            <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" required>
+                            <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" autocomplete="on" required>
                             <ion-icon class="eye" id="seye-btn" name="eye" id="eye" onclick="sshowHide();"></ion-icon>
                         </div>
                     </div>

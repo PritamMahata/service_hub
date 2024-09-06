@@ -1,6 +1,3 @@
-<?php
-include './env/config.php';
-?>
 <div class="element-main">
     <?php
     if ($category_title) { ?>

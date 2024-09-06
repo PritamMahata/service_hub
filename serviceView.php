@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('./env/config.php');
 $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 ?>
 <!DOCTYPE html>

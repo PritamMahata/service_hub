@@ -1,6 +1,5 @@
 <?php
 require_once('./env/config.php');
-session_start();
 $category_title = false;
 ?>
 

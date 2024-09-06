@@ -1,6 +1,5 @@
 <?php
 include('./env/config.php');
-session_start();
 
 $emailID = isset($_SESSION['email']) ? $_SESSION['email'] : null;
 
@@ -122,15 +121,15 @@ if ($emailID) {
                             <div class="card-body pb-2">
                                 <div class="form-group">
                                     <label class="form-label">Current password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" autocomplete="on" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" autocomplete="on" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" autocomplete="on" class="form-control">
                                 </div>
                             </div>
                         </div>

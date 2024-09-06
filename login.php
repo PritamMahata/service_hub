@@ -1,13 +1,12 @@
 <?php
-session_start();
+require_once 'env/config.php';
+require_once('./assets/components/toast.php');
 $showAlert = false;
-$msg = '<h3 style = "color:coral;">Invalid Credentials<h3>';
 if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
     header("Location: profile.php");
     exit();
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'env/config.php';
     $email = $_POST['email'];
     $password = $_POST['password'];
     $sql = "SELECT * FROM users WHERE email = '$email'";
@@ -15,18 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
         $hashed_password_from_db = $user['password'];
-        echo "<br>";
-        echo $password;
         if (password_verify($password, $hashed_password_from_db)) {
             $_SESSION['email'] = $email;
             $_SESSION['isLogin'] = true;
             header("Location: index.php");
             exit();
         } else {
-            $showAlert = true;
+            toast('danger', 'Invalid Credentials');
         }
     } else {
-        $showAlert = true;
+        toast('danger', 'Invalid Credentials');
     }
 }
 ?>
@@ -59,29 +56,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="./assets/images/servicebanner.png" width="400" height="400">
         </div>
         <div class="login_form">
-            <?php
-            if ($showAlert) {
-                require_once('./assets/components/toast.php');
-            }
-            ?>
             <h1 class="form_heading">Login</h1>
             <div class="row_field">
                 <div class="sidebyside ">
                     <p class="nav-title"> Doesn’t have any account yet?</p> <a href="./signup.php">Sign Up</a>
                 </div>
             </div>
-
             <form method="post">
                 <div class="row_field">
                     <label class="newsletter-title">E-mail ID </label>
                     <input type="email" name="email" id="email" class="email-field" placeholder="Email" required>
                 </div>
-
-
                 <div class="row_field">
                     <label class="newsletter-title">Password</label>
                     <div class="sidebyside">
-                        <input type="password" name="password" id="password" class="email-field" id="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="email-field" id="password" placeholder="Password" autocomplete="on" required>
                         <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye" onclick="lshowHide();"></ion-icon>
                     </div>
                 </div>

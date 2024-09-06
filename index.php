@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once('./env/config.php');
 $end = 8;
 $category_title = true;
 ?>
