@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="cpwd">Enter Your Password</label>
-                    <input type="password" name="cpwd" id="cpwd" class="form-control">
+                    <input type="password" name="cpwd" id="cpwd" class="form-control" autocomplete="on">
                 </div>
                 <div class="form-group">
                     <label for="ccontact">Enter Your Contact Number</label>

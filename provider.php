@@ -97,13 +97,13 @@
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
-                        <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" required>
+                        <input type="password" autocomplete="on" name="password" id="spassword" class="email-field" placeholder="Password" required>
                     </div>
 
                     <div class="row_field">
                         <label class="newsletter-title">Confirm Password</label>
                         <div class="sidebyside">
-                            <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" required>
+                            <input type="password" autocomplete="on" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" required>
                             <ion-icon class="eye" id="seye-btn" name="eye" id="eye" onclick="sshowHide();"></ion-icon>
                         </div>
                     </div>

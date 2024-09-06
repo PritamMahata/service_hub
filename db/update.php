@@ -39,7 +39,7 @@ $rec=mysqli_fetch_assoc($rs);
                 </div>
                 <div class="form-group">
                     <label for="cpwd">Enter Your Password</label>
-                    <input type="password" value="<?php echo $rec['cpwd']?>" name="cpwd" id="cpwd" class="form-control">
+                    <input type="password" value="<?php echo $rec['cpwd']?>" name="cpwd" id="cpwd" class="form-control" autocomplete="on">
                 </div>
                 <div class="form-group">
                     <label for="ccontact">Enter Your Contact Number</label>
