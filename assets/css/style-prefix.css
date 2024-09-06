@@ -143,7 +143,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--border-color);
+  /* border-left: 1px solid var(--border-color); */
 }
 
 body::-webkit-scrollbar-thumb {
@@ -324,7 +324,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .modal-content::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--border-color);
+  /* border-left: 1px solid var(--border-color); */
 }
 
 .modal-content::-webkit-scrollbar-thumb {
@@ -1647,11 +1647,31 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .element-featured .countdown {
+  overflow-y: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+}
+.element-featured .countdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+.element-featured .countdown::-webkit-scrollbar-track {
+  background: var(--white);
+  /* border-left: 1px solid var(--border-color); */
+}
+
+.element-featured .countdown::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.element-featured .countdown::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
 }
 
 .element-featured .countdown-content {
@@ -1901,7 +1921,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .testimonial-main::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--border-color);
+  /* border-left: 1px solid var(--border-color); */
 }
 
 .testimonial-main::-webkit-scrollbar-thumb {
