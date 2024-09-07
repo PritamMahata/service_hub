@@ -53,8 +53,7 @@
                     <p class="testimonial-name">Lorem ipsum</p>
                     <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                     <img src="./assets/images/icons/quotes.svg" class="quotation-img" width="26">
-                    <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit
-                        amet.</p>
+                    <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.</p>
                 </div>
             </div>
             <!-- CTA -->
