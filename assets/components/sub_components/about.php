@@ -2,7 +2,6 @@
     <div class="container">
         <div class="testimonials-box">
             <!-- TESTIMONIALS -->
-
             <div class="testimonial">
                 <h2 class="title">About Us</h2>
                 <div class="testimonial-card">
@@ -53,11 +52,8 @@
                     <p class="testimonial-name">Sarvise Hub</p>
                     <p class="testimonial-title">Online Service Booking Website</p>
                     <img src="./assets/images/icons/quotes.svg" class="quotation-img" width="26">
-<<<<<<< HEAD
                     <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.</p>
-=======
                     <p class="testimonial-desc"> Home Solutions,<br>One Click Away<br>Book . Relax . Repeat</p>
->>>>>>> c04f197667f22931e265d06df8fd9d99ebb62425
                 </div>
             </div>
             <!-- CTA -->
