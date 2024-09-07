@@ -63,7 +63,7 @@
                     <p class="discount">25% Discount</p>
                     <h2 class="cta-title">Salon Services</h2>
                     <p class="cta-text">Starting @ $10</p>
-                    <button class="cta-btn">Shop now</button>
+                    <button class="cta-btn">Book now</button>
                 </a>
             </div>
             <!-- SERVICE -->
