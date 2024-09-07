@@ -18,6 +18,8 @@ include('mail.php');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0"/>
 </head>
 
 <body>
@@ -99,7 +101,7 @@ include('mail.php');
                         <label class="newsletter-title">Confirm Password</label>
                         <div class="sidebyside">
                             <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" autocomplete="on" required>
-                            <ion-icon class="eye" id="seye-btn" name="eye" id="eye" onclick="sshowHide();"></ion-icon>
+                            <span class="material-symbols-rounded" id="seye_btn" onclick="sshowHide();" style="margin-right: 10px;">visibility_off</span>
                         </div>
                     </div>
 

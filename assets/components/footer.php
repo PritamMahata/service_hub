@@ -87,19 +87,19 @@
           </li>
           <li class="footer-nav-item flex">
             <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+                <span class="material-symbols-rounded">location_on</span>
             </div>
             <address class="content"> 419 State 414 Rte Beaver Dams, New York(NY), 14812, USA </address>
           </li>
           <li class="footer-nav-item flex">
             <div class="icon-box">
-              <ion-icon name="call-outline"></ion-icon>
+                <span class="material-symbols-rounded">call</span>
             </div>
             <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
           </li>
           <li class="footer-nav-item flex">
             <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+                <span class="material-symbols-rounded">mail</span>
             </div>
             <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
           </li>

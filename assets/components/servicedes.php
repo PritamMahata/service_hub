@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         <div class="showcase-container" style="padding:10px;">
             <div class="showcase">
                 <div class="showcase-banner">
-                    <img src="<?php echo $row["simage"]?>" class="showcase-img">
+                    <img loading="lazy" src="<?php echo $row["simage"]?>" class="showcase-img">
                 </div>
                 <div class="showcase-content">
                     <a href="#">

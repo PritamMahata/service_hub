@@ -5,7 +5,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_1.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_1.jpg"
                       width="70" class="showcase-img">
                   </a>
                   <div class="showcase-content">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_2.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_2.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_3.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_3.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_4.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_4.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -71,7 +71,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_5.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_5.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_6.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_6.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_7.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_7.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_8.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_8.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -142,7 +142,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_9.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_9.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -158,7 +158,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_10.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_10.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_11.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_11.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -190,7 +190,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_12.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_12.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -208,7 +208,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_13.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_13.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -224,7 +224,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_14.jpg"  class="showcase-img"
+                    <img loading="lazy" src="./assets/images/services/img_14.jpg"  class="showcase-img"
                       width="70">
                   </a>
                   <div class="showcase-content">
@@ -240,7 +240,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_15.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_15.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -256,7 +256,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_16.jpg"  class="showcase-img"
+                    <img loading="lazy" src="./assets/images/services/img_16.jpg"  class="showcase-img"
                       width="70">
                   </a>
                   <div class="showcase-content">
@@ -279,7 +279,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_17.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_17.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -295,7 +295,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_18.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_18.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -311,7 +311,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_1.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_1.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -327,7 +327,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_2.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_2.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -345,7 +345,7 @@
               <div class="showcase-container">
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_3.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_3.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -361,7 +361,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_4.jpg"  class="showcase-img"
+                    <img loading="lazy" src="./assets/images/services/img_4.jpg"  class="showcase-img"
                       width="70">
                   </a>
                   <div class="showcase-content">
@@ -377,7 +377,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_5.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_5.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">
@@ -393,7 +393,7 @@
                 </div>
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/services/img_6.jpg" 
+                    <img loading="lazy" src="./assets/images/services/img_6.jpg"
                       class="showcase-img" width="70">
                   </a>
                   <div class="showcase-content">

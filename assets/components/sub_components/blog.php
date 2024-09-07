@@ -3,7 +3,7 @@
         <div class="blog-container has-scrollbar">
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-1.jpg"
+              <img loading="lazy" src="./assets/images/blog-1.jpg"
                 width="300" class="blog-banner">
             </a>
             <div class="blog-content">
@@ -17,7 +17,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-2.jpg"
+              <img loading="lazy" src="./assets/images/blog-2.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
@@ -31,7 +31,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-3.jpg"
+              <img loading="lazy" src="./assets/images/blog-3.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">
@@ -45,7 +45,7 @@
           </div>
           <div class="blog-card">
             <a href="#">
-              <img src="./assets/images/blog-4.jpg"
+              <img loading="lazy" src="./assets/images/blog-4.jpg"
                 class="blog-banner" width="300">
             </a>
             <div class="blog-content">

@@ -47,54 +47,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0"/>
 </head>
 
 <body>
-    <div class="overlay" data-overlay></div>
-    <?php
-    require_once('./assets/components/header.php');
-    require_once('./assets/components/sub_components/slidebar.php');
-    ?>
-    <div class="login_box">
-        <div class="newsletter-img">
-            <img src="./assets/images/servicebanner.png" width="400" height="400">
+<div class="overlay" data-overlay></div>
+<?php
+require_once('./assets/components/header.php');
+require_once('./assets/components/sub_components/slidebar.php');
+?>
+<div class="login_box">
+    <div class="newsletter-img">
+        <img src="./assets/images/servicebanner.png" width="400" height="400">
+    </div>
+    <div class="login_form">
+        <h1 class="form_heading">Login</h1>
+        <div class="row_field">
+            <div class="sidebyside ">
+                <p class="nav-title"> Doesn’t have any account yet?</p> <a href="./signup.php">Sign Up</a>
+            </div>
         </div>
-        <div class="login_form">
-            <h1 class="form_heading">Login</h1>
+        <form method="post">
             <div class="row_field">
-                <div class="sidebyside ">
-                    <p class="nav-title"> Doesn’t have any account yet?</p> <a href="./signup.php">Sign Up</a>
+                <label class="newsletter-title">E-mail ID </label>
+                <input type="email" name="email" id="email" class="email-field" placeholder="Email" required>
+            </div>
+            <div class="row_field">
+                <label class="newsletter-title">Password</label>
+                <div class="sidebyside">
+                    <input type="password" name="password" class="email-field" id="password" placeholder="Password"
+                           autocomplete="on" required>
+                    <span class="material-symbols-rounded" id="leye_btn" onclick="lshowHide();" style="margin-right: 10px;">visibility_off</span>
                 </div>
             </div>
-            <form method="post">
-                <div class="row_field">
-                    <label class="newsletter-title">E-mail ID </label>
-                    <input type="email" name="email" id="email" class="email-field" placeholder="Email" required>
+            <div class="col_field">
+                <div class="container flex_div">
+                    <button class="btn-newsletter disable" onclick="window.location.href = './index.php'">Back</button>
                 </div>
-                <div class="row_field">
-                    <label class="newsletter-title">Password</label>
-                    <div class="sidebyside">
-                        <input type="password" name="password" id="password" class="email-field" id="password" placeholder="Password" autocomplete="on" required>
-                        <ion-icon class="eye" id="leye-btn" name="eye-off" id="eye" onclick="lshowHide();"></ion-icon>
-                    </div>
+                <div class="container flex_div">
+                    <button type="submit" class="btn-newsletter">Log in</button>
                 </div>
-                <div class="col_field">
-                    <div class="container flex_div">
-                        <button class="btn-newsletter disable" onclick="window.location.href = './index.php'">Back</button>
-                    </div>
-                    <div class="container flex_div">
-                        <button type="submit" class="btn-newsletter">Log in</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-    <?php require_once('./assets/components/footer.php') ?>
-    <script src="./assets/js/relog.js"></script>
-    <script src="./assets/js/toast.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</div>
+<?php require_once('./assets/components/footer.php') ?>
+<script src="./assets/js/relog.js"></script>
+<script src="./assets/js/toast.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

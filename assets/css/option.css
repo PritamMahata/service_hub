@@ -96,7 +96,7 @@
 
 .card .content::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--border-color);
+  /*border-left: 1px solid var(--border-color);*/
 }
 
 .card .content::-webkit-scrollbar-thumb {

@@ -103,7 +103,7 @@ textarea {
 
 .form_style::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--border-color);
+  /*border-left: 1px solid var(--border-color);*/
 }
 
 .form_style::-webkit-scrollbar-thumb {

@@ -12,33 +12,32 @@ function test() {
   }
 }
 //password show hide
-let leye_btn = document.getElementById("leye-btn");
+let leye_btn = document.getElementById("leye_btn");
 let password = document.getElementById("password");
-let cpassword = document.getElementById("cpassword");
 
 function lshowHide() {
   if (password.type === "password") {
     password.type = "text";
-    leye_btn.name = "eye";
+    leye_btn.innerText = "visibility";
   } else {
     password.type = "password";
-    leye_btn.name = "eye-off";
+    leye_btn.innerText = "visibility_off";
   }
 };
 
 let spassword = document.getElementById("spassword");
 let scpassword = document.getElementById("scpassword");
-let seye_btn = document.getElementById("seye-btn");
+let seye_btn = document.getElementById("seye_btn");
 
 function sshowHide() {
   if (spassword.type === "password" && scpassword.type === "password") {
     spassword.type = "text";
     scpassword.type = "text";
-    seye_btn.name = "eye-off";
+    seye_btn.innerText = "visibility_off";
   } else {
     spassword.type = "password";
     scpassword.type = "password";
-    seye_btn.name = "eye";
+    seye_btn.innerText = "visibility";
   }
 }
 

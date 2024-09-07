@@ -104,7 +104,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background: var(--white);
-  border-left: 1px solid var(--cultured);
+  /*border-left: 1px solid var(--cultured);*/
 }
 
 body::-webkit-scrollbar-thumb {

@@ -1,5 +1,5 @@
 login design /typography - done
-signp design /typography - done
+sign design /typography - done
 product view page (html css) 
 Cart page design (html css) 
 admin page design (html css) 
@@ -23,10 +23,10 @@ INSERT INTO `provider` (`pid`, `fname`, `mname`, `lname`, `gender`, `age`, `emai
 
 detailing :
 use input pattern in html with css
-implement lazy load image for faster image load 
-custom 404 page
-search suggetion
-add sound 
+implement lazy load image for faster image load - done
+custom 404-page
+search suggestion
+add sound - done
 
 
 <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?php echo $yourAddress; ?>&output=embed" style="

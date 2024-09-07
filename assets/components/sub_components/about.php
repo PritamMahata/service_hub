@@ -8,43 +8,43 @@
                 <div class="testimonial-card">
                     <div class="testimonial-main">
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
@@ -59,7 +59,7 @@
             </div>
             <!-- CTA -->
             <div class="cta-container">
-                <img src="./assets/images/cta-banner.jpg" class="cta-banner">
+                <img loading="lazy" src="./assets/images/cta-banner.jpg" class="cta-banner">
                 <a href="#" class="cta-content">
                     <p class="discount">25% Discount</p>
                     <h2 class="cta-title">Service Title</h2>
@@ -73,7 +73,7 @@
                 <div class="service-container">
                     <a href="#" class="service-item">
                         <div class="service-icon">
-                            <ion-icon name="boat-outline"></ion-icon>
+                            <span class="material-symbols-rounded">support_agent</span>
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">24/7 Service</h3>
@@ -82,7 +82,7 @@
                     </a>
                     <a href="#" class="service-item">
                         <div class="service-icon">
-                            <ion-icon name="rocket-outline"></ion-icon>
+                            <span class="material-symbols-rounded">rocket_launch</span>
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Fastest Service</h3>
@@ -91,7 +91,7 @@
                     </a>
                     <a href="#" class="service-item">
                         <div class="service-icon">
-                            <ion-icon name="call-outline"></ion-icon>
+                            <span class="material-symbols-rounded">call</span>
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Best Online Support</h3>
@@ -100,7 +100,7 @@
                     </a>
                     <a href="#" class="service-item">
                         <div class="service-icon">
-                            <ion-icon name="arrow-undo-outline"></ion-icon>
+                            <span class="material-symbols-rounded">reply</span>
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Cancel Policy</h3>
@@ -109,7 +109,8 @@
                     </a>
                     <a href="#" class="service-item">
                         <div class="service-icon">
-                            <ion-icon name="ticket-outline"></ion-icon>
+                            <span class="material-symbols-rounded">confirmation_number</span>
+
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">30% money back</h3>
@@ -118,7 +119,6 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
