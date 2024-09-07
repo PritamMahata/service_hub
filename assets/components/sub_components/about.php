@@ -8,60 +8,64 @@
                 <div class="testimonial-card">
                     <div class="testimonial-main" id="scroll-container">
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/170951200" class="testimonial-banner" width="80"
                                  height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="testimonial-card-details">
-                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/169755810" class="testimonial-banner" width="80"
-                                 height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                            <p class="testimonial-name">Pritam Roy</p>
+                            <p class="testimonial-title">has done the Database part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/169791778" class="testimonial-banner" width="80"
                                  height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                            <p class="testimonial-name">Paramita Gupta</p>
+                            <p class="testimonial-title">has done the User Interface Designing part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/170951200" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/169755810" class="testimonial-banner" width="80"
                                  height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                            <p class="testimonial-name">Shristi Guha</p>
+                            <p class="testimonial-title">has done the UI Desinging & Front-end part of Website</p>
+                        </div>
+                        <div class="testimonial-card-details">
+                            <img loading="lazy" src="./assets/images/testimonial-2.jpg" class="testimonial-banner" width="80"
+                                 height="80">
+                            <p class="testimonial-name">Pritam Mahata</p>
+                            <p class="testimonial-title">has done the UI Designing, Front-end and Back-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/178006439" class="testimonial-banner" width="80"
                                  height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                            <p class="testimonial-name">Samiulla Khan</p>
+                            <p class="testimonial-title">has done the Database part of Website</p>
+                        </div>
+                        <div class="testimonial-card-details">
+                            <img loading="lazy" src="./assets/images/testimonial-2.jpg" class="testimonial-banner" width="80"
+                                 height="80">
+                            <p class="testimonial-name">Sundar Praksh Mandal</p>
+                            <p class="testimonial-title">has done the Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
-                                 height="80">
-                            <p class="testimonial-name">Lorem ipsum</p>
-                            <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                            <p class="testimonial-name">Sneha Kundu</p>
+                            <p class="testimonial-title">has done the Testing part of Website</p>
                         </div>
                     </div>
-                    <p class="testimonial-name">Lorem ipsum</p>
-                    <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
+                    <p class="testimonial-name">Sarvise Hub</p>
+                    <p class="testimonial-title">Online Service Booking Website</p>
                     <img src="./assets/images/icons/quotes.svg" class="quotation-img" width="26">
+<<<<<<< HEAD
                     <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.</p>
+=======
+                    <p class="testimonial-desc"> Home Solutions,<br>One Click Away<br>Book . Relax . Repeat</p>
+>>>>>>> c04f197667f22931e265d06df8fd9d99ebb62425
                 </div>
             </div>
             <!-- CTA -->
             <div class="cta-container">
-                <img loading="lazy" src="./assets/images/cta-banner.jpg" class="cta-banner">
+                <img loading="lazy" src="./assets/images/services/img_1.jpg" class="cta-banner">
                 <a href="#" class="cta-content">
                     <p class="discount">25% Discount</p>
-                    <h2 class="cta-title">Service Title</h2>
+                    <h2 class="cta-title">Salon Services</h2>
                     <p class="cta-text">Starting @ $10</p>
                     <button class="cta-btn">Shop now</button>
                 </a>
