@@ -6,7 +6,7 @@
             <div class="testimonial">
                 <h2 class="title">About Us</h2>
                 <div class="testimonial-card">
-                    <div class="testimonial-main">
+                    <div class="testimonial-main" id="scroll-container">
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
                                  height="80">
@@ -14,25 +14,25 @@
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/169755810" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/169791778" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/170951200" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/178006439" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Lorem ipsum</p>
                             <p class="testimonial-title">Lorem ipsum dolor sit amet</p>
@@ -122,3 +122,18 @@
         </div>
     </div>
 </div>
+<script>
+    function scrollToMiddle() {
+        const container = document.getElementById('scroll-container');
+        const containerWidth = container.scrollWidth;
+        const visibleWidth = container.clientWidth;
+        const middlePosition = (containerWidth - visibleWidth) / 2;
+        container.scrollLeft = middlePosition;
+        console.log("hello scroll")
+    }
+
+    // Wait for the DOM to load before executing the scroll function
+    document.addEventListener('DOMContentLoaded', () => {
+        scrollToMiddle();
+    });
+</script>

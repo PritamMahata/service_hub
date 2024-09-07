@@ -96,9 +96,11 @@ a {
 span {
     display: inline-block;
 }
-.material-symbols-rounded:hover{
+
+.material-symbols-rounded:hover {
     cursor: pointer;
 }
+
 html {
     font-family: "Poppins", sans-serif;
     -ms-scroll-chaining: none;
@@ -1963,6 +1965,10 @@ body::-webkit-scrollbar-thumb:hover {
     /* overflow: hidden; */
     overflow-x: auto;
     gap: 10px;
+    width: 100%;
+    scroll-padding: 50% 0;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .testimonial-card-details {
@@ -1971,6 +1977,7 @@ body::-webkit-scrollbar-thumb:hover {
     border: 3px solid #d7d7d766;
     border-radius: 5px;
     padding: 12px;
+    scroll-snap-align: center;
 }
 
 .testimonials-box {
