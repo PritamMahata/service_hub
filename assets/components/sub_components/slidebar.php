@@ -60,7 +60,7 @@ ORDER BY c.cname, s.subcatname";
 
     </div>
     <div class="product-showcase">
-        <h3 class="showcase-heading">Lorem ipsum</h3>
+        <h3 class="showcase-heading">Bestselling Services</h3>
         <div class="showcase-wrapper">
             <div class="showcase-container">
                 <div class="showcase">
@@ -71,7 +71,7 @@ ORDER BY c.cname, s.subcatname";
                     <div class="showcase-content">
 
                         <a href="#">
-                            <h4 class="showcase-title">Lorem ipsum</h4>
+                            <h4 class="showcase-title">Salon</h4>
                         </a>
 
                         <div class="showcase-rating">
@@ -83,8 +83,8 @@ ORDER BY c.cname, s.subcatname";
                         </div>
 
                         <div class="price-box">
-                            <del>$5.00</del>
-                            <p class="price">$4.00</p>
+                            <del>$250.00</del>
+                            <p class="price">$200.00</p>
                         </div>
 
                     </div>
@@ -96,7 +96,7 @@ ORDER BY c.cname, s.subcatname";
                     </a>
                     <div class="showcase-content">
                         <a href="#">
-                            <h4 class="showcase-title">Lorem ipsum</h4>
+                            <h4 class="showcase-title">Plumbing</h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
@@ -107,8 +107,8 @@ ORDER BY c.cname, s.subcatname";
                         </div>
 
                         <div class="price-box">
-                            <del>$17.00</del>
-                            <p class="price">$7.00</p>
+                            <del>$170.00</del>
+                            <p class="price">$110.00</p>
                         </div>
 
                     </div>
@@ -121,7 +121,7 @@ ORDER BY c.cname, s.subcatname";
                     </a>
                     <div class="showcase-content">
                         <a href="#">
-                            <h4 class="showcase-title">Lorem ipsum</h4>
+                            <h4 class="showcase-title">Cooking</h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
@@ -131,8 +131,8 @@ ORDER BY c.cname, s.subcatname";
                             <ion-icon name="star-half-outline"></ion-icon>
                         </div>
                         <div class="price-box">
-                            <del>$5.00</del>
-                            <p class="price">$3.00</p>
+                            <del>$275.00</del>
+                            <p class="price">$175.00</p>
                         </div>
 
                     </div>
@@ -146,7 +146,7 @@ ORDER BY c.cname, s.subcatname";
                     <div class="showcase-content">
 
                         <a href="#">
-                            <h4 class="showcase-title">Lorem ipsum</h4>
+                            <h4 class="showcase-title">Car Washing</h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
@@ -157,8 +157,8 @@ ORDER BY c.cname, s.subcatname";
                         </div>
 
                         <div class="price-box">
-                            <del>$15.00</del>
-                            <p class="price">$12.00</p>
+                            <del>$150.00</del>
+                            <p class="price">$120.00</p>
                         </div>
 
                     </div>
