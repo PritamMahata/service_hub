@@ -1,5 +1,5 @@
 <?php 
-    require_once('config.php');
+    require_once('../env/config.php');
     if(empty($_SESSION['a_info'])){
         ?>
         <script>
@@ -42,7 +42,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="components/logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -58,7 +58,7 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Admin</div>
-                            <a class="nav-link" href="category.php">
+                            <a class="nav-link" href="./components/category.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Category
                             </a>

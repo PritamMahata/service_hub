@@ -1,4 +1,4 @@
-<?php require('config.php'); ?>
+<?php require('../env/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,7 +40,7 @@
                                             $aemail=$_POST['aemail'];
                                             $apwd=$_POST['apwd'];
                                             $src="SELECT * FROM admin WHERE aemail='$aemail' AND apwd='$apwd'";
-                                            $rs=mysqli_query($con, $src)or die(mysqli_error($con));
+                                            $rs=mysqli_query($conn, $src)or die(mysqli_error($conn));
                                             if(mysqli_num_rows($rs)>0){
                                                 $rec=mysqli_fetch_assoc($rs);
                                                 $_SESSION['a_info']=$rec;
