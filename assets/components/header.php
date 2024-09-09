@@ -5,7 +5,7 @@ if (isset($_SESSION['email'])) {
     $isLoggedIn = false;
 }
 ?>
-<header>
+<header class="header">
     <div class="header-main">
         <div class="container">
             <a href="./index.php" class="header-logo">
@@ -20,24 +20,27 @@ if (isset($_SESSION['email'])) {
                 </form>
             </div>
             <div class="header-user-actions">
+                <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './index.php'">
+                    <!-- <span class="material-symbols-rounded" style="font-size: 1.9rem; color: white;">home</span> -->
+                    <ion-icon name="home"style="font-size: 1.9rem; color: white;"></ion-icon>
+                </button>
                 <?php
                 if ($isLoggedIn) { ?>
-                    <button class="action-btn" onclick="window.location.href = './task.php'">
-                        <ion-icon name="calendar"></ion-icon>
+                    <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './task.php'">
+                        <ion-icon name="calendar" style="font-size: 1.9rem; color: white;"></ion-icon>
                         <span class="count">2</span>
                     </button>
-                    <button class="action-btn" onclick="window.location.href = './profile.php'">
-                        <ion-icon name="person-circle-outline"></ion-icon>
+                    <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './profile.php'">
+                        <ion-icon name="person-circle-outline" style="font-size: 1.9rem; color: white;"></ion-icon>
                     </button>
                 <?php } else { ?>
                     <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './signup.php'">
-                        <span class="material-symbols-rounded" style= "font-size: 1.9rem;">person_add</span>
-
-                        <h6 class="relog_text">Sign Up</h6>
+                        <span class="material-symbols-rounded" style="font-size: 1.9rem; color: white;">person_add</span>
+                        <!-- <h6 class="relog_text">Sign Up</h6> -->
                     </button>
                     <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './login.php'">
-                        <span class="material-symbols-rounded" style= "font-size: 1.9rem;">login</span>
-                        <h6 class="relog_text">Login</h6>
+                        <span class="material-symbols-rounded" style="font-size: 1.9rem; color: white;">login</span>
+                        <!-- <h6 class="relog_text">Login</h6> -->
                     </button>
                 <?php }
                 ?>

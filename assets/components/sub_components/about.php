@@ -128,7 +128,6 @@
         const visibleWidth = container.clientWidth;
         const middlePosition = (containerWidth - visibleWidth) / 2;
         container.scrollLeft = middlePosition;
-        console.log("hello scroll")
     }
 
     // Wait for the DOM to load before executing the scroll function

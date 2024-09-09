@@ -14,7 +14,6 @@ $result = $conn->query($sql);
       <li class="menu-category">
         <a href="./category.php" class="menu-title">Categories</a>
       </li>
-
       <?php
       $categories = [];
       while ($row = $result->fetch_assoc()) {
@@ -41,10 +40,6 @@ $result = $conn->query($sql);
 
         echo '</li>';
       }
-
-      // $conn->close();
-
-
       ?>
     </ul>
   </div>
