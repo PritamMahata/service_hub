@@ -103,5 +103,4 @@ profile
 3. photo
 
 Admin Page 
-1. provider and client details 
-  admin can delete,ban 
+1. provider and client details admin can delete,ban          - Done
