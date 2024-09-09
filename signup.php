@@ -1,6 +1,6 @@
 <?php require("./env/config.php");
 require_once('./assets/components/toast.php'); 
-include('mail.php'); 
+include('./PHPMailer/mail.php'); 
 ?>
 
 <!DOCTYPE html>
