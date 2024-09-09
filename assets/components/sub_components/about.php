@@ -1,3 +1,9 @@
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sdiscount = 20";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>
+
 <div>
     <div class="container">
         <div class="testimonials-box">
@@ -58,11 +64,11 @@
             </div>
             <!-- CTA -->
             <div class="cta-container">
-                <img loading="lazy" src="./assets/images/services/img_1.jpg" class="cta-banner">
+                <img loading="lazy" src="<?php echo $rec['simage']?>">
                 <a href="#" class="cta-content">
-                    <p class="discount">25% Discount</p>
-                    <h2 class="cta-title">Salon Services</h2>
-                    <p class="cta-text">Starting @ $10</p>
+                    <p class="discount"><?php echo $rec['sdiscount']?>% Discount</p>
+                    <h2 class="cta-title"><?php echo $rec['sname']?></h2>
+                    <p class="cta-text">Starting @ $<?php echo $rec['sprice']?></p>
                     <button class="cta-btn">Book now</button>
                 </a>
             </div>
