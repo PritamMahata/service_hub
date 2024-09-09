@@ -57,21 +57,26 @@ ORDER BY c.cname, s.subcatname";
                 // $conn->close();
 
                 ?>
+</div>
 
-    </div>
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sid = 4";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>
     <div class="product-showcase">
         <h3 class="showcase-heading">Bestselling Services</h3>
         <div class="showcase-wrapper">
             <div class="showcase-container">
                 <div class="showcase">
                     <a href="#" class="showcase-img-box">
-                        <img src="./assets/images/services/img_1.jpg" width="75" height="75"
+                        <img src="<?php echo $rec['simage']?>" width="75" height="75"
                              class="showcase-img">
                     </a>
                     <div class="showcase-content">
 
                         <a href="#">
-                            <h4 class="showcase-title">Salon</h4>
+                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
                         </a>
 
                         <div class="showcase-rating">
@@ -83,70 +88,88 @@ ORDER BY c.cname, s.subcatname";
                         </div>
 
                         <div class="price-box">
-                            <del>$250.00</del>
-                            <p class="price">$200.00</p>
+                            <del>$1500.00</del>
+                            <p class="price">$<?php echo $rec['sprice']?></p>
                         </div>
 
                     </div>
                 </div>
+
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sid = 6";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>                
                 <div class="showcase">
                     <a href="#" class="showcase-img-box">
-                        <img src="./assets/images/services/img_2.jpg" class="showcase-img"
+                        <img src="<?php echo $rec['simage']?>" class="showcase-img"
                              width="75" height="75">
                     </a>
                     <div class="showcase-content">
                         <a href="#">
-                            <h4 class="showcase-title">Plumbing</h4>
+                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star-half-outline"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
                         </div>
 
                         <div class="price-box">
-                            <del>$170.00</del>
-                            <p class="price">$110.00</p>
+                            <del>$2500.00</del>
+                            <p class="price">$<?php echo $rec['sprice']?></p>
                         </div>
 
                     </div>
 
                 </div>
+
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sid = 7";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>                   
                 <div class="showcase">
                     <a href="#" class="showcase-img-box">
-                        <img src="./assets/images/services/img_3.jpg" class="showcase-img" width="75"
+                        <img src="<?php echo $rec['simage']?>" class="showcase-img" width="75"
                              height="75">
                     </a>
                     <div class="showcase-content">
                         <a href="#">
-                            <h4 class="showcase-title">Cooking</h4>
+                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star-half-outline"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
                         </div>
                         <div class="price-box">
-                            <del>$275.00</del>
-                            <p class="price">$175.00</p>
+                            <del>$725.00</del>
+                            <p class="price">$<?php echo $rec['sprice']?></p>
                         </div>
 
                     </div>
 
                 </div>
+
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sid = 15";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>                    
                 <div class="showcase">
                     <a href="#" class="showcase-img-box">
-                        <img src="./assets/images/services/img_4.jpg" class="showcase-img" width="75"
+                        <img src="<?php echo $rec['simage']?>" class="showcase-img" width="75"
                              height="75">
                     </a>
                     <div class="showcase-content">
 
                         <a href="#">
-                            <h4 class="showcase-title">Car Washing</h4>
+                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
                         </a>
                         <div class="showcase-rating">
                             <ion-icon name="star"></ion-icon>
@@ -157,8 +180,8 @@ ORDER BY c.cname, s.subcatname";
                         </div>
 
                         <div class="price-box">
-                            <del>$150.00</del>
-                            <p class="price">$120.00</p>
+                            <del>$1300.00</del>
+                            <p class="price">$<?php echo $rec['sprice']?></p>
                         </div>
 
                     </div>

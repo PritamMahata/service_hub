@@ -1,16 +1,21 @@
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sdiscount = 5";
+    $res = mysqli_query($conn, $src);
+    $rec = mysqli_fetch_assoc($res);
+?>
+
 <div class="element-featured container">
   <div class="showcase-wrapper has-scrollbar">
     <div class="showcase-container" style="padding:10px;">
       <div class="showcase">
         <div class="showcase-banner">
-          <img src="./assets/images/services/img_7.jpg" class="showcase-img">
+          <img src= "<?php echo $rec['simage']?>" class="showcase-img">
         </div>
         <div class="showcase-content">
           <a href="#">
-            <h3 class="showcase-title" style="font-size: 1.6rem;">House Deep-Cleaning</h3>
+            <h3 class="showcase-title" style="font-size: 1.6rem;"> <?php echo $rec['sname']?> </h3>
           </a>
-          <p class="showcase-desc" style="font-size: 1rem;"> Our skilled professionals will meticulously clean and sanitize your home, eliminating dust, dirt and allergens that build up over time.
-          </p>
+          <p class="showcase-desc" style="font-size: 1rem;"> <?php echo $rec['sdes']?> </p>
           <div class="showcase-rating">
             <ion-icon name="star"></ion-icon>
             <ion-icon name="star"></ion-icon>
@@ -19,9 +24,11 @@
             <ion-icon name="star-outline"></ion-icon>
           </div>
           <div class="price-box">
-            <p class="price">$300.00</p>
-            <del>$500.00</del>
+            <h6><p class="discount"><?php echo $rec['sdiscount']?>% Discount</p></h6>
+            <p class="price">$<?php echo $rec['sprice']?></p>
+            <del>$1052</del>
           </div>
+
           <div class="countdown-box">
             <p class="countdown-desc">Hurry up!</p>
             <div class="countdown">
