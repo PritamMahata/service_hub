@@ -104,3 +104,4 @@ profile
 
 Admin Page 
 1. provider and client details admin can delete,ban          - Done
+2. mobile sidebar - done
