@@ -1,63 +1,75 @@
+<?php
+    $src = "SELECT *FROM SERVICES WHERE sdiscount >= 15";
+    $res = mysqli_query($conn, $src);
+    $rec1 = mysqli_fetch_assoc($res);
+    $rec2 = mysqli_fetch_assoc($res);
+    $rec3 = mysqli_fetch_assoc($res);
+    $rec4 = mysqli_fetch_assoc($res);
+?>
+
 <div class="blog">
       <div class="container">
         <div class="blog-container has-scrollbar">
           <div class="blog-card">
             <a href="#">
-              <img loading="lazy" src="./assets/images/services/Pet Grooming.jpg"
+              <img loading="lazy" src="<?php echo $rec1['simage']?>"
                 width="300" class="blog-banner">
             </a>
             <div class="blog-content">
-              <h3><a href="#" class="blog-category">Pet Grooming</a></h3>
+              <h3><a href="#" class="blog-category"><?php echo $rec1['sname']?></a></h3>
               <a href="#">
-                <h1 class="blog-title">Gentle, stress-free care of your pets.</h1>
+                <h1 class="blog-title"><?php echo $rec1['sdes']?></h1>
               </a>
               <div class="price-box">
-            <p class="price">$158.00</p>
+            <p class="price">$<?php echo $rec1['sprice']?></p>
               </div>
             </div>
           </div>
+
           <div class="blog-card">
             <a href="#">
-              <img loading="lazy" src="./assets/images/services/Yoga Class.jpg"
-                class="blog-banner" width="300">
+              <img loading="lazy" src="<?php echo $rec2['simage']?>"
+                width="300" class="blog-banner">
             </a>
             <div class="blog-content">
-             <h3> <a href="#" class="blog-category">Yoga Class</a> </h3>
-              <h1>
-                <a href="#" class="blog-title">Yoga sessions for all experience levels.</a>
-              </h1>
+              <h3><a href="#" class="blog-category"><?php echo $rec2['sname']?></a></h3>
+              <a href="#">
+                <h1 class="blog-title"><?php echo $rec2['sdes']?></h1>
+              </a>
               <div class="price-box">
-            <p class="price">$100.00</p>
+            <p class="price">$<?php echo $rec2['sprice']?></p>
               </div>
             </div>
           </div>
+
           <div class="blog-card">
             <a href="#">
-              <img loading="lazy" src="./assets/images/services/Teacher.jpg"
-                class="blog-banner" width="300">
+              <img loading="lazy" src="<?php echo $rec3['simage']?>"
+                width="300" class="blog-banner">
             </a>
             <div class="blog-content">
-              <h3><a href="#" class="blog-category">Tutoring</a></h3>
-              <h1>
-                <a href="#" class="blog-title">Tutors will be qualified, experienced.</a>
-              </h1>
+              <h3><a href="#" class="blog-category"><?php echo $rec3['sname']?></a></h3>
+              <a href="#">
+                <h1 class="blog-title"><?php echo $rec3['sdes']?></h1>
+              </a>
               <div class="price-box">
-            <p class="price">$78.00</p>
+            <p class="price">$<?php echo $rec3['sprice']?></p>
               </div>
             </div>
           </div>
+
           <div class="blog-card">
             <a href="#">
-              <img loading="lazy" src="./assets/images/services/Laptop Repair.jpg"
-                class="blog-banner" width="300">
+              <img loading="lazy" src="<?php echo $rec4['simage']?>"
+                width="300" class="blog-banner">
             </a>
             <div class="blog-content">
-              <h3><a href="#" class="blog-category">Laptop Repair</a></h3>
-              <h1>
-                <a href="#" class="blog-title">Laptop repair by trained professionals.</a>
-              </h1>
+              <h3><a href="#" class="blog-category"><?php echo $rec4['sname']?></a></h3>
+              <a href="#">
+                <h1 class="blog-title"><?php echo $rec4['sdes']?></h1>
+              </a>
               <div class="price-box">
-            <p class="price">$150.00</p>
+            <p class="price">$<?php echo $rec4['sprice']?></p>
               </div>
             </div>
           </div>
