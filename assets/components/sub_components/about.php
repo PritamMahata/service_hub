@@ -22,7 +22,7 @@
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/169791778" class="testimonial-banner" width="80"
                                  height="80">
                             <p class="testimonial-name">Paramita Gupta</p>
-                            <p class="testimonial-title">has done the User Interface Designing part of Website</p>
+                            <p class="testimonial-title">has done the UI Designing & some Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/169755810" class="testimonial-banner" width="80"
@@ -58,8 +58,8 @@
                     <p class="testimonial-name">Sarvise Hub</p>
                     <p class="testimonial-title">Online Service Booking Website</p>
                     <img src="./assets/images/icons/quotes.svg" class="quotation-img" width="26">
-                    <p class="testimonial-desc"> Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet.</p>
-                    <p class="testimonial-desc"> Home Solutions,<br>One Click Away<br>Book . Relax . Repeat</p>
+                    <p class="testimonial-desc">Your stress-free Service Booking Hub!<br>With just a few clicks, you can book your desired service and then kick back — no worries, no stress.<br>Let us handle the rest...</p>
+                    <!-- <p class="testimonial-desc"> Home Solutions,<br>One Click Away<br>Book . Relax . Repeat</p> -->
                 </div>
             </div>
             <!-- CTA -->
@@ -74,7 +74,7 @@
             </div>
             <!-- SERVICE -->
             <div class="service">
-                <h2 class="title">Our Services</h2>
+                <h2 class="title">Our Service Commitments</h2>
                 <div class="service-container">
                     <a href="#" class="service-item">
                         <div class="service-icon">
