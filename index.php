@@ -1,6 +1,6 @@
 <?php
 include_once('./env/config.php');
-$end = 8;
+$end = 10;
 $category_title = true;
 ?>
 <!DOCTYPE html>
