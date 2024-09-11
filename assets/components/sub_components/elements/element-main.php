@@ -78,7 +78,7 @@
                 echo "</div>";
                 $count++;
             }
-        } 
+        }
         // else {
         //     echo "No services found.";
         // }

@@ -1,6 +1,7 @@
 <!-- NOTIFICATION TOAST -->
 <?php
-function toast($state, $msg){
+function toast($state, $msg)
+{
 ?>
   <audio id="warning">
     <source src="./assets/sound/error2.mp3" type="audio/mp3">

@@ -1,7 +1,7 @@
 <?php
-    $src = "SELECT *FROM SERVICES WHERE sdiscount = 20";
-    $res = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($res);
+$src = "SELECT *FROM SERVICES WHERE sdiscount = 20";
+$res = mysqli_query($conn, $src);
+$rec = mysqli_fetch_assoc($res);
 ?>
 
 <div>
@@ -14,43 +14,43 @@
                     <div class="testimonial-main" id="scroll-container">
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/170951200" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Pritam Roy</p>
                             <p class="testimonial-title">has done the Database part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/169791778" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Paramita Gupta</p>
                             <p class="testimonial-title">has done the UI Designing & some Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/169755810" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Shristi Guha</p>
                             <p class="testimonial-title">has done the UI Desinging & Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="./assets/images/testimonial-2.jpg" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Pritam Mahata</p>
                             <p class="testimonial-title">has done the UI Designing, Front-end and Back-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="https://avatars.githubusercontent.com/u/178006439" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Samiulla Khan</p>
                             <p class="testimonial-title">has done the Database part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="./assets/images/testimonial-2.jpg" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Sundar Praksh Mandal</p>
                             <p class="testimonial-title">has done the Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
                             <img loading="lazy" src="./assets/images/testimonial-1.jpg" class="testimonial-banner" width="80"
-                                 height="80">
+                                height="80">
                             <p class="testimonial-name">Sneha Kundu</p>
                             <p class="testimonial-title">has done the Testing part of Website</p>
                         </div>
@@ -64,11 +64,11 @@
             </div>
             <!-- CTA -->
             <div class="cta-container">
-                <img loading="lazy" src="<?php echo $rec['simage']?>">
+                <img loading="lazy" src="<?php echo $rec['simage'] ?>">
                 <a href="#" class="cta-content">
-                    <p class="discount"><?php echo $rec['sdiscount']?>% Discount</p>
-                    <h2 class="cta-title"><?php echo $rec['sname']?></h2>
-                    <p class="cta-text">Starting @ $<?php echo $rec['sprice']?></p>
+                    <p class="discount"><?php echo $rec['sdiscount'] ?>% Discount</p>
+                    <h2 class="cta-title"><?php echo $rec['sname'] ?></h2>
+                    <p class="cta-text">Starting @ $<?php echo $rec['sprice'] ?></p>
                     <button class="cta-btn">Book now</button>
                 </a>
             </div>

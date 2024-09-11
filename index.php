@@ -21,33 +21,33 @@ $category_title = true;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0"/>
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
     <style>
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0,
-            'wght' 600,
-            'GRAD' 0,
-            'opsz' 40
+                'wght' 600,
+                'GRAD' 0,
+                'opsz' 40
         }
     </style>
 </head>
 
 <body>
-<div class="overlay" data-overlay></div>
-<?php
-require_once('./assets/components/header.php');
-require_once('./assets/components/banner.php');
-require_once('./assets/components/main.php');
-require_once('./assets/components/sub_components/blog.php');
-require_once('./assets/components/sub_components/about.php');
-require_once('./assets/components/footer.php');
-?>
-<script src="./assets/js/script.js"></script>
-<!-- ionicon link -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div class="overlay" data-overlay></div>
+    <?php
+    require_once('./assets/components/header.php');
+    require_once('./assets/components/banner.php');
+    require_once('./assets/components/main.php');
+    require_once('./assets/components/sub_components/blog.php');
+    require_once('./assets/components/sub_components/about.php');
+    require_once('./assets/components/footer.php');
+    ?>
+    <script src="./assets/js/script.js"></script>
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

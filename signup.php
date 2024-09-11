@@ -1,6 +1,6 @@
 <?php require("./env/config.php");
-require_once('./assets/components/toast.php'); 
-include('./PHPMailer/mail.php'); 
+require_once('./assets/components/toast.php');
+include('./PHPMailer/mail.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include('./PHPMailer/mail.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0"/>
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
 </head>
 
 <body>
@@ -59,16 +59,16 @@ include('./PHPMailer/mail.php');
                     } catch (Exception $e) {
                         $res = 0;
                     }
-                    if ($res == 1) { 
-                        toast("success", send_mail($email,$v_code, $fname, $lname));
-                        ?>
+                    if ($res == 1) {
+                        toast("success", send_mail($email, $v_code, $fname, $lname));
+                ?>
                         <!-- <script>
                             setTimeout(() => {
                                 window.location.href = "./login.php";
                             }, 5000);
                         </script> -->
-                    <?php
-                    } else { 
+                <?php
+                    } else {
                         toast("danger", "Account Creation Failed");
                     }
                 }
