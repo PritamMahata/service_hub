@@ -59,134 +59,48 @@ ORDER BY c.cname, s.subcatname";
                 ?>
 </div>
 
-<?php
-    $src = "SELECT *FROM SERVICES WHERE sid = 4";
-    $res = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($res);
-?>
+
     <div class="product-showcase">
         <h3 class="showcase-heading">Bestselling Services</h3>
         <div class="showcase-wrapper">
             <div class="showcase-container">
+                <?php
+                    $sql = "SELECT *FROM SERVICES WHERE srating >= 4 LIMIT 4";
+                    $res = mysqli_query($conn, $sql);
+                    for($a = 1; $a <= 4; $a++){
+                    while ($row = mysqli_fetch_assoc($res)) { ?>
+
                 <div class="showcase">
                     <a href="#" class="showcase-img-box">
-                        <img src="<?php echo $rec['simage']?>" width="75" height="75"
+                        <img src="<?php echo $row['simage']?>" width="75" height="75"
                              class="showcase-img">
                     </a>
                     <div class="showcase-content">
 
                         <a href="#">
-                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
+                            <h4 class="showcase-title"><?php echo $row['sname']?></h4>
                         </a>
 
                         <div class="showcase-rating">
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
+                            <?php
+                                $i = 0;
+                                for ($i; $i < htmlspecialchars($row['srating']); $i++) {
+                                    echo "<ion-icon name='star'></ion-icon>";
+                                }
+                                for ($i; $i < 5; $i++) {
+                                    echo "<ion-icon name='star-outline'></ion-icon>";
+                                }
+                            ?>
                         </div>
 
                         <div class="price-box">
-                            <del>$1500.00</del>
-                            <p class="price">$<?php echo $rec['sprice']?></p>
+                            <del> <?php echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?> </del>
+                            <p class="price">$<?php echo $row['sprice']?></p>
                         </div>
-
                     </div>
                 </div>
+                <?php } } ?>
 
-<?php
-    $src = "SELECT *FROM SERVICES WHERE sid = 6";
-    $res = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($res);
-?>                
-                <div class="showcase">
-                    <a href="#" class="showcase-img-box">
-                        <img src="<?php echo $rec['simage']?>" class="showcase-img"
-                             width="75" height="75">
-                    </a>
-                    <div class="showcase-content">
-                        <a href="#">
-                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
-                        </a>
-                        <div class="showcase-rating">
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                        </div>
-
-                        <div class="price-box">
-                            <del>$2500.00</del>
-                            <p class="price">$<?php echo $rec['sprice']?></p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-<?php
-    $src = "SELECT *FROM SERVICES WHERE sid = 7";
-    $res = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($res);
-?>                   
-                <div class="showcase">
-                    <a href="#" class="showcase-img-box">
-                        <img src="<?php echo $rec['simage']?>" class="showcase-img" width="75"
-                             height="75">
-                    </a>
-                    <div class="showcase-content">
-                        <a href="#">
-                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
-                        </a>
-                        <div class="showcase-rating">
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                        </div>
-                        <div class="price-box">
-                            <del>$725.00</del>
-                            <p class="price">$<?php echo $rec['sprice']?></p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-<?php
-    $src = "SELECT *FROM SERVICES WHERE sid = 15";
-    $res = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($res);
-?>                    
-                <div class="showcase">
-                    <a href="#" class="showcase-img-box">
-                        <img src="<?php echo $rec['simage']?>" class="showcase-img" width="75"
-                             height="75">
-                    </a>
-                    <div class="showcase-content">
-
-                        <a href="#">
-                            <h4 class="showcase-title"><?php echo $rec['sname']?></h4>
-                        </a>
-                        <div class="showcase-rating">
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                        </div>
-
-                        <div class="price-box">
-                            <del>$1300.00</del>
-                            <p class="price">$<?php echo $rec['sprice']?></p>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
         </div>
 
