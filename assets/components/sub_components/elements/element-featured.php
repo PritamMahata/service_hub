@@ -1,7 +1,7 @@
 <?php
-$src = "SELECT *FROM SERVICES WHERE sdiscount = 5";
-$res = mysqli_query($conn, $src);
-$rec = mysqli_fetch_assoc($res);
+    $sql = "SELECT *FROM SERVICES WHERE srating >= 3";
+    $res = mysqli_query($conn, $sql);
+    $rec = mysqli_fetch_assoc($res);
 ?>
 
 <div class="element-featured container">
@@ -9,26 +9,29 @@ $rec = mysqli_fetch_assoc($res);
     <div class="showcase-container" style="padding:10px;">
       <div class="showcase">
         <div class="showcase-banner">
-          <img src="<?php echo $rec['simage'] ?>" class="showcase-img">
+          <img src= "<?php echo $rec['simage']?>" class="showcase-img">
         </div>
         <div class="showcase-content">
           <a href="#">
-            <h3 class="showcase-title" style="font-size: 1.6rem;"> <?php echo $rec['sname'] ?> </h3>
+            <h3 class="showcase-title" style="font-size: 1.6rem;"> <?php echo $rec['sname']?> </h3>
           </a>
-          <p class="showcase-desc" style="font-size: 1rem;"> <?php echo $rec['sdes'] ?> </p>
+          <p class="showcase-desc" style="font-size: 1rem;"> <?php echo $rec['sdes']?> </p>
+
           <div class="showcase-rating">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
+          <?php
+            $i = 0;
+            for ($i; $i < htmlspecialchars($rec['srating']); $i++) {
+            echo "<ion-icon name='star'></ion-icon>";
+            }
+            for ($i; $i < 5; $i++) {
+            echo "<ion-icon name='star-outline'></ion-icon>";
+            }
+          ?>
           </div>
           <div class="price-box">
-            <h6>
-              <p class="discount"><?php echo $rec['sdiscount'] ?>% Discount</p>
-            </h6>
+            <h6><p class="discount"><?php echo $rec['sdiscount']?>% Discount</p></h6>
             <p class="price">$<?php echo $rec['sprice'] ?></p>
-            <del>$1052</del>
+            <del> <?php echo "<p class='price'>$" . (($rec['sprice']) - ((int)($rec['sdiscount']) / 100) * (int)($rec['sprice'])) . "</p>"; ?> </del>
           </div>
 
           <div class="countdown-box">
@@ -46,7 +49,7 @@ $rec = mysqli_fetch_assoc($res);
                 <p class="display-number">40</p>
                 <p class="display-text">Secs</p>
               </div>
-
+              
             </div>
           </div>
 
@@ -61,7 +64,7 @@ $rec = mysqli_fetch_assoc($res);
               <li class="showcase-list">
                 <div class="sidebyside">
                   <ion-icon name="chevron-forward"></ion-icon>
-                  <p>Technicians verified with adequate training in deep cleaning techniques.</p>
+                  <p>Technicians verified with adequate training in Car Washing techniques.</p>
                 </div>
               </li>
               <li class="showcase-list">
