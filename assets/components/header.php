@@ -21,8 +21,10 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="header-user-actions">
                 <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './index.php'">
-                    <!-- <span class="material-symbols-rounded" style="font-size: 1.9rem; color: white;">home</span> -->
                     <ion-icon name="home" style="font-size: 1.9rem; color: white;"></ion-icon>
+                </button>
+                <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './category.php'">
+                    <ion-icon name="grid" style="font-size: 1.9rem; color: white;"></ion-icon>
                 </button>
                 <?php
                 if ($isLoggedIn) { ?>
