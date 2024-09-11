@@ -53,3 +53,43 @@ if (isset($_SESSION['email'])) {
     require_once('sub_components/menubar/menubar.php');
     ?>
 </header>
+
+<script>
+    const placeholders = [
+        "Home Services",
+        "Beauty & Wellness",
+        "Automotive",
+        "Electronics Repair",
+        "Cleaning Services",
+        "Fitness & Training",
+        "Health Care",
+        "Pet Services",
+        "Event Planning"
+    ];
+
+    const searchField = document.querySelector(".search-field");
+    let placeholderIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 50; // Speed of typing in milliseconds
+    const delayBetweenPlaceholders = 2000; // Delay between different placeholder texts in milliseconds
+
+    function typePlaceholder() {
+        const currentPlaceholder = placeholders[placeholderIndex];
+        searchField.placeholder = currentPlaceholder.substring(0, charIndex); // Display part of the placeholder text
+
+        if (charIndex < currentPlaceholder.length) {
+            charIndex++;
+            setTimeout(typePlaceholder, typingSpeed);
+        } else {
+            // Delay before typing the next placeholder
+            setTimeout(() => {
+                placeholderIndex = (placeholderIndex + 1) % placeholders.length; // Cycle through placeholders
+                charIndex = 0;
+                typePlaceholder();
+            }, delayBetweenPlaceholders);
+        }
+    }
+
+    // Start the animation
+    typePlaceholder();
+</script>
