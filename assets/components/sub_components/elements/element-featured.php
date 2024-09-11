@@ -79,7 +79,9 @@ $rec = mysqli_fetch_assoc($res);
             </ul>
           </div>
           <div class="sidebyside" style="justify-content: center; margin-top: 16px; ">
-            <button class="add-cart-btn" name="book_btn" id="book_btn">Book now</button>
+            <?php
+            echo "<button class='add-cart-btn' name='book_btn' id='book_btn' onclick='goToDetails(" . $rec['sid'] . ")'>Book now</button>";
+            ?>
           </div>
         </div>
       </div>
