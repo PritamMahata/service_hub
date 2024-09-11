@@ -95,7 +95,7 @@ Account type deleted code
 changes needed
 logo 
 select time change
-
+mobile sidebar - done
 
 profile 
 1. Details
@@ -104,4 +104,3 @@ profile
 
 Admin Page 
 1. provider and client details admin can delete,ban          - Done
-2. mobile sidebar - done
