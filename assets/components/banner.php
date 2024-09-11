@@ -5,31 +5,51 @@
         <div class="slider-item">
           <img loading="lazy" src="./assets/images/banner-1.jpg" class="banner-img">
           <div class="banner-content">
-            <!-- <p class="banner-subtitle">Lorem ipsum </p> -->
-            <h2 class="banner-title" id="hotline" style=" font-size: xx-large;"></h2>
-            <!-- <p class="banner-text"> starting at &dollar; <b>20</b>.00 </p> -->
-            <!-- <a href="#" class="banner-btn">Book Now</a> -->
+            <h2 class="banner-title" id="hotline"></h2>
           </div>
         </div>
         <div class="slider-item">
           <img loading="lazy" src="./assets/images/banner-2.jpg" class="banner-img">
           <div class="banner-content">
-            <!-- <p class="banner-subtitle">Lorem ipsum </p> -->
-            <h2 class="banner-title" id="hotline"></h2>
-            <!-- <p class="banner-text"> starting at &dollar; <b>15</b>.00 </p> -->
-            <!-- <a href="#" class="banner-btn">Book Now</a> -->
+            <h2 class="banner-title" id="hotline">
+              <h2>
           </div>
         </div>
         <div class="slider-item">
           <img loading="lazy" src="./assets/images/banner-3.jpg" class="banner-img">
           <div class="banner-content">
-            <!-- <p class="banner-subtitle">Sale Offer</p> -->
-            <h2 class="banner-title" id="hotline"></h2>
-            <!-- <p class="banner-text"> starting at &dollar; <b>29</b>.99 </p> -->
-            <!-- <a href="#" class="banner-btn">Book Now</a> -->
+            <h2 class="banner-title" id="hotline">
+              <h2>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="./assets/js/hotline.js"></script>
+
+  <script>
+    let hotlines = [
+      "Your One-Stop Solution for Service Needs!",
+      "Book Smarter, Live Better!",
+      "Convenience at Your Fingertips!",
+      "Simplify Your Schedule, Amplify Your Life!",
+      "Effortless Booking, Exceptional Service!",
+      "Unlock a World of Services, Anytime, Anywhere!",
+      "Book with Ease, Enjoy with Peace!",
+      "Where Service Meets Simplicity!",
+      "Your Trusted Partner in Booking Services!",
+      "The Fast Track to Hassle-Free Service!",
+    ];
+
+    const hotlineElements = document.querySelectorAll("#hotline");
+    let index = 0;
+
+    function updateHotline() {
+      hotlineElements.forEach(element => {
+        element.innerHTML = `${hotlines[index]}`;
+        index = (index + 1) % hotlines.length;
+      });
+      index = (index + 1) % hotlines.length;
+    }
+    updateHotline();
+    setInterval(updateHotline, 10000);
+  </script>
