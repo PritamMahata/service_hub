@@ -58,6 +58,7 @@ if (isset($_GET['booking_id'])) {
                     <th scope="col">Service Id</th>
                     <th scope="col">Booking date</th>
                     <th scope="col">Status</th>
+                    <th scope="col" colspan="2">operation</th>
                 </tr>
             </thead>
             <tbody>

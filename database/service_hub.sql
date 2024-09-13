@@ -92,7 +92,7 @@ INSERT INTO `category` (`cid`, `cname`) VALUES
 (7, 'Health Care'),
 (8, 'Pet Services'),
 (9, 'Event Planning'),
-(10, 'Gardening & Landscaping'),
+(10, 'Gardening'),
 (11, 'Home Improvement'),
 (12, 'IT Support'),
 (13, 'Education & Tutoring'),
