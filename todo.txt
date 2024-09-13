@@ -101,6 +101,7 @@ profile
 1. Details
 2. Edit info
 3. photo
+4. minor fix
 
 Admin Page 
 1. provider and client details admin can delete,ban          - Done
