@@ -10,7 +10,7 @@ if ($emailID) {
         $p_result = $stmt->get_result();
         if ($p_result->num_rows > 0) {
             $p_row = $p_result->fetch_assoc();
-            // Process the user data
+            $_SESSION['uid'] = $p_row['uid'];
         } else {
             echo "Unauthorized access";
             header("Location: login.php");
@@ -24,7 +24,6 @@ if ($emailID) {
     echo "Unauthorized access";
     header("Location: login.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,18 +63,13 @@ if ($emailID) {
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list"
-                            href="#account-general">General</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-change-password">Change password</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-info">Info</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-social-links">Social links</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-connections">status</a>
-                        <!-- <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-connections">Connections</a> -->
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">status</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                        <a class="list-group-item list-group-item-action">
+                            <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/logout.php'">logout</button>
+                        </a>
                         <!-- <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-notifications">Notifications
                         </a> -->
@@ -88,34 +82,24 @@ if ($emailID) {
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
                                     class="d-block ui-w-80">
                                 <div class="media-body ml-4">
-                                    <label class="btn btn-outline-primary"> Upload new photo <input type="file"
-                                            class="account-settings-fileinput">
-                                    </label> &nbsp; <button type="button"
-                                        class="btn btn-default md-btn-flat">Reset</button>
+                                    <label class="btn btn-outline-primary"> Upload new photo <input type="file" class="account-settings-fileinput">
+                                    </label>
                                     <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                                 </div>
                             </div>
                             <hr class="border-light m-0">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" value="<?php echo $p_row['fname'] . " " . $p_row['fname'] . " " . $p_row['lname'] ?>">
-                                </div>
-                                <div class="form-group">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" value="Nelle Maxwell">
+                                    <input type="text" class="form-control mb-1" value="<?php echo $p_row['fname'] . " " . $p_row['mname'] . " " . $p_row['lname'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
-                                    <!-- <div class="alert alert-warning mt-3"> Your email is not confirmed. Please check
-                                        your inbox.<br>
-                                        <a href="javascript:void(0)">Resend confirmation</a>
-                                    </div> -->
+                                    <input type="text" class="form-control mb-1" value="<?php echo $p_row['email'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Company</label>
-                                    <input type="text" class="form-control" value="Company Ltd.">
+                                    <label class="form-label">Contact Number</label>
+                                    <input type="number" class="form-control" value="<?php echo $p_row['con_num'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -170,178 +154,77 @@ if ($emailID) {
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-social-links">
-                            <div class="card-body pb-2">
-                                <div class="form-group">
-                                    <label class="form-label">Twitter</label>
-                                    <input type="text" class="form-control" value="https://twitter.com/user">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Facebook</label>
-                                    <input type="text" class="form-control" value="https://www.facebook.com/user">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Google+</label>
-                                    <input type="text" class="form-control" value>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">LinkedIn</label>
-                                    <input type="text" class="form-control" value>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Instagram</label>
-                                    <input type="text" class="form-control" value="https://www.instagram.com/user">
-                                </div>
-                            </div>
-                        </div>
                         <div class="tab-pane fade" id="account-connections">
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Order #</th>
-                                            <th>Date Purchased</th>
-                                            <th>Status</th>
+                                            <th>Order Id</th>
+                                            <th>Arricval Date</th>
                                             <th>Total</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">78A643CD409</a></td>
-                                            <td>August 08, 2017</td>
-                                            <td><span class="badge badge-danger m-0">Canceled</span></td>
-                                            <td><span>$760.50</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">34VB5540K83</a></td>
-                                            <td>July 21, 2017</td>
-                                            <td><span class="badge badge-info m-0">In Progress</span></td>
-                                            <td>$315.20</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">112P45A90V2</a></td>
-                                            <td>June 15, 2017</td>
-                                            <td><span class="badge badge-warning m-0">Delayed</span></td>
-                                            <td>$1,264.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">28BA67U0981</a></td>
-                                            <td>May 19, 2017</td>
-                                            <td><span class="badge badge-success m-0">Delivered</span></td>
-                                            <td>$198.35</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">502TR872W2</a></td>
-                                            <td>April 04, 2017</td>
-                                            <td><span class="badge badge-success m-0">Delivered</span></td>
-                                            <td>$2,133.90</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a class="navi-link" href="#order-details" data-toggle="modal">47H76G09F33</a></td>
-                                            <td>March 30, 2017</td>
-                                            <td><span class="badge badge-success m-0">Delivered</span></td>
-                                            <td>$86.40</td>
-                                        </tr>
+                                        <?php
+                                        if (isset($_SESSION['uid'])) {
+                                            $uid = $_SESSION['uid'];
+                                            $sql = "SELECT * FROM bookings where user_id = $uid;";
+                                            $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                        ?>
+                                                    <tr>
+                                                        <td><a class="navi-link" href="#order-details" data-toggle="modal"><?php echo $row['order_id']; ?></a></td>
+                                                        <td><?php echo $row['arrival_date']; ?></td>
+                                                        <td><span>
+                                                                <?php
+                                                                // Use a different variable for the services query
+                                                                $service_sql = "SELECT * FROM services WHERE sid = " . $row['service_id'] . ";";
+                                                                $service_result = mysqli_query($conn, $service_sql);
+                                                                if (mysqli_num_rows($service_result) == 1) {
+                                                                    $price = mysqli_fetch_assoc($service_result);
+                                                                    echo $price['sprice'];
+                                                                }
+                                                                ?>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                            if ($row['status'] == 'pending') {
+                                                                echo "<span class='badge badge-warning p-2'>pending</span>";
+                                                            } else if ($row['status'] == 'confirmed') {
+                                                                echo "<span class='badge badge-info p-2'>confirmed</span>";
+                                                            } else if ($row['status'] == 'completed') {
+                                                                echo "<span class='badge badge-success p-2'>completed</span>";
+                                                            } else if ($row['status'] == 'cancelled') {
+                                                                echo "<span class='badge badge-danger p-2'>cancelled</span>";
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                            if (($row['status'] == 'pending' || $row['status'] == 'completed' || $row['status'] == 'cancelled') && $row['arrival_date'] > $row['booking_date']) {
+                                                            ?>
+                                                                <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">Cancel</button>
+                                                            <?php
+                                                            } else { ?>
+                                                                <button type='button' class='btn btn-danger' disabled>Cancel</button>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                        <?php
+                                                }
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <!-- <div class="tab-pane fade" id="account-connections">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-twitter">Connect to
-                                    <strong>Twitter</strong></button>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <h5 class="mb-2">
-                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i
-                                            class="ion ion-md-close"></i> Remove</a>
-                                    <i class="ion ion-logo-google text-google"></i> You are connected to Google:
-                                </h5>
-                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="345a59554c435158587459555d581a575b59">[email&#160;protected]</a>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-facebook">Connect to
-                                    <strong>Facebook</strong></button>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-instagram">Connect to
-                                    <strong>Instagram</strong></button>
-                            </div>
-                        </div> -->
-                        <!-- <div class="tab-pane fade" id="account-notifications">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Activity</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone comments on my article</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone answers on my forum
-                                            thread</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone follows me</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Application</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">News and announcements</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly product updates</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly blog digest</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -350,8 +233,6 @@ if ($emailID) {
             <button type="button" class="btn btn-primary">Save changes</button>
             &nbsp;
             <button type="button" class="btn btn-default">Cancel</button>
-            &nbsp;
-            <a href="./assets/components/logout.php">logout</a>
         </div>
     </div>
     <?php
