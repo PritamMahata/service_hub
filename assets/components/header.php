@@ -1,9 +1,13 @@
 <?php
+require_once('./env/config.php');
 if (isset($_SESSION['email'])) {
     $isLoggedIn = true;
 } else {
     $isLoggedIn = false;
 }
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : 0;
+$sql = "SELECT * FROM bookings where user_id = $uid;";
+$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 ?>
 <header class="header">
     <div class="header-main">
@@ -30,7 +34,7 @@ if (isset($_SESSION['email'])) {
                 if ($isLoggedIn) { ?>
                     <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './task.php'">
                         <ion-icon name="calendar" style="font-size: 1.9rem; color: white;"></ion-icon>
-                        <span class="count">2</span>
+                        <span class="count"><?php echo mysqli_num_rows($result); ?></span>
                     </button>
                     <button class="action-btn sidebyside relog_btn" onclick="window.location.href = './profile.php'">
                         <ion-icon name="person-circle-outline" style="font-size: 1.9rem; color: white;"></ion-icon>
