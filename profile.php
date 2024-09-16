@@ -64,7 +64,7 @@ if ($emailID) {
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
                         <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">status</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Booking status</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
                         <a class="list-group-item list-group-item-action">
@@ -100,6 +100,10 @@ if ($emailID) {
                                 <div class="form-group">
                                     <label class="form-label">Contact Number</label>
                                     <input type="number" class="form-control" value="<?php echo $p_row['con_num'] ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Alternet Numebr</label>
+                                    <input type="number" class="form-control" value="<?php echo $p_row['alt_num'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -163,6 +167,7 @@ if ($emailID) {
                                             <th>Arricval Date</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Happy Code</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -203,9 +208,10 @@ if ($emailID) {
                                                             }
                                                             ?>
                                                         </td>
+                                                        <td><?php echo $row['happy_code']; ?></td>
                                                         <td>
                                                             <?php
-                                                            if (($row['status'] == 'pending' || $row['status'] == 'completed' || $row['status'] == 'cancelled') && $row['arrival_date'] > $row['booking_date']) {
+                                                            if (!(($row['status'] == 'confirmed') || ($row['status'] == 'cancelled'))) {
                                                             ?>
                                                                 <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">Cancel</button>
                                                             <?php
