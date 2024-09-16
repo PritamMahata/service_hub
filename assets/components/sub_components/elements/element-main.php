@@ -27,7 +27,9 @@
     <p class="showcase-badge angle pink">new</p> 
     -->
 
-    <div class="element-grid">
+    <div class="element-grid" <?php if (isset($is_category)) {
+                                    echo "style='grid-template-columns: repeat(4, 1fr);'";
+                                } ?>>
         <?php
         if ($result->num_rows > 0) {
             $count = 0;
