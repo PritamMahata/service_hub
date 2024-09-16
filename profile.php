@@ -58,17 +58,17 @@ if ($emailID) {
 
     <!-- <a href="assets/components/logout.php">Logout</a> -->
     <div class="container light-style flex-grow-1 container-p-y">
-        <h4 class="font-weight-bold py-1 mb-1"> Account settings </h4>
+        <h4 class="font-weight-bold py-1 mb-1"> Dashboard </h4> <br>
         <div class="card overflow-hidden">
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Booking status</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General Info</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Booking Status</a>
+                        <!-- <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a> -->
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change Password</a>
                         <a class="list-group-item list-group-item-action">
-                            <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/logout.php'">logout</button>
+                            <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/logout.php'">Logout</button>
                         </a>
                         <!-- <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-notifications">Notifications
@@ -82,7 +82,7 @@ if ($emailID) {
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
                                     class="d-block ui-w-80">
                                 <div class="media-body ml-4">
-                                    <label class="btn btn-outline-primary"> Upload new photo <input type="file" class="account-settings-fileinput">
+                                    <label class="btn btn-outline-primary"> UPLOAD PHOTO <input type="file" class="account-settings-fileinput">
                                     </label>
                                     <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                                 </div>
@@ -90,40 +90,44 @@ if ($emailID) {
                             <hr class="border-light m-0">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label class="form-label">Name</label>
+                                    <label class="form-label">USER NAME</label>
                                     <input type="text" class="form-control mb-1" value="<?php echo $p_row['fname'] . " " . $p_row['mname'] . " " . $p_row['lname'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">E-mail</label>
+                                    <label class="form-label">E-MAIL ID</label>
                                     <input type="text" class="form-control mb-1" value="<?php echo $p_row['email'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Contact Number</label>
+                                    <label class="form-label">CONTACT NUMBER</label>
                                     <input type="number" class="form-control" value="<?php echo $p_row['con_num'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Alternet Numebr</label>
+                                    <label class="form-label">ALTERNET CONTACT NUMBER</label>
                                     <input type="number" class="form-control" value="<?php echo $p_row['alt_num'] ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">ADDRESS</label>
+                                    <input type="text" class="form-control" value="<?php echo $p_row['address'] ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="account-change-password">
                             <div class="card-body pb-2">
                                 <div class="form-group">
-                                    <label class="form-label">Current password</label>
+                                    <label class="form-label">CURRENT PASSWORD</label>
                                     <input type="password" autocomplete="on" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">New password</label>
+                                    <label class="form-label">NEW PASSWORD</label>
                                     <input type="password" autocomplete="on" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Repeat new password</label>
+                                    <label class="form-label">REPEAT NEW PASSWORD</label>
                                     <input type="password" autocomplete="on" class="form-control">
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-info">
+                        <!--<div class="tab-pane fade" id="account-info">
                             <div class="card-body pb-2">
                                 <div class="form-group">
                                     <label class="form-label">Bio</label>
@@ -157,7 +161,7 @@ if ($emailID) {
                                     <input type="text" class="form-control" value>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="tab-pane fade" id="account-connections">
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0">
@@ -198,13 +202,13 @@ if ($emailID) {
                                                         <td>
                                                             <?php
                                                             if ($row['status'] == 'pending') {
-                                                                echo "<span class='badge badge-warning p-2'>pending</span>";
+                                                                echo "<span class='badge badge-warning p-2'>PENDING</span>";
                                                             } else if ($row['status'] == 'confirmed') {
-                                                                echo "<span class='badge badge-info p-2'>confirmed</span>";
+                                                                echo "<span class='badge badge-info p-2'>CONFIRMED</span>";
                                                             } else if ($row['status'] == 'completed') {
-                                                                echo "<span class='badge badge-success p-2'>completed</span>";
+                                                                echo "<span class='badge badge-success p-2'>COMPLETED</span>";
                                                             } else if ($row['status'] == 'cancelled') {
-                                                                echo "<span class='badge badge-danger p-2'>cancelled</span>";
+                                                                echo "<span class='badge badge-danger p-2'>CANCELLED</span>";
                                                             }
                                                             ?>
                                                         </td>
@@ -213,10 +217,10 @@ if ($emailID) {
                                                             <?php
                                                             if (!(($row['status'] == 'confirmed') || ($row['status'] == 'cancelled'))) {
                                                             ?>
-                                                                <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">Cancel</button>
+                                                                <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">CANCEL</button>
                                                             <?php
                                                             } else { ?>
-                                                                <button type='button' class='btn btn-danger' disabled>Cancel</button>
+                                                                <button type='button' class='btn btn-danger' disabled>CANCEL</button>
                                                             <?php
                                                             }
                                                             ?>
@@ -235,11 +239,11 @@ if ($emailID) {
                 </div>
             </div>
         </div>
-        <div class="text-right m-3">
-            <button type="button" class="btn btn-primary">Save changes</button>
+        <br> <div class="text-right m-3">
+            <button type="button" class="btn btn-primary">Save Changes</button>
             &nbsp;
             <button type="button" class="btn btn-default">Cancel</button>
-        </div>
+        </div> <br>
     </div>
     <?php
     require_once('./assets/components/footer.php');

@@ -4,7 +4,7 @@ require_once('./env/config.php');
 
 <div class="container">
     <div class="cart-container">
-        <h3>Cart</h3>
+        <b> <h3>BOOKING HISTORY</h3> </b> <br>
         <div class="col-md-9 container">
             <div class="tab-content">
                 <div class="tab-pane fade active show" id="account-connections">
@@ -46,13 +46,13 @@ require_once('./env/config.php');
                                                 <td>
                                                     <?php
                                                     if ($row['status'] == 'pending') {
-                                                        echo "<span class='badge badge-warning p-2'>pending</span>";
+                                                        echo "<span class='badge badge-warning p-2'>PENDING</span>";
                                                     } else if ($row['status'] == 'confirmed') {
-                                                        echo "<span class='badge badge-info p-2'>confirmed</span>";
+                                                        echo "<span class='badge badge-info p-2'>CONFIRMED</span>";
                                                     } else if ($row['status'] == 'completed') {
-                                                        echo "<span class='badge badge-success p-2'>completed</span>";
+                                                        echo "<span class='badge badge-success p-2'>COMPLETED</span>";
                                                     } else if ($row['status'] == 'cancelled') {
-                                                        echo "<span class='badge badge-danger p-2'>cancelled</span>";
+                                                        echo "<span class='badge badge-danger p-2'>CANCELLED</span>";
                                                     }
                                                     ?>
                                                 </td>
@@ -61,10 +61,10 @@ require_once('./env/config.php');
                                                     <?php
                                                     if (!(($row['status'] == 'confirmed') || ($row['status'] == 'cancelled'))) {
                                                     ?>
-                                                        <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">Cancel</button>
+                                                        <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">CANCEL</button>
                                                     <?php
                                                     } else { ?>
-                                                        <button type='button' class='btn btn-danger' disabled>Cancel</button>
+                                                        <button type='button' class='btn btn-danger' disabled>CANCEL</button>
                                                     <?php
                                                     }
                                                     ?>
@@ -83,6 +83,6 @@ require_once('./env/config.php');
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <br>
     </div>
 </div>

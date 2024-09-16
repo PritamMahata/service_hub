@@ -9,7 +9,7 @@ $uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : 0;
 $sql = "SELECT * FROM bookings where user_id = $uid;";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 ?>
-<header class="header">
+<header class="header"> <br>
     <div class="header-main">
         <div class="container">
             <a href="./index.php" class="header-logo">
@@ -56,7 +56,7 @@ $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     <?php
     require_once('sub_components/menubar/menubar.php');
     ?>
-</header>
+</header> <br>
 
 <script>
     const placeholders = [

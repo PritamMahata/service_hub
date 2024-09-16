@@ -52,7 +52,7 @@ if (isset($_POST['ok'])) {
 
     $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID', '$date,$time', current_timestamp(), 'pending','$happyCode')";
     if ($conn->query($sql) === TRUE) {
-      echo '<script>alert("Order Placed Successfully")</script>';
+      toast("success","Booking Registered Sucessfully");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -72,11 +72,11 @@ if (isset($_POST['ok'])) {
     <div class="newsletter">
       <form method="POST">
         <div class="newsletter-header">
-          <h3 class="newsletter-title">Checkout</h3>
+          <h3 class="newsletter-title">SCHEDULE YOUR SERVICE</h3>
           <!-- <p class="newsletter-desc"> Subscribe the <b>service hub</b> to get latest service and discount update. </p> -->
-        </div>
+        </div> <br>
         <div class="row_field">
-          <label class="newsletter-title">E-mail ID </label>
+          <label class="newsletter-title">E-mail ID</label>
           <input type="email" name="email" class="email-field" placeholder="E-mail ID" value="<?php echo $email ?>" required>
         </div>
         <div class="col_field">
@@ -95,7 +95,7 @@ if (isset($_POST['ok'])) {
         </div>
 
         <div class="row_field">
-          <label class="newsletter-title">Select Slot</label>
+          <br> <label class="newsletter-title">SELECT SLOT</label>
           <label class="newsletter-title">Select Date</label>
           <div class="card">
             <div class="content">
