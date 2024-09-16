@@ -35,28 +35,27 @@
                         </div>
                     </button>
 
-                <?php
-                // Check if there are subcategories to display
-                if (!empty($subcategories[0])) {
-                    echo '<ul class="sidebar-submenu-category-list" data-accordion>';
-                    foreach ($subcategories as $subcategory_name) {
-                        if ($subcategory_name) { // Make sure subcategory is not empty
-                            echo '<li class="sidebar-submenu-category">';
-                            echo '<a href="#" class="sidebar-submenu-title">';
-                            echo '<p class="product-name">' . htmlspecialchars($subcategory_name) . '</p>';
-                            echo '</a>';
-                            echo '</li>';
+                    <?php
+                    // Check if there are subcategories to display
+                    if (!empty($subcategories[0])) {
+                        echo '<ul class="sidebar-submenu-category-list" data-accordion>';
+                        foreach ($subcategories as $subcategory_name) {
+                            if ($subcategory_name) {
+                    ?>
+                <li class="sidebar-submenu-category">
+                    <a href="<?php echo "./category.php?search=" . htmlspecialchars($subcategory_name) ?>" class="sidebar-submenu-title">
+        <?php echo '<p class="product-name">' . htmlspecialchars($subcategory_name) . '</p>';
+                                echo '</a>';
+                                echo '</li>';
+                            }
                         }
+                        echo '</ul>';
                     }
-                    echo '</ul>';
+                    echo '</li>';
                 }
-                echo '</li>';
-            }
-            echo '</ul>';
-
-            // $conn->close();
-
-                ?>
+                echo '</ul>';
+                // $conn->close();
+        ?>
     </div>
 
 
@@ -70,7 +69,7 @@
                 for ($a = 1; $a <= 4; $a++) {
                     while ($row = mysqli_fetch_assoc($res)) { ?>
 
-                        <div class="showcase">
+                        <div class="showcase" onclick="window.location = './category.php?search=<?php echo $row['sname'] ?>'">
                             <a href="#" class="showcase-img-box">
                                 <img src="<?php echo $row['simage'] ?>" width="75" height="75"
                                     class="showcase-img">
@@ -94,8 +93,10 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <del> <?php echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?> </del>
-                                    <p class="price">$<?php echo $row['sprice'] ?></p>
+                                    <del>
+                                        <p class="price">$<?php echo $row['sprice'] ?></p>
+                                    </del>
+                                    <?php echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?>
                                 </div>
                             </div>
                         </div>
