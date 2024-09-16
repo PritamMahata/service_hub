@@ -1,5 +1,11 @@
-<?php
-
+<?php include_once './env/config.php';
+require_once('./assets/components/toast.php');
+$showAlert = false;
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : '';
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$con_num = isset($_SESSION['con_num']) ? $_SESSION['con_num'] : '';
+$address = isset($_SESSION['address']) ? $_SESSION['address'] : '';
+$serviceID = isset($_GET['serviceId']) ? $_GET['serviceId'] : '';
 
 
 function generateOrderID($length = 11)
@@ -11,9 +17,50 @@ function generateOrderID($length = 11)
   for ($i = 0; $i < $length; $i++) {
     $orderID .= $characters[rand(0, $charactersLength - 1)];
   }
-
   return $orderID;
 }
+function generateHappyCode($length = 6)
+{
+  $characters = '0123456789';
+  $happyCode = '';
+  $charactersLength = strlen($characters);
+
+  for ($i = 0; $i < $length; $i++) {
+    $happyCode .= $characters[rand(0, $charactersLength - 1)];
+  }
+  return $happyCode;
+}
+
+if (isset($_POST['ok'])) {
+  if ($_SESSION['isLogin']) {
+    $email = $_POST['email'];
+    $con_num = $_POST['con_num'];
+    $alt_num = $_POST['alt_num'];
+    $address = $_POST['address'];
+    $date = $_POST['rd1'];
+    $time = $_POST['rd2'];
+    $orderID = generateOrderID();
+    $happyCode = generateHappyCode();
+    $sql = "SELECT * FROM services WHERE sid = '$serviceID'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+    } else {
+      echo "0 results";
+    }
+    $providerId = $row['created_by'];
+
+    $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID', '$date,$time', current_timestamp(), 'pending','$happyCode')";
+    if ($conn->query($sql) === TRUE) {
+      echo '<script>alert("Order Placed Successfully")</script>';
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  } else {
+    echo '<script> window.location = "login.php"</script>';
+  }
+}
+
 ?>
 
 <div class="modal closed" data-modal>
@@ -35,16 +82,16 @@ function generateOrderID($length = 11)
         <div class="col_field">
           <div class="row_field">
             <label class="newsletter-title">Contact Number</label>
-            <input type="number" name="con_num" class="email-field" placeholder="Contact Number" required>
+            <input type="number" name="con_num" class="email-field" placeholder="Contact Number" value="<?php echo $con_num ?>" required>
           </div>
           <div class="row_field">
             <label class="newsletter-title">Alternate Number</label>
-            <input type="number" name="alt_num" class="email-field" placeholder="Alternate Number" required>
+            <input type="number" name="alt_num" class="email-field" placeholder="(optional)">
           </div>
         </div>
         <div class="row_field">
           <label class="newsletter-title">Address</label>
-          <textarea id="w3review" name="address" rows="4" cols="50"></textarea>
+          <textarea id="w3review" name="address" rows="4" cols="50"><?php echo $address ?></textarea>
         </div>
 
         <div class="row_field">
@@ -59,7 +106,7 @@ function generateOrderID($length = 11)
               $startDayOfYear = (int)$date->format('z') + 1;
               $targetDayOfYear = $startDayOfYear + $stopDay - 1;
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
-                echo '<input type="radio" name="rd1" id="_' . $date->format('j') . '" required>';
+                echo '<input type="radio" name="rd1" id="_' . $date->format('j') . '" value = "' . $date->format('j') . $date->format('S') . " " . $date->format('M') . '" required>';
                 $date->modify('+1 day');
                 $count++;
               }
@@ -85,9 +132,9 @@ function generateOrderID($length = 11)
           <label class="newsletter-title">Select Time</label>
           <div class="card">
             <div class="content">
-              <input type="radio" name="rd2" id="_32">
-              <input type="radio" name="rd2" id="_33">
-              <input type="radio" name="rd2" id="_34">
+              <input type="radio" name="rd2" id="_32" value="9:00 AM - 12:00 PM" required>
+              <input type="radio" name="rd2" id="_33" value="12:00 PM - 3:00 PM" required>
+              <input type="radio" name="rd2" id="_34" value="3:00 PM - 5:00 PM" required>
               <label for="_32" class="box __32">
                 <div class="plan">
                   <span class="yearly">9:00 AM - 12:00 PM</span>

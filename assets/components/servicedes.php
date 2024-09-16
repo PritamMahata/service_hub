@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
                             <?php
                             $count = date("j");
                             $date = new DateTime();
-                            $stopDay = 10;
+                            $stopDay = 9;
                             $startDayOfYear = (int)$date->format('z') + 1;
                             $targetDayOfYear = $startDayOfYear + $stopDay - 1;
                             while ((int)$date->format('z') + 1 != $targetDayOfYear) {
