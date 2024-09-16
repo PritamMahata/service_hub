@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2024 at 09:08 AM
+-- Generation Time: Sep 16, 2024 at 12:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,8 +18,575 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+-- Database: `php36`
+--
+CREATE DATABASE IF NOT EXISTS `php36` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `php36`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `sid` int(11) NOT NULL,
+  `sname` varchar(255) NOT NULL,
+  `semail` varchar(255) NOT NULL,
+  `spwd` varchar(255) NOT NULL,
+  `sgender` varchar(255) NOT NULL,
+  `slang` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`sid`, `sname`, `semail`, `spwd`, `sgender`, `slang`) VALUES
+(1, 'pritam', 'pritam@gmail.com', '@kfsdkfskfsdkf', 'Male', 'C,PHP'),
+(4, 'pritam', 'hello@gmail.com', '@kfsdkfskfsdkf', 'Male', 'C,PHP'),
+(5, 'pritam', 'hello@gmail.com', '@kfsdkfskfsdkf', 'Male', 'C,PHP');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`sid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- Database: `phpmyadmin`
+--
+CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `phpmyadmin`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__bookmark`
+--
+
+CREATE TABLE `pma__bookmark` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `dbase` varchar(255) NOT NULL DEFAULT '',
+  `user` varchar(255) NOT NULL DEFAULT '',
+  `label` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `query` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__central_columns`
+--
+
+CREATE TABLE `pma__central_columns` (
+  `db_name` varchar(64) NOT NULL,
+  `col_name` varchar(64) NOT NULL,
+  `col_type` varchar(64) NOT NULL,
+  `col_length` text DEFAULT NULL,
+  `col_collation` varchar(64) NOT NULL,
+  `col_isNull` tinyint(1) NOT NULL,
+  `col_extra` varchar(255) DEFAULT '',
+  `col_default` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
+
+--
+-- Dumping data for table `pma__central_columns`
+--
+
+INSERT INTO `pma__central_columns` (`db_name`, `col_name`, `col_type`, `col_length`, `col_collation`, `col_isNull`, `col_extra`, `col_default`) VALUES
+('service_hub', 'email_id', 'varchar', '100', 'utf8mb4_general_ci', 0, ',', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__column_info`
+--
+
+CREATE TABLE `pma__column_info` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `column_name` varchar(64) NOT NULL DEFAULT '',
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `mimetype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `transformation` varchar(255) NOT NULL DEFAULT '',
+  `transformation_options` varchar(255) NOT NULL DEFAULT '',
+  `input_transformation` varchar(255) NOT NULL DEFAULT '',
+  `input_transformation_options` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__designer_settings`
+--
+
+CREATE TABLE `pma__designer_settings` (
+  `username` varchar(64) NOT NULL,
+  `settings_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
+
+--
+-- Dumping data for table `pma__designer_settings`
+--
+
+INSERT INTO `pma__designer_settings` (`username`, `settings_data`) VALUES
+('root', '{\"relation_lines\":\"true\",\"angular_direct\":\"direct\",\"snap_to_grid\":\"off\"}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__export_templates`
+--
+
+CREATE TABLE `pma__export_templates` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `export_type` varchar(10) NOT NULL,
+  `template_name` varchar(64) NOT NULL,
+  `template_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__favorite`
+--
+
+CREATE TABLE `pma__favorite` (
+  `username` varchar(64) NOT NULL,
+  `tables` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__history`
+--
+
+CREATE TABLE `pma__history` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL DEFAULT '',
+  `db` varchar(64) NOT NULL DEFAULT '',
+  `table` varchar(64) NOT NULL DEFAULT '',
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
+  `sqlquery` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__navigationhiding`
+--
+
+CREATE TABLE `pma__navigationhiding` (
+  `username` varchar(64) NOT NULL,
+  `item_name` varchar(64) NOT NULL,
+  `item_type` varchar(64) NOT NULL,
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__pdf_pages`
+--
+
+CREATE TABLE `pma__pdf_pages` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `page_nr` int(10) UNSIGNED NOT NULL,
+  `page_descr` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__recent`
+--
+
+CREATE TABLE `pma__recent` (
+  `username` varchar(64) NOT NULL,
+  `tables` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
+
+--
+-- Dumping data for table `pma__recent`
+--
+
+INSERT INTO `pma__recent` (`username`, `tables`) VALUES
+('root', '[{\"db\":\"service_hub\",\"table\":\"bookings\"},{\"db\":\"service_hub\",\"table\":\"users\"},{\"db\":\"service_hub\",\"table\":\"services\"},{\"db\":\"service_hub\",\"table\":\"provider\"},{\"db\":\"service_hub\",\"table\":\"admin\"},{\"db\":\"service_hub\",\"table\":\"category\"},{\"db\":\"service_hub\",\"table\":\"roles\"},{\"db\":\"service_hub\",\"table\":\"sub_category\"},{\"db\":\"productdb\",\"table\":\"producttb\"},{\"db\":\"php36\",\"table\":\"student\"}]');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__relation`
+--
+
+CREATE TABLE `pma__relation` (
+  `master_db` varchar(64) NOT NULL DEFAULT '',
+  `master_table` varchar(64) NOT NULL DEFAULT '',
+  `master_field` varchar(64) NOT NULL DEFAULT '',
+  `foreign_db` varchar(64) NOT NULL DEFAULT '',
+  `foreign_table` varchar(64) NOT NULL DEFAULT '',
+  `foreign_field` varchar(64) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__savedsearches`
+--
+
+CREATE TABLE `pma__savedsearches` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `username` varchar(64) NOT NULL DEFAULT '',
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `search_name` varchar(64) NOT NULL DEFAULT '',
+  `search_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_coords`
+--
+
+CREATE TABLE `pma__table_coords` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
+  `x` float UNSIGNED NOT NULL DEFAULT 0,
+  `y` float UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_info`
+--
+
+CREATE TABLE `pma__table_info` (
+  `db_name` varchar(64) NOT NULL DEFAULT '',
+  `table_name` varchar(64) NOT NULL DEFAULT '',
+  `display_field` varchar(64) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_uiprefs`
+--
+
+CREATE TABLE `pma__table_uiprefs` (
+  `username` varchar(64) NOT NULL,
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL,
+  `prefs` text NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
+
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'service_hub', 'providers', '{\"CREATE_TIME\":\"2024-08-31 19:55:11\"}', '2024-09-04 05:13:01'),
+('root', 'service_hub', 'sub_category', '{\"sorted_col\":\"`sub_category`.`subcat` ASC\"}', '2024-09-09 06:36:48'),
+('root', 'test', 'usr', '{\"CREATE_TIME\":\"2024-03-04 22:34:13\",\"sorted_col\":\"`usr`.`id` ASC\"}', '2024-03-04 17:09:07'),
+('root', 'trip', 'contacts', '{\"sorted_col\":\"`contacts`.`concern` ASC\"}', '2024-07-09 15:39:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__tracking`
+--
+
+CREATE TABLE `pma__tracking` (
+  `db_name` varchar(64) NOT NULL,
+  `table_name` varchar(64) NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `schema_snapshot` text NOT NULL,
+  `schema_sql` text DEFAULT NULL,
+  `data_sql` longtext DEFAULT NULL,
+  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') DEFAULT NULL,
+  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__userconfig`
+--
+
+CREATE TABLE `pma__userconfig` (
+  `username` varchar(64) NOT NULL,
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `config_data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
+
+--
+-- Dumping data for table `pma__userconfig`
+--
+
+INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
+('root', '2024-09-16 10:24:24', '{\"Console\\/Mode\":\"collapse\",\"ThemeDefault\":\"pmahomme\",\"DefaultConnectionCollation\":\"utf8mb4_nopad_bin\",\"Console\\/Height\":250.95499999999998,\"NavigationWidth\":187}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__usergroups`
+--
+
+CREATE TABLE `pma__usergroups` (
+  `usergroup` varchar(64) NOT NULL,
+  `tab` varchar(64) NOT NULL,
+  `allowed` enum('Y','N') NOT NULL DEFAULT 'N'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__users`
+--
+
+CREATE TABLE `pma__users` (
+  `username` varchar(64) NOT NULL,
+  `usergroup` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `pma__bookmark`
+--
+ALTER TABLE `pma__bookmark`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pma__central_columns`
+--
+ALTER TABLE `pma__central_columns`
+  ADD PRIMARY KEY (`db_name`,`col_name`);
+
+--
+-- Indexes for table `pma__column_info`
+--
+ALTER TABLE `pma__column_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
+
+--
+-- Indexes for table `pma__designer_settings`
+--
+ALTER TABLE `pma__designer_settings`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma__export_templates`
+--
+ALTER TABLE `pma__export_templates`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
+
+--
+-- Indexes for table `pma__favorite`
+--
+ALTER TABLE `pma__favorite`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma__history`
+--
+ALTER TABLE `pma__history`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
+
+--
+-- Indexes for table `pma__navigationhiding`
+--
+ALTER TABLE `pma__navigationhiding`
+  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma__pdf_pages`
+--
+ALTER TABLE `pma__pdf_pages`
+  ADD PRIMARY KEY (`page_nr`),
+  ADD KEY `db_name` (`db_name`);
+
+--
+-- Indexes for table `pma__recent`
+--
+ALTER TABLE `pma__recent`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma__relation`
+--
+ALTER TABLE `pma__relation`
+  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
+  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
+
+--
+-- Indexes for table `pma__savedsearches`
+--
+ALTER TABLE `pma__savedsearches`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
+
+--
+-- Indexes for table `pma__table_coords`
+--
+ALTER TABLE `pma__table_coords`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
+
+--
+-- Indexes for table `pma__table_info`
+--
+ALTER TABLE `pma__table_info`
+  ADD PRIMARY KEY (`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma__table_uiprefs`
+--
+ALTER TABLE `pma__table_uiprefs`
+  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma__tracking`
+--
+ALTER TABLE `pma__tracking`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
+
+--
+-- Indexes for table `pma__userconfig`
+--
+ALTER TABLE `pma__userconfig`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma__usergroups`
+--
+ALTER TABLE `pma__usergroups`
+  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
+
+--
+-- Indexes for table `pma__users`
+--
+ALTER TABLE `pma__users`
+  ADD PRIMARY KEY (`username`,`usergroup`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `pma__bookmark`
+--
+ALTER TABLE `pma__bookmark`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pma__column_info`
+--
+ALTER TABLE `pma__column_info`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pma__export_templates`
+--
+ALTER TABLE `pma__export_templates`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pma__history`
+--
+ALTER TABLE `pma__history`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pma__pdf_pages`
+--
+ALTER TABLE `pma__pdf_pages`
+  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pma__savedsearches`
+--
+ALTER TABLE `pma__savedsearches`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- Database: `productdb`
+--
+CREATE DATABASE IF NOT EXISTS `productdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `productdb`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `producttb`
+--
+
+CREATE TABLE `producttb` (
+  `id` int(11) NOT NULL,
+  `product_name` varchar(25) NOT NULL,
+  `product_price` float DEFAULT NULL,
+  `product_image` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `producttb`
+--
+
+INSERT INTO `producttb` (`id`, `product_name`, `product_price`, `product_image`) VALUES
+(1, 'Apple MacBook Pro', 1799, './upload/product1.png'),
+(2, 'Sony E7 Headphones', 147, './upload/product2.png'),
+(3, 'Sony Xperia Z4', 459, './upload/product3.png'),
+(4, 'Samsung Galaxy A50', 278, './upload/product4.png');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `producttb`
+--
+ALTER TABLE `producttb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `producttb`
+--
+ALTER TABLE `producttb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- Database: `service_hub`
 --
+CREATE DATABASE IF NOT EXISTS `service_hub` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `service_hub`;
 
 -- --------------------------------------------------------
 
@@ -50,22 +617,25 @@ INSERT INTO `admin` (`aid`, `aname`, `aemail`, `apwd`) VALUES
 
 CREATE TABLE `bookings` (
   `booking_id` int(11) NOT NULL,
+  `order_id` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `provider_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
-  `booking_date` datetime NOT NULL,
-  `status` enum('pending','confirmed','completed','cancelled') NOT NULL DEFAULT 'pending'
+  `arrival_date` varchar(255) NOT NULL,
+  `booking_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` enum('pending','confirmed','completed','cancelled') NOT NULL DEFAULT 'pending',
+  `happy_code` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`booking_id`, `user_id`, `provider_id`, `service_id`, `booking_date`, `status`) VALUES
-(1, 8, 1, 3, '2024-09-10 16:47:00', 'pending'),
-(2, 8, 1, 3, '2024-09-10 16:47:00', 'pending'),
-(3, 8, 1, 3, '2024-09-10 16:47:00', 'pending'),
-(4, 8, 1, 3, '2024-09-10 16:47:00', 'pending');
+INSERT INTO `bookings` (`booking_id`, `order_id`, `user_id`, `provider_id`, `service_id`, `arrival_date`, `booking_date`, `status`, `happy_code`) VALUES
+(30, 'TIE6Q7W3UAI', 8, 1, 4, '21st Sep,3:00 PM - 5:00 PM', '2024-09-16 11:25:15', 'confirmed', 799530),
+(40, 'AF363FI45G8', 8, 1, 6, '19th Sep,12:00 PM - 3:00 PM', '2024-09-16 12:51:46', 'pending', 162728),
+(43, 'TPQ1BT8B3HB', 8, 1, 1, '19th Sep,12:00 PM - 3:00 PM', '2024-09-16 12:57:40', 'pending', 471968),
+(45, '3YW31JT2EAV', 18, 1, 1, '17th Sep,9:00 AM - 12:00 PM', '2024-09-16 15:28:05', 'pending', 258792);
 
 -- --------------------------------------------------------
 
@@ -200,7 +770,7 @@ INSERT INTO `services` (`sid`, `sname`, `srating`, `sprice`, `sduration`, `sdes`
 (10, 'Party Makeup', 4, 1500, '1 hr', 'Glamorous makeup for parties and events.', '', 2, 'assets\\images\\services\\img_10.jpg', NULL, 10, '2024-09-04 02:00:00', 2, 2),
 (11, 'Express Car Wash', 4, 300, '30 min', 'Quick exterior wash for your car.', '', 3, 'assets\\images\\services\\img_11.jpg', 'popular', 5, '2024-09-01 01:00:00', 1, 2),
 (12, 'Interior Detailing', 5, 1200, '1.5 hr', 'Comprehensive interior cleaning and detailing.', '', 3, 'assets\\images\\services\\img_12.jpg', 'new', 20, '2024-09-01 23:00:00', 1, 2),
-(13, 'Deluxe Car Wash', 5, 800, '2 hr', 'Includes wax and tire shine.', '', 3, 'assets\\images\\services\\img_13.jpg', 'sale', 20, '2024-09-02 01:00:00', 1, 2);
+(13, 'Deluxe Car Wash', 5, 800, '2 hr', 'Includes wax and tire shine.', '', 3, 'assets\\images\\services\\img_13.jpg', 'sale', 20, '2024-09-02 01:00:00', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -272,7 +842,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `isverified`, `is_deleted`, `ucreate`, `v_code`) VALUES
-(8, 'test', NULL, 'test', 'test@gmail.com', '$2y$10$xBh05JMX.BzOfwz7gGgHuOrQB/X5keE4C59t41L26Jpx4Lm4Ro2bC', 312312313, 123123123, 'qweqweds asd as', 1, 0, '2024-09-09 07:03:47', ''),
+(8, 'Pritam', NULL, 'Mahata', 'test@gmail.com', '$2y$10$xBh05JMX.BzOfwz7gGgHuOrQB/X5keE4C59t41L26Jpx4Lm4Ro2bC', 312312313, 123123123, 'qweqweds asd as', 1, 0, '2024-09-15 22:10:34', 'f138c66bf86f285a11e6f89de5847de2'),
 (17, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2'),
 (18, 'qwe', 'qwe', 'qwe', 'temp.token.co@gmail.com', '$2y$10$yvrNT1XOMdlehJNBmZHyzujyG3QDyZAaHRfxUPZE7gMYt8EfgQoTm', 123, 123, 'Earth', 1, 0, '2024-09-09 10:37:37', 'a26f1c1b5d7ee822a48e6b494949b4c2'),
 (19, '123', '123', '123', 'pritammahata12@gmail.com', '$2y$10$5JgYcooUkiR/hufqeGN8ROmMdCtSzzEm7sUEKUALmbFL7EoqfwBRW', 123, 123, '1231313131', 1, 0, '2024-09-09 10:43:47', '4e5e750155da623ce65359985e4f9600');
@@ -351,7 +921,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `category`
