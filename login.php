@@ -20,6 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             if (password_verify($password, $hashed_password_from_db)) {
                 $_SESSION['email'] = $email;
+                $_SESSION['uid'] = $user['uid'];
+                $_SESSION['con_num'] = $user['con_num'];
+                $_SESSION['address'] = $user['address'];
                 $_SESSION['isLogin'] = true;
                 header("Location: index.php");
                 exit();
