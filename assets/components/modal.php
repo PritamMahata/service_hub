@@ -1,3 +1,21 @@
+<?php
+
+
+
+function generateOrderID($length = 11)
+{
+  $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  $orderID = '';
+  $charactersLength = strlen($characters);
+
+  for ($i = 0; $i < $length; $i++) {
+    $orderID .= $characters[rand(0, $charactersLength - 1)];
+  }
+
+  return $orderID;
+}
+?>
+
 <div class="modal closed" data-modal>
   <div class="modal-close-overlay" data-modal-overlay></div>
   <div class="modal-content">
@@ -34,19 +52,21 @@
           <label class="newsletter-title">Select Date</label>
           <div class="card">
             <div class="content">
-
               <?php
               $count = date("j");
               $date = new DateTime();
-              $stopDay = 10;
+              $stopDay = 9;
               $startDayOfYear = (int)$date->format('z') + 1;
               $targetDayOfYear = $startDayOfYear + $stopDay - 1;
-              for ($i = $count; $i <= $stopDay; $i++) {
-                echo '<input type="radio" name="rd1" id="_' . $i . '" required>';
+              while ((int)$date->format('z') + 1 != $targetDayOfYear) {
+                echo '<input type="radio" name="rd1" id="_' . $date->format('j') . '" required>';
+                $date->modify('+1 day');
+                $count++;
               }
+              $date = new DateTime();
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
                 echo
-                '<label for="_' . $count . '" class="box __' . $count . ' style="background: #ddd; margin: 5px; padding: 10px 12px; display: flex; border-radius: 5px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; min-width: fit-content;"">
+                '<label for="_' . $date->format('j') . '" class="box __' . $date->format('j') . '">
                 <div class="plan">
                 <div class="yearly">' . $date->format('jS') . '</div>
                 <div class="yearly">' . $date->format('M') . '</div>
@@ -56,7 +76,6 @@
                 $count++;
               }
               ?>
-
             </div>
           </div>
         </div>
@@ -69,7 +88,6 @@
               <input type="radio" name="rd2" id="_32">
               <input type="radio" name="rd2" id="_33">
               <input type="radio" name="rd2" id="_34">
-
               <label for="_32" class="box __32">
                 <div class="plan">
                   <span class="yearly">9:00 AM - 12:00 PM</span>
