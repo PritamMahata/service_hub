@@ -13,6 +13,7 @@ require_once('./env/config.php');
     <!-- favicon -->
     <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
     <!-- custom css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/relog.css">
@@ -34,6 +35,7 @@ require_once('./env/config.php');
     require_once('./assets/components/footer.php');
     ?>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ionicon link -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
