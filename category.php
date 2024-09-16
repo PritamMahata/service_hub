@@ -1,6 +1,7 @@
 <?php
 require_once('./env/config.php');
 $category_title = false;
+$is_category = true;
 ?>
 
 <!DOCTYPE html>
