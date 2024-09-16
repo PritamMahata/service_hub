@@ -190,7 +190,7 @@ if ($emailID) {
                                                                 $service_result = mysqli_query($conn, $service_sql);
                                                                 if (mysqli_num_rows($service_result) == 1) {
                                                                     $price = mysqli_fetch_assoc($service_result);
-                                                                    echo $price['sprice'];
+                                                                    echo "₹".$price['sprice'];
                                                                 }
                                                                 ?>
                                                             </span>
