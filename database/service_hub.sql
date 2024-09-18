@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 01:10 PM
+-- Generation Time: Sep 18, 2024 at 08:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,8 +66,6 @@ CREATE TABLE `bookings` (
 
 INSERT INTO `bookings` (`booking_id`, `order_id`, `user_id`, `provider_id`, `service_id`, `arrival_date`, `booking_date`, `status`, `happy_code`) VALUES
 (30, 'TIE6Q7W3UAI', 8, 1, 4, '21st Sep,3:00 PM - 5:00 PM', '2024-09-16 11:25:15', 'confirmed', 799530),
-(40, 'AF363FI45G8', 8, 1, 6, '19th Sep,12:00 PM - 3:00 PM', '2024-09-16 12:51:46', 'pending', 162728),
-(43, 'TPQ1BT8B3HB', 8, 1, 1, '19th Sep,12:00 PM - 3:00 PM', '2024-09-16 12:57:40', 'pending', 471968),
 (45, '3YW31JT2EAV', 18, 1, 1, '17th Sep,9:00 AM - 12:00 PM', '2024-09-16 15:28:05', 'pending', 258792);
 
 -- --------------------------------------------------------
@@ -191,7 +189,7 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`sid`, `sname`, `srating`, `sprice`, `sduration`, `sdes`, `sfeatures`, `scategory`, `simage`, `sattraction`, `sdiscount`, `screate`, `created_by`, `updated_by`) VALUES
-(1, 'Basic Car Wash', 4, 500, '1 hr', 'A quick and thorough car wash.', 'Exterior Hand Wash,Rinse and Dry,Wheel and Tire Cleaning,Window and Mirror Cleaning,Exterior Wax Application,Quick Interior Vacuum', 3, 'assets\\images\\services\\img_1.jpg', 'discount', 10, '2024-09-01 01:00:00', 1, 1),
+(1, 'Car wash', 4, 900, '2 hr', 'Basic Car Wash', '                    Special Car wash, Using high quality product                    ', 7, 'assets\\images\\services\\img_1.jpg', 'discount', 5, '2024-09-01 01:00:00', 1, 1),
 (2, 'House Cleaning - Standard', 3, 1000, '4 hr', 'Basic cleaning for your home.', '', 5, 'assets\\images\\services\\img_2.jpg', NULL, 5, '2024-09-01 01:00:00', 2, 2),
 (3, 'Pipe Leak Repair', 4, 1500, '2 hr', 'Fixing and replacing leaking pipes.', '', 1, 'assets\\images\\services\\img_3.jpg', 'discount', 15, '2024-09-01 04:00:00', 1, 1),
 (4, 'Drain Cleaning', 5, 1200, '1 hr', 'Professional cleaning of clogged drains.', '', 1, 'assets\\images\\services\\img_4.jpg', NULL, 10, '2024-09-01 23:00:00', 1, 1),
@@ -354,7 +352,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -378,7 +376,7 @@ ALTER TABLE `providertask`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sub_category`
