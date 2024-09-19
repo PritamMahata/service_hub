@@ -31,7 +31,7 @@ $rec = mysqli_fetch_assoc($res);
                             <p class="testimonial-title">has done the UI Desinging & Front-end part of Website</p>
                         </div>
                         <div class="testimonial-card-details">
-                            <img loading="lazy" src="./assets/images/testimonial-2.jpg" class="testimonial-banner" width="80"
+                            <img loading="lazy" src="https://avatars.githubusercontent.com/u/76785755" class="testimonial-banner" width="80"
                                 height="80">
                             <p class="testimonial-name">Pritam Mahata</p>
                             <p class="testimonial-title">has done the UI Designing, Front-end and Back-end part of Website</p>
