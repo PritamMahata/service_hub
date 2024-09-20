@@ -13,8 +13,12 @@ $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     <div class="header-main">
         <div class="container">
             <a href="./index.php" class="header-logo">
-                <!-- <img src="./assets/images/logo/logo.png" width="120" height="36"> -->
-                 <h2 style=" DISPLAY: FLEX; color:#333333;">Service &nbsp;&nbsp;<ion-icon name="home" style="font-size: 1.9rem; color: #333333;"></ion-icon>UB</h2>
+                <!-- <img src="./assets/images/logo/logo.gif" width="120" height="36"> -->
+                <!-- <h2 style=" DISPLAY: FLEX; color:#333333;">Service &nbsp;&nbsp;<ion-icon name="home" style="font-size: 1.9rem; color: #333333;"></ion-icon>UB</h2> -->
+                <p>Service</p>
+                <img src="./assets/images/logo/logo.gif" style="height: 40px;">
+                <p>UB</p>
+
             </a>
             <div class="header-search-container">
                 <form action="category.php" method="GET">

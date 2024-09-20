@@ -44,18 +44,16 @@ if (isset($_GET['booking_id'])) {
             <li class="breadcrumb-item">Dashboard</li>
             <li class="breadcrumb-item active">Services</li>
         </ol>
-        <a href="modify.php" class="btn btn-primary">Add New Service</a>
-
     </div>
     <div class="container-fluid px-4">
-        <h3 class="mb-0">All Services</h3>
+        <h3 class="mb-4">All Services Requests</h3>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th scope="col">Booking Id</th>
-                    <th scope="col">User Id</th>
-                    <th scope="col">Provider Id</th>
-                    <th scope="col">Service Id</th>
+                    <th scope="col">Assigned Service Engineer</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Service Category</th>
                     <th scope="col">Booking date</th>
                     <th scope="col">Status</th>
                     <th scope="col" colspan="2">operation</th>
@@ -63,16 +61,33 @@ if (isset($_GET['booking_id'])) {
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM bookings;";
+                $sql = "SELECT 
+            bookings.booking_id, 
+            CONCAT(provider.fname, ' ', provider.mname, ' ', provider.lname) AS full_name,
+            services.sid, 
+            services.sname, 
+            service_category.cname AS category_name, 
+            provider.fname AS provider_name,
+            provider_category.cname AS provider_category_name,
+            bookings.booking_date, 
+            bookings.status
+        FROM bookings 
+        INNER JOIN users ON bookings.user_id = users.uid
+        INNER JOIN services ON bookings.service_id = services.sid
+        INNER JOIN category AS service_category ON services.scategory = service_category.cid
+        INNER JOIN provider ON bookings.provider_id = provider.pid
+        INNER JOIN category AS provider_category ON provider.provider_category_id = provider_category.cid";
+
                 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                         <tr>
                             <th><?php echo $row['booking_id'] ?></th>
-                            <th><?php echo $row['user_id'] ?></th>
-                            <th><?php echo $row['provider_id'] ?></th>
-                            <th><?php echo $row['service_id'] ?></th>
+                            <th><?php echo $row['full_name'] ?></th>
+                            <th><?php echo $row['sname'] ?></th>
+                            <th><?php echo $row['category_name'] ?></th>
                             <th><?php echo $row['booking_date'] ?></th>
                             <th><?php echo $row['status'] ?></th>
                             <td><?php echo "<button class='btn btn-primary' onclick='goToDetails(" . $row['booking_id'] . ")'>Edit</button>"; ?></td>

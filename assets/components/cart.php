@@ -12,8 +12,9 @@ require_once('./env/config.php');
                         <table class="table table-hover mb-0">
                             <thead>
                                 <tr>
-                                    <th>Order Id</th>
-                                    <th>Arricval Date</th>
+                                    <th>Request Id</th>
+                                    <th>Sevice Name</th>
+                                    <th>Arrival Date</th>
                                     <th>Total</th>
                                     <th>Status</th>
                                     <th>Happy Code</th>
@@ -24,12 +25,13 @@ require_once('./env/config.php');
                                 <?php
                                 if (isset($_SESSION['uid'])) {
                                     $uid = $_SESSION['uid'];
-                                    $sql = "SELECT * FROM bookings where user_id = $uid;";
+                                    $sql = "SELECT * FROM bookings,services where bookings.user_id = $uid and bookings.service_id = services.sid;";
                                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = $result->fetch_assoc()) { ?>
                                             <tr>
                                                 <td><a class="navi-link" href="#order-details" data-toggle="modal"><?php echo $row['order_id']; ?></a></td>
+                                                <td><?php echo $row['sname']; ?></td>
                                                 <td><?php echo $row['arrival_date']; ?></td>
                                                 <td><span>
                                                         <?php

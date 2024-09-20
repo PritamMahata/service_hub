@@ -79,14 +79,8 @@ if (empty($_SESSION['a_info'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Bookings
                         </a>
-
-
                     </div>
                 </div>
-                <!-- <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div> -->
             </nav>
         </div>
         <div id="layoutSidenav_content">
