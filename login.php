@@ -21,6 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $hashed_password_from_db)) {
                 $_SESSION['email'] = $email;
                 $_SESSION['uid'] = $user['uid'];
+                $_SESSION['fname'] = $user['fname'];
+                $_SESSION['mname'] = $user['mname'];
+                $_SESSION['lname'] = $user['lname'];
                 $_SESSION['con_num'] = $user['con_num'];
                 $_SESSION['address'] = $user['address'];
                 $_SESSION['isLogin'] = true;

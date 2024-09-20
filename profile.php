@@ -167,8 +167,8 @@ if ($emailID) {
                                 <table class="table table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Order Id</th>
-                                            <th>Arricval Date</th>
+                                            <th>Request Id</th>
+                                            <th>Arrival Date</th>
                                             <th>Total</th>
                                             <th>Status</th>
                                             <th>Happy Code</th>
