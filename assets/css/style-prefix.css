@@ -174,8 +174,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 12px; /* for vertical scroll */
-  height: 12px; /* for horizontal scroll */
+  width: 12px;
+  /* for vertical scroll */
+  height: 12px;
+  /* for horizontal scroll */
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
@@ -310,9 +312,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .modal-content {
   position: relative;
-  height: 80%;
+  height: 95%;
   width: 90%;
-  max-width: 550px;
+  max-width: 1000px;
   margin: 20px;
   background: var(--white);
   -webkit-border-radius: var(--border-radius-md);
@@ -348,6 +350,7 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
+
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -359,6 +362,7 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
+
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -505,6 +509,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @-webkit-keyframes slideInOut {
+
   0%,
   5%,
   100% {
@@ -524,6 +529,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes slideInOut {
+
   0%,
   5%,
   100% {
@@ -648,10 +654,17 @@ body::-webkit-scrollbar-thumb:hover {
 
 .header-logo {
   margin: 7px 0;
+  display: flex;
+  color: #333333;
+  justify-content: center;
+  align-items: flex-end;
 }
+.header-logo p{
 
+}
 .header-logo img {
   margin: auto;
+  margin: 0 -3px 0 10px;
 }
 
 .header-search-container {
@@ -838,7 +851,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 12px 0;
 }
 
-.accordion-menu > div {
+.accordion-menu>div {
   font-size: 14px;
 }
 
@@ -2456,6 +2469,7 @@ footer {
  */
 
 @media (min-width: 480px) {
+
   /**
      * #CUSTOM PROPERTY
      */
@@ -2594,6 +2608,7 @@ footer {
  */
 
 @media (min-width: 570px) {
+
   /**
      * #HEADER
      */
@@ -2724,6 +2739,7 @@ footer {
  */
 
 @media (min-width: 768px) {
+
   /**
      * #CUSTOM PROPERTY
      */
@@ -2938,6 +2954,7 @@ footer {
  */
 
 @media (min-width: 1024px) {
+
   /**
      * #CUSTOM PROPERTY
      */
@@ -3053,7 +3070,7 @@ footer {
     position: relative;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title {
+  .desktop-menu-category-list .menu-category>.menu-title {
     position: relative;
     color: var(--onyx);
     font-size: var(--fs-7);
@@ -3065,12 +3082,12 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover {
+  .desktop-menu-category-list .menu-category>.menu-title:hover {
     color: var(--salmon-pink);
     text-decoration: none;
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title::after {
+  .desktop-menu-category-list .menu-category>.menu-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -3089,7 +3106,7 @@ footer {
     transition: var(--transition-timing);
   }
 
-  .desktop-menu-category-list .menu-category > .menu-title:hover::after {
+  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
@@ -3124,7 +3141,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-panel {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -3194,7 +3211,7 @@ footer {
     z-index: 5;
   }
 
-  .desktop-menu-category-list .menu-category:hover > .dropdown-list {
+  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -3453,6 +3470,7 @@ footer {
  */
 
 @media (min-width: 1200px) {
+
   /**
      * #REUSED STYLE
      */
@@ -3491,7 +3509,7 @@ footer {
   /**
      * #element
      */
-  .element-featured .showcase > div {
+  .element-featured .showcase>div {
     min-width: -webkit-calc(50% - 10px);
     min-width: calc(50% - 10px);
   }
@@ -3573,6 +3591,7 @@ footer {
  */
 
 @media (min-width: 1400px) {
+
   /**
      * #BASE
      */

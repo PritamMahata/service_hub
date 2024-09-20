@@ -31,9 +31,9 @@ $rec = mysqli_fetch_assoc($res);
             <h6>
               <p class="discount"><?php echo $rec['sdiscount'] ?>% Discount</p>
             </h6>
-            <?php echo "<p class='price'>$" . (($rec['sprice']) - ((int)($rec['sdiscount']) / 100) * (int)($rec['sprice'])) . "</p>"; ?>
+            <?php echo "<p class='price'>₹" . (($rec['sprice']) - ((int)($rec['sdiscount']) / 100) * (int)($rec['sprice'])) . "</p>"; ?>
             <del>
-              <p class="price">$<?php echo $rec['sprice'] ?></p>
+              <p class="price">₹<?php echo $rec['sprice'] ?></p>
             </del>
           </div>
 
