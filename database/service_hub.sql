@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2024 at 08:02 PM
+-- Generation Time: Sep 20, 2024 at 05:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,6 +54,8 @@ CREATE TABLE `bookings` (
   `user_id` int(11) NOT NULL,
   `provider_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
+  `issue` varchar(255) NOT NULL,
+  `baddress` varchar(255) NOT NULL,
   `arrival_date` varchar(255) NOT NULL,
   `booking_date` datetime NOT NULL DEFAULT current_timestamp(),
   `status` enum('pending','confirmed','completed','cancelled') NOT NULL DEFAULT 'pending',
@@ -64,9 +66,8 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`booking_id`, `order_id`, `user_id`, `provider_id`, `service_id`, `arrival_date`, `booking_date`, `status`, `happy_code`) VALUES
-(30, 'TIE6Q7W3UAI', 8, 1, 4, '21st Sep,3:00 PM - 5:00 PM', '2024-09-16 11:25:15', 'confirmed', 799530),
-(45, '3YW31JT2EAV', 18, 1, 1, '17th Sep,9:00 AM - 12:00 PM', '2024-09-16 15:28:05', 'pending', 258792);
+INSERT INTO `bookings` (`booking_id`, `order_id`, `user_id`, `provider_id`, `service_id`, `issue`, `baddress`, `arrival_date`, `booking_date`, `status`, `happy_code`) VALUES
+(13, 'AML1K0AZ25E', 1, 3, 3, 'isse here', 'address here', '20th Sep,9:00 AM - 12:00 PM', '2024-09-20 16:56:18', 'pending', 575360);
 
 -- --------------------------------------------------------
 
@@ -108,6 +109,7 @@ INSERT INTO `category` (`cid`, `cname`) VALUES
 
 CREATE TABLE `provider` (
   `pid` int(11) NOT NULL,
+  `provider_category_id` int(11) DEFAULT 0,
   `fname` varchar(50) NOT NULL,
   `mname` varchar(50) DEFAULT NULL,
   `lname` varchar(50) NOT NULL,
@@ -136,9 +138,17 @@ CREATE TABLE `provider` (
 -- Dumping data for table `provider`
 --
 
-INSERT INTO `provider` (`pid`, `fname`, `mname`, `lname`, `gender`, `age`, `email`, `con_num`, `alt_num`, `address`, `password`, `pan_card`, `acc_num`, `ifsc`, `experience`, `photo`, `certificate`, `aadhaar`, `created_at`, `updated_at`, `is_deleted`, `is_verified`, `is_banned`) VALUES
-(1, 'John', 'M', 'Doe', 'Male', 35, 'john.doe@example.com', 9876543210, 9876543210, '123 Main St, Springfield', 'hashed_password', 'ABCDE1234F', 123456789012, 'SBIN0001234', '5 years as a plumber', 'john_photo.jpg', 'plumber_certificate.jpg', 'john_aadhaar.jpg', '2024-09-01 04:30:00', '2024-09-09 10:13:25', 0, 0, 0),
-(2, 'Jane', 'A', 'Smith', 'Female', 29, 'jane.smith@example.com', 9876543211, NULL, '456 Market St, Springfield', 'hashed_password', 'XYZDE5678K', 123456789013, 'HDFC0005678', '3 years as a hairstylist', 'jane_photo.jpg', 'stylist_certificate.jpg', 'jane_aadhaar.jpg', '2024-09-01 05:30:00', '2024-09-01 05:30:00', 0, 0, 0);
+INSERT INTO `provider` (`pid`, `provider_category_id`, `fname`, `mname`, `lname`, `gender`, `age`, `email`, `con_num`, `alt_num`, `address`, `password`, `pan_card`, `acc_num`, `ifsc`, `experience`, `photo`, `certificate`, `aadhaar`, `created_at`, `updated_at`, `is_deleted`, `is_verified`, `is_banned`) VALUES
+(1, 1, 'John', 'A.', 'Doe', 'Male', 35, 'john.doe@tech.com', 9876543210, 9123456789, '123 Tech Street', '123', 'ABCD1234P', 987654321012, 'IFSC1234567', '10 years', 'photo1.jpg', 'cert1.pdf', '1234567890', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(2, 2, 'Sarah', 'B.', 'Johnson', 'Female', 29, 'sarah.j@health.com', 8765432109, 9987654321, '456 Health Ave', '123', 'BCDE2345Q', 876543210987, 'IFSC9876543', '5 years', 'photo2.jpg', 'cert2.pdf', '2345678901', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(3, 3, 'Michael', 'C.', 'Smith', 'Male', 42, 'mike.smith@edu.com', 7654321098, 9765432108, '789 Education Blvd', '123', 'CDEF3456R', 765432109876, 'IFSC5432189', '15 years', 'photo3.jpg', 'cert3.pdf', '3456789012', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(4, 4, 'Patricia', 'D.', 'Lee', 'Female', 38, 'pat.lee@finance.com', 6543210987, 8654321097, '101 Finance Road', '123', 'DEFG4567S', 654321098765, 'IFSC4321987', '12 years', 'photo4.jpg', 'cert4.pdf', '4567890123', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(5, 5, 'David', 'E.', 'Martinez', 'Male', 33, 'dave.m@trans.com', 5432109876, 7543210986, '202 Transport Lane', '123', 'EFGH5678T', 543210987654, 'IFSC3210876', '7 years', 'photo5.jpg', 'cert5.pdf', '5678901234', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(6, 6, 'Emily', 'F.', 'Davis', 'Female', 28, 'emily.d@techworld.com', 9321456789, 9456789123, '789 Tech Park', '123', 'FGHI6789U', 932145678945, 'IFSC6789123', '3 years', 'photo6.jpg', 'cert6.pdf', '6789012345', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(7, 7, 'Robert', 'G.', 'Wilson', 'Male', 47, 'robert.w@medicenter.com', 9213457890, 9356789012, '567 Healthway', '123', 'GHIJ7890V', 921345789012, 'IFSC7890234', '20 years', 'photo7.jpg', 'cert7.pdf', '7890123456', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(8, 8, 'Sophia', 'H.', 'Brown', 'Female', 31, 'sophia.b@schoolwise.com', 9102345678, 9234567891, '123 Academy Lane', '123', 'HIJK8901W', 910234567891, 'IFSC8901345', '6 years', 'photo8.jpg', 'cert8.pdf', '8901234567', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(9, 9, 'James', 'I.', 'Taylor', 'Male', 36, 'james.t@finwise.com', 9012345678, 9123456789, '456 Money Ave', '123', 'IJKL9012X', 901234567890, 'IFSC9012456', '9 years', 'photo9.jpg', 'cert9.pdf', '9012345678', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
+(10, 10, 'Linda', 'J.', 'Anderson', 'Female', 40, 'linda.a@transitlink.com', 8901234567, 8976543210, '789 Roadway Blvd', '123', 'JKLM0123Y', 890123456789, 'IFSC0123567', '12 years', 'photo10.jpg', 'cert10.pdf', '9123456789', '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -152,14 +162,6 @@ CREATE TABLE `providertask` (
   `sub_category_id` int(11) NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `providertask`
---
-
-INSERT INTO `providertask` (`pt_id`, `provider_id`, `sub_category_id`, `date`) VALUES
-(1, 1, 1, '2024-09-05 09:00:00'),
-(2, 2, 2, '2024-09-06 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -189,19 +191,16 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`sid`, `sname`, `srating`, `sprice`, `sduration`, `sdes`, `sfeatures`, `scategory`, `simage`, `sattraction`, `sdiscount`, `screate`, `created_by`, `updated_by`) VALUES
-(1, 'Car wash', 4, 900, '2 hr', 'Basic Car Wash', '                    Special Car wash, Using high quality product                    ', 7, 'assets\\images\\services\\img_1.jpg', 'discount', 5, '2024-09-01 01:00:00', 1, 1),
+(1, 'Car washe', 4, 900, '2 hr', 'Basic Car Wash', 'Special Car wash, Using high quality product', 3, 'assets/images/services/img_11.jpg', 'discount', 5, '2024-09-01 01:00:00', 1, 1),
 (2, 'House Cleaning - Standard', 3, 1000, '4 hr', 'Basic cleaning for your home.', '', 5, 'assets\\images\\services\\img_2.jpg', NULL, 5, '2024-09-01 01:00:00', 2, 2),
-(3, 'Pipe Leak Repair', 4, 1500, '2 hr', 'Fixing and replacing leaking pipes.', '', 1, 'assets\\images\\services\\img_3.jpg', 'discount', 15, '2024-09-01 04:00:00', 1, 1),
-(4, 'Drain Cleaning', 5, 1200, '1 hr', 'Professional cleaning of clogged drains.', '', 1, 'assets\\images\\services\\img_4.jpg', NULL, 10, '2024-09-01 23:00:00', 1, 1),
-(5, 'Light Fixture Installation', 4, 1000, '1.5 hr', 'Installation of new light fixtures.', '', 1, 'assets\\images\\services\\img_5.jpg', 'new', 5, '2024-09-01 01:00:00', 1, 1),
-(6, 'Circuit Breaker Repair', 5, 2000, '3 hr', 'Repair and replacement of circuit breakers.', '', 1, 'assets\\images\\services\\img_6.jpg', 'popular', 20, '2024-09-03 00:00:00', 1, 1),
-(7, 'Men\'s Haircut', 5, 500, '30 min', 'Classic and modern men\'s haircuts.', '', 2, 'assets\\images\\services\\img_7.jpg', 'bestseller', 0, '2024-09-01 03:00:00', 2, 2),
-(8, 'Women\'s Haircut', 4, 800, '1 hr', 'Stylish women\'s haircuts for all hair types.', '', 2, 'assets\\images\\services\\img_8.jpg', 'new', 10, '2024-09-02 03:00:00', 2, 2),
-(9, 'Bridal Makeup', 5, 5000, '2 hr', 'Complete bridal makeup with hairstyling.', '', 2, 'assets\\images\\services\\img_9.jpg', 'exclusive', 15, '2024-09-03 01:00:00', 2, 2),
-(10, 'Party Makeup', 4, 1500, '1 hr', 'Glamorous makeup for parties and events.', '', 2, 'assets\\images\\services\\img_10.jpg', NULL, 10, '2024-09-04 02:00:00', 2, 2),
-(11, 'Express Car Wash', 4, 300, '30 min', 'Quick exterior wash for your car.', '', 3, 'assets\\images\\services\\img_11.jpg', 'popular', 5, '2024-09-01 01:00:00', 1, 2),
-(12, 'Interior Detailing', 5, 1200, '1.5 hr', 'Comprehensive interior cleaning and detailing.', '', 3, 'assets\\images\\services\\img_12.jpg', 'new', 20, '2024-09-01 23:00:00', 1, 2),
-(13, 'Deluxe Car Wash', 5, 800, '2 hr', 'Includes wax and tire shine.', '', 3, 'assets\\images\\services\\img_13.jpg', 'sale', 20, '2024-09-02 01:00:00', 2, 2);
+(3, 'Men\'s Haircut', 5, 500, '30 min', 'Classic and modern men\'s haircuts.', '', 2, 'assets\\images\\services\\img_7.jpg', 'bestseller', 0, '2024-09-01 03:00:00', 3, 3),
+(4, 'Women\'s Haircut', 4, 800, '1 hr', 'Stylish women\'s haircuts for all hair types.', '', 2, 'assets\\images\\services\\img_8.jpg', 'new', 10, '2024-09-02 03:00:00', 4, 4),
+(5, 'Bridal Makeup', 5, 5000, '2 hr', 'Complete bridal makeup with hairstyling.', '', 2, 'assets\\images\\services\\img_9.jpg', 'exclusive', 15, '2024-09-03 01:00:00', 5, 5),
+(6, 'Party Makeup', 4, 1500, '1 hr', 'Glamorous makeup for parties and events.', '', 2, 'assets\\images\\services\\img_10.jpg', NULL, 10, '2024-09-04 02:00:00', 6, 6),
+(7, 'Deluxe Car Wash', 5, 800, '2 hr', 'Includes wax and tire shine.', '', 3, 'assets\\images\\services\\img_13.jpg', 'sale', 20, '2024-09-02 01:00:00', 7, 7),
+(8, 'Deep House Cleaning', 4, 2500, '6 hr', 'Comprehensive deep cleaning for your home.', '', 5, 'assets/images/services/img_11.jpg', 'sale', 15, '2024-09-05 01:00:00', 8, 8),
+(9, 'Full Body Massage', 5, 2000, '1.5 hr', 'Relaxing full-body massage with essential oils.', '', 4, 'assets/images/services/img_12.jpg', 'popular', 10, '2024-09-06 01:00:00', 9, 9),
+(10, 'Facial Treatment', 4, 1200, '1 hr', 'Rejuvenating facial for all skin types.', '', 4, 'assets/images/services/img_13.jpg', NULL, 5, '2024-09-07 01:00:00', 10, 10);
 
 -- --------------------------------------------------------
 
@@ -273,10 +272,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `isverified`, `is_deleted`, `ucreate`, `v_code`) VALUES
-(8, 'Pritam', NULL, 'Mahata', 'test@gmail.com', '$2y$10$xBh05JMX.BzOfwz7gGgHuOrQB/X5keE4C59t41L26Jpx4Lm4Ro2bC', 312312313, 123123123, 'qweqweds asd as', 1, 0, '2024-09-15 22:10:34', 'f138c66bf86f285a11e6f89de5847de2'),
-(17, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2'),
-(18, 'qwe', 'qwe', 'qwe', 'temp.token.co@gmail.com', '$2y$10$yvrNT1XOMdlehJNBmZHyzujyG3QDyZAaHRfxUPZE7gMYt8EfgQoTm', 123, 123, 'Earth', 1, 0, '2024-09-09 10:37:37', 'a26f1c1b5d7ee822a48e6b494949b4c2'),
-(19, '123', '123', '123', 'pritammahata12@gmail.com', '$2y$10$5JgYcooUkiR/hufqeGN8ROmMdCtSzzEm7sUEKUALmbFL7EoqfwBRW', 123, 123, '1231313131', 1, 0, '2024-09-09 10:43:47', '4e5e750155da623ce65359985e4f9600');
+(1, 'Pritam', NULL, 'Mahata', 'test@gmail.com', '$2y$10$xBh05JMX.BzOfwz7gGgHuOrQB/X5keE4C59t41L26Jpx4Lm4Ro2bC', 312312313, 123123123, 'qweqweds asd as', 1, 0, '2024-09-15 22:10:34', 'f138c66bf86f285a11e6f89de5847de2'),
+(2, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2'),
+(3, 'qwe', 'qwe', 'qwe', 'temp.token.co@gmail.com', '$2y$10$yvrNT1XOMdlehJNBmZHyzujyG3QDyZAaHRfxUPZE7gMYt8EfgQoTm', 123, 123, 'Earth', 1, 0, '2024-09-09 10:37:37', 'a26f1c1b5d7ee822a48e6b494949b4c2'),
+(4, '123', '123', '123', 'pritammahata12@gmail.com', '$2y$10$5JgYcooUkiR/hufqeGN8ROmMdCtSzzEm7sUEKUALmbFL7EoqfwBRW', 123, 123, '1231313131', 1, 0, '2024-09-09 10:43:47', '4e5e750155da623ce65359985e4f9600');
 
 --
 -- Indexes for dumped tables
@@ -292,10 +291,7 @@ ALTER TABLE `admin`
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `provider_id` (`provider_id`),
-  ADD KEY `service_id` (`service_id`);
+  ADD PRIMARY KEY (`booking_id`);
 
 --
 -- Indexes for table `category`
@@ -308,7 +304,8 @@ ALTER TABLE `category`
 --
 ALTER TABLE `provider`
   ADD PRIMARY KEY (`pid`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `fk_provider_category` (`provider_category_id`);
 
 --
 -- Indexes for table `providertask`
@@ -352,43 +349,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `provider`
 --
 ALTER TABLE `provider`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `providertask`
 --
 ALTER TABLE `providertask`
-  MODIFY `pt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pt_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- AUTO_INCREMENT for table `sub_category`
---
-ALTER TABLE `sub_category`
-  MODIFY `subcat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -401,6 +386,12 @@ ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`uid`),
   ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`pid`),
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`service_id`) REFERENCES `services` (`sid`);
+
+--
+-- Constraints for table `provider`
+--
+ALTER TABLE `provider`
+  ADD CONSTRAINT `fk_provider_category` FOREIGN KEY (`provider_category_id`) REFERENCES `category` (`cid`);
 
 --
 -- Constraints for table `providertask`
