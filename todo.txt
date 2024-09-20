@@ -107,3 +107,20 @@ Admin Page
 1. provider and client details admin can delete,ban          - Done
 
 demo message 
+
+
+
+19-09-2024 task
+
+  remove email id from booking modal and adding user name, issue - done
+  booking modal style - done
+  address and contact number mandetory - done
+  order id booking to request id - done
+
+
+  admin dashboard
+
+  adding animation in serviceHub logo
+
+  adding service engineers dashboard
+  date selection issue
