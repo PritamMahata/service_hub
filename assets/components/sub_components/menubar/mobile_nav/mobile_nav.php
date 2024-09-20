@@ -9,101 +9,108 @@
         <li class="menu-category sidebyside">
             <a href="./index.php" class="menu-title"><span class="material-symbols-rounded">home</span>Home</a>
         </li>
-        <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-                <p class="menu-title">Lorem ipsum</p>
-                <div>
-                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
-                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
-                </div>
-            </button>
-            <ul class="submenu-category-list" data-accordion>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-                <p class="menu-title">Lorem ipsum</p>
-                <div>
-                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
-                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
-                </div>
-            </button>
-            <ul class="submenu-category-list" data-accordion>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-                <p class="menu-title">Lorem ipsum</p>
-                <div>
-                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
-                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
-                </div>
-            </button>
-            <ul class="submenu-category-list" data-accordion>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-                <p class="menu-title">Lorem ipsum</p>
-                <div>
-                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
-                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
-                </div>
-            </button>
-            <ul class="submenu-category-list" data-accordion>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-                <li class="submenu-category">
-                    <a href="#" class="submenu-title">Lorem ipsum</a>
-                </li>
-            </ul>
-        </li>
+        <?php
+        if ($isLoggedIn) { ?>
+            <li class="menu-category sidebyside">
+                <a href="./profile.php" class="menu-title"><span class="material-symbols-rounded">Person</span>Profile</a>
+            </li>
+        <?php } ?>
         <li class="menu-category sidebyside">
-            <a href="./index.php" class="menu-title"><span class="material-symbols-rounded">home</span>Home</a>
+            <a href="./category.php" class="menu-title"><span class="material-symbols-rounded">view_list</span>Category</a>
         </li>
+        <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+                <p class="menu-title">option 1</p>
+                <div>
+                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
+                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
+                </div>
+            </button>
+            <ul class="submenu-category-list" data-accordion>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+                <p class="menu-title">option 2</p>
+                <div>
+                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
+                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
+                </div>
+            </button>
+            <ul class="submenu-category-list" data-accordion>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+                <p class="menu-title">option 3</p>
+                <div>
+                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
+                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
+                </div>
+            </button>
+            <ul class="submenu-category-list" data-accordion>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+                <p class="menu-title">option 4</p>
+                <div>
+                    <span class="material-symbols-rounded add-icon">keyboard_arrow_down</span>
+                    <span class="material-symbols-rounded remove-icon">keyboard_arrow_up</span>
+                </div>
+            </button>
+            <ul class="submenu-category-list" data-accordion>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+                <li class="submenu-category">
+                    <a href="#" class="submenu-title">Lorem ipsum</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="menu-category sidebyside">
             <a href="./index.php" class="menu-title"><span class="material-symbols-rounded">home</span>Home</a>
         </li>

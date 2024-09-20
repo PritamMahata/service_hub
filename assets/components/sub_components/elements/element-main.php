@@ -43,7 +43,9 @@
                 echo "<img src='" . htmlspecialchars($row['simage']) . "' width='300' class='element-img default'>";
                 // echo "<p class='showcase-badge'>" . htmlspecialchars($row['sdiscount']) . "</p>";
                 if (isset($row['sdiscount'])) {
-                    echo "<p class='showcase-badge'>" . ($row['sdiscount']) . "%" . "</p>";
+                    if ($row['sdiscount'] > 0) {
+                        echo "<p class='showcase-badge'>" . ($row['sdiscount']) . "%" . "</p>";
+                    }
                     // echo "<p class='showcase-badge'>" . gettype((int)($row['sdiscount'])) . "%" . "</p>";
                 }
                 echo "<div class='showcase-actions'>";

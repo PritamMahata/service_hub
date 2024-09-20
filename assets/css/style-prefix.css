@@ -202,7 +202,7 @@ body::-webkit-scrollbar-thumb:hover {
   letter-spacing: 0.4px;
   text-transform: capitalize;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-color);
+  /* border-bottom: 1px solid var(--border-color); */
   /*margin-bottom: 30px;*/
 }
 
@@ -659,9 +659,9 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   align-items: flex-end;
 }
-.header-logo p{
 
-}
+.header-logo p {}
+
 .header-logo img {
   margin: auto;
   margin: 0 -3px 0 10px;
@@ -2003,7 +2003,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .testimonial-card {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding: 30px 20px;
   border: 3px solid var(--border-color);
   -webkit-border-radius: var(--border-radius-md);
@@ -2055,6 +2055,12 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: var(--border-radius-md);
   overflow: hidden;
   margin-bottom: 25px;
+}
+
+.cta-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .cta-banner {
@@ -2200,6 +2206,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
@@ -2215,6 +2222,12 @@ body::-webkit-scrollbar-thumb:hover {
 .blog-card {
   min-width: 100%;
   scroll-snap-align: start;
+}
+
+.blog-card img {
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .blog-banner {
@@ -3568,8 +3581,8 @@ footer {
   }
 
   .blog-card {
-    min-width: -webkit-calc(25% - 22.5px);
-    min-width: calc(25% - 22.5px);
+    /* min-width: -webkit-calc(25% - 22.5px);
+    min-width: calc(25% - 22.5px); */
   }
 
   /**
