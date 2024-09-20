@@ -90,8 +90,9 @@ include('./PHPMailer/mail.php');
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" class="email-field" placeholder="E-mail ID" required>
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required>
                     </div>
+                    <div id="msg" style="color: red;"></div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
                         <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" autocomplete="on" required>
@@ -129,8 +130,6 @@ include('./PHPMailer/mail.php');
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
     </div>
@@ -138,6 +137,24 @@ include('./PHPMailer/mail.php');
     <script src="./assets/js/relog.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.getElementById('email').addEventListener('blur', function() {
+            let email = $(this).val(); // Use 'this' to refer to the email input
+            $.ajax({
+                method: "POST",
+                url: "db/checkEmail.php",
+                data: {
+                    email: email
+                },
+                success: function(result) {
+                    $("#msg").html("<strong>" + result + "</strong>");
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 
 </html>
