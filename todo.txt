@@ -124,3 +124,17 @@ demo message
 
   adding service engineers dashboard
   date selection issue
+
+
+
+admin login
+
+  javascript: (function () {  function F1(ele, val) {    if (document.getElementById(ele) && val != "") {      document.getElementById(ele).value = val;    }  }    F1("aemail", "admin@gmail.com");  F1("apwd", "123456");})();
+
+user login
+
+javascript: (function () {  function F1(ele, val) {    if (document.getElementById(ele) && val != "") {      document.getElementById(ele).value = val;    }  }    F1("email", "test@gmail.com");  F1("password", "123");})();
+
+service engineers login
+
+javascript: (function () {  function F1(ele, val) {    if (document.getElementById(ele) && val != "") {      document.getElementById(ele).value = val;    }  }    F1("semail", "john.doe@tech.com");  F1("password", "123");})();
