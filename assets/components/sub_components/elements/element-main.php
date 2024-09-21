@@ -76,7 +76,9 @@
                 echo "</div>";
                 echo "<div class='price-box'>";
                 echo "<p class='price'>₹" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>";
-                echo "<del>₹" . htmlspecialchars($row['sprice']) . "</del>";
+                if ($row['sdiscount'] > 0) {
+                    echo "<del>₹" . htmlspecialchars($row['sprice']) . "</del>";
+                }
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";

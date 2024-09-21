@@ -16,7 +16,7 @@
                 <h1 class="blog-title"><?php echo $row['sdes'] ?></h1>
               </a>
               <div class="price-box">
-                <p class="price">$<?php echo $row['sprice'] ?></p>
+                <p class="price">₹<?php echo $row['sprice'] ?></p>
               </div>
             </div>
           </div>
