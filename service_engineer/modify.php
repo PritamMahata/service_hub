@@ -1,20 +1,24 @@
 <?php require("./components/header.php");
 $seID = isset($_SESSION['se_info']['pid']) ? $_SESSION['se_info']['pid'] : 0;
 $seCategoryID = isset($_SESSION['se_info']['provider_category_id']) ? $_SESSION['se_info']['provider_category_id'] : 0;
+$is_service_created = false;
+// Check if service exists for the provider
+$rec = ['sname' => '', 'scategory' => '', 'sduration' => '', 'sprice' => '', 'sdiscount' => '', 'sdes' => '', 'sfeatures' => '']; // Default empty values
+
 if ($seID) {
     $src = "SELECT * FROM services WHERE created_by=$seID";
     $rs = mysqli_query($conn, $src);
-    $rec = mysqli_fetch_assoc($rs);
-} else {
-    $rec = ['sname' => '', 'scategory' => '', 'sduration' => '', 'sprice' => '', 'sdiscount' => '', 'sdes' => '', 'sfeatures' => ''];
+
+    if (mysqli_num_rows($rs) > 0) {
+        $rec = mysqli_fetch_assoc($rs); // If service exists, assign its values to $rec
+        $is_service_created = true;
+    }
 }
 
 // image upload
-
 $simage = "";
 function upload_image()
 {
-    // The file path that includes the directory and the original file name
     $targetDir = "../assets/images/services/";
     $dataDir = "assets/images/services/" . basename($_FILES["simage"]["name"]);
     $targetFile = $targetDir . basename($_FILES["simage"]["name"]);
@@ -43,11 +47,9 @@ function upload_image()
         $uploadOk = 0;
     }
 
-    //     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
     } else {
-        // Try to upload file
         if (move_uploaded_file($_FILES["simage"]["tmp_name"], $targetFile)) {
             global $simage;
             $simage = $dataDir;
@@ -65,13 +67,14 @@ if (isset($_POST['add'])) {
     $sfeatures = $_POST['sfeatures'];
     upload_image();
     $sql = "INSERT INTO services (sname, sprice, sduration, sdes, sfeatures, scategory, simage, sdiscount,created_by) 
-            VALUES ('$sname', '$sprice', '$sduration', '$sdes', '$sfeatures', '$scategory', '$simage', '$sdiscount','1')";
+            VALUES ('$sname', '$sprice', '$sduration', '$sdes', '$sfeatures', '$scategory', '$simage', '$sdiscount','$seID')";
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Service Added Successfully')</script>";
     } else {
         echo "<script>alert('Error Adding Service')</script>";
     }
 }
+
 if (isset($_POST['update'])) {
     $sname = $_POST['sname'];
     $scategory = $_POST['scategory'];
@@ -89,8 +92,6 @@ if (isset($_POST['update'])) {
     }
 }
 
-
-
 ?>
 <main>
     <div class="container-fluid px-4">
@@ -106,14 +107,14 @@ if (isset($_POST['update'])) {
                         <label for="firstName">Service Name </label>
                         <input type="text" class="form-control" id="firstName" placeholder="" name="sname" value="<?php echo $rec['sname'] ?>" required="">
                         <div class="invalid-feedback">
-                            Valid first name is required.
+                            Valid service name is required.
                         </div>
                     </div>
                     <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Category</label>
                         <select class="form-select" id="scategory" name="scategory">
                             <?php
-                            if (isset($rec['scategory'])) {
+                            if (isset($rec['scategory']) && !$rec['scategory'] == '') {
                                 $cid = $rec['scategory'];
                                 $sql2 = "SELECT * FROM category where cid = $cid";
                                 $result2 = $conn->query($sql2);
@@ -141,7 +142,7 @@ if (isset($_POST['update'])) {
                         <label for="lastName">Duration</label>
                         <input type="text" class="form-control" id="lastName" placeholder="hrs" name="sduration" value="<?php echo $rec['sduration'] ?>" required="">
                         <div class="invalid-feedback">
-                            Valid last name is required.
+                            Valid duration is required.
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
@@ -156,25 +157,21 @@ if (isset($_POST['update'])) {
                 <div class="mb-3">
                     <label for="description">Description</label>
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                        </div>
                         <input type="text" class="form-control" id="description" placeholder="Write a short description" required="" name="sdes" value="<?php echo $rec['sdes'] ?>">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="features">Featurs</label>
-                    <input type="text" class="form-control" id="features" placeholder="write featurs separeted with ," name="sfeatures" value="<?php echo $rec['sfeatures']; ?>">
-                    <!-- $rec['sfeatures'] -->
+                    <label for="features">Features</label>
+                    <input type="text" class="form-control" id="features" placeholder="write features separated with ," name="sfeatures" value="<?php echo $rec['sfeatures']; ?>">
                 </div>
                 <div class="mb-3">
                     <div class="custom-file">
                         <label class="custom-file-label" for="customFile">Choose file</label>
-                        <!-- <input type="file" class="custom-file-input form-control" id="customFile"> -->
                         <input type="file" class="form-control" id="simage" name="simage" accept="image/*" required>
                     </div>
                 </div>
                 <?php
-                if ($seCategoryID != 0) { ?>
+                if ($is_service_created) { ?>
                     <button class="btn btn-primary btn-lg btn-block" name="update">Update Service</button>
                 <?php
                 } else { ?>

@@ -39,7 +39,7 @@
                 <tr>
                     <th scope="col">Request Id</th>
                     <th scope="col">Customer Name</th>
-                    <th scope="col">Service Name</th>
+                    <th scope="col">Ph No.</th>
                     <th scope="col">Booking Address</th>
                     <th scope="col">Issue</th>
                     <th scope="col">Booking date</th>
@@ -63,10 +63,10 @@
                         <tr>
                             <th><?php echo $row['order_id']; ?></th>
                             <th><?php echo $row['fname'] . " " . $row['lname']; ?></th>
-                            <th><?php echo $row['sname']; ?></th>
+                            <th><?php echo $row['bphone']; ?></th>
                             <th><?php echo $row['baddress']; ?></th>
                             <th><?php echo $row['issue']; ?></th>
-                            <th><?php echo $row['booking_date']; ?></th>
+                            <th><?php echo $row['arrival_date']; ?></th>
                             <th>
                                 <select class="form-select" onchange="changeStatus(<?php echo $row['booking_id']; ?>, this.value)">
                                     <option selected disabled value="pending" <?php if ($row['status'] == 'pending') echo 'selected'; ?>>Pending</option>

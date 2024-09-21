@@ -43,7 +43,7 @@
                                     if (isset($_POST['ok'])) {
                                         $semail = $_POST['semail'];
                                         $password = $_POST['password'];
-                                        $src = "SELECT * FROM provider WHERE email='$semail' AND password='$password'";
+                                        $src = "SELECT * FROM provider WHERE email='$semail' AND password='$password' AND is_verified=1 AND is_deleted=0 AND is_banned=0";
                                         $rs = mysqli_query($conn, $src) or die(mysqli_error($conn));
                                         if (mysqli_num_rows($rs) > 0) {
                                             $rec = mysqli_fetch_assoc($rs);
@@ -52,7 +52,7 @@
                                         } else {
                                     ?>
                                             <div class="alert alert-danger">
-                                                Invalid email or password
+                                                Invalid email or password or your account is not verified
                                             </div>
                                     <?php
                                         }
