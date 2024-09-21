@@ -103,6 +103,12 @@
           </div>
           <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
         </li>
+        <li class="footer-nav-item flex">
+          <div class="icon-box">
+            <span class="material-symbols-rounded">how_to_reg</span>
+          </div>
+          <a href="provider.php" class="footer-nav-link">Register as a professional </a>
+        </li>
       </ul>
       <ul class="footer-nav-list">
         <li class="footer-nav-item">
@@ -135,10 +141,10 @@
       </ul>
     </div>
   </div>
-  <!-- <div class="footer-bottom">
-      <div class="container">
-        <img src="./assets/images/payment.png" class="payment-img">
-        <p class="copyright"> Copyright &copy; <a href="#">Service Hub</a> all rights reserved. </p>
-      </div>
-    </div> -->
+  <div class="footer-bottom">
+    <div class="container">
+      <!-- <img src="./assets/images/payment.png" class="payment-img"> -->
+      <p class="copyright"> Copyright &copy; <a href="#">Service Hub</a> all rights reserved. </p>
+    </div>
+  </div>
 </footer>
