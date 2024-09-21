@@ -35,10 +35,9 @@ function generateHappyCode($length = 6)
 
 if (isset($_POST['ok'])) {
   if ($_SESSION['isLogin']) {
-    $con_num = $_POST['con_num'];
-    $alt_num = $_POST['alt_num'];
     $issue = $_POST['issue'];
     $baddress = $_POST['baddress'];
+    $bphone = $_POST['bphone'];
     $date = $_POST['rd1'];
     $time = $_POST['rd2'];
     $orderID = generateOrderID();
@@ -51,7 +50,7 @@ if (isset($_POST['ok'])) {
       echo "0 results";
     }
     $providerId = $row['created_by'];
-    $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id,issue, baddress, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID','$issue','$baddress', '$date,$time', current_timestamp(), 'pending','$happyCode')";
+    $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id,issue, baddress,bphone, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID','$issue','$baddress','$bphone','$date,$time', current_timestamp(), 'pending','$happyCode')";
     if ($conn->query($sql) === TRUE) {
       toast("success", "Booking Registered Sucessfully");
     } else {
@@ -83,7 +82,7 @@ if (isset($_POST['ok'])) {
         <div class="col_field">
           <div class="row_field">
             <label class="newsletter-title">Contact Number</label>
-            <input type="number" name="con_num" class="email-field" placeholder="Contact Number" required>
+            <input type="number" name="bphone" class="email-field" placeholder="Contact Number" required>
           </div>
           <div class="row_field">
             <label class="newsletter-title">Alternate Number</label>
