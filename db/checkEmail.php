@@ -12,10 +12,10 @@ if (isset($_POST['email'])) {
 
     if ($result->num_rows > 0) {
         // Email is already registered
-        echo "This email is already registered.";
+        echo "<strong style = 'color:red;'>This email is already registered.</strong>";
     } else {
         // Email is available
-        echo "Email is available.";
+        echo "<strong style = 'color:green;'>Email is available.</strong>";
     }
 
     $stmt->close();
