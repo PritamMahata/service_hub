@@ -89,6 +89,76 @@
     </div>
 </main>
 
+<!-- <script>
+    let bookingIdToDelete = null;
+
+    // Function to set the booking ID for deletion
+    function setDeleteId(bookingId) {
+        bookingIdToDelete = bookingId;
+        document.getElementById('deleteServiceText').innerText = "Service ID: " + bookingId; // Update modal text
+    }
+
+    // Function to delete the service after confirmation
+    function deleteService() {
+        if (bookingIdToDelete) {
+            window.location.href = `services.php?booking_id=${bookingIdToDelete}`;
+        }
+    }
+
+    // AJAX function to change the status of the booking
+    function changeStatus(bookingId, newStatus) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'components/update_status.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log('Status updated successfully');
+            } else {
+                console.error('Error occurred while updating status.');
+            }
+        };
+        if (newStatus === 'completed') {
+            modal();
+        }
+        xhr.send('booking_id=' + bookingId + '&status=' + newStatus);
+    }
+
+    function modal(bookingId) {
+        bookingIdToDelete = bookingId;
+        var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+        deleteModal.show();
+    }
+
+    function deleteService() {
+        let happyCode = document.getElementById('inp_happyCode').value;
+        if (bookingIdToDelete && happyCode) {
+            // Make AJAX request to validate happy code and delete service if valid
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'components/validate_happy_code.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    let response = JSON.parse(xhr.responseText);
+                    if (response.status === "success") {
+                        alert(response.message);
+                        // Redirect or refresh the page to update the services list
+                        window.location.reload();
+                    } else {
+                        alert(response.message);
+                    }
+                } else {
+                    alert('An error occurred while processing your request.');
+                }
+            };
+
+            // Send the booking ID and happy code to the server
+            xhr.send('booking_id=' + bookingIdToDelete + '&happyCode=' + happyCode);
+        } else {
+            alert('Please enter the happy code.');
+        }
+    }
+</script> -->
 <script>
     let bookingIdToDelete = null;
 
@@ -158,6 +228,23 @@
             alert('Please enter the happy code.');
         }
     }
+
+    // Function to reload the booking table every 1 second
+    function reloadBookingTable() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', './components/fetch_bookings.php', true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                document.querySelector('table tbody').innerHTML = xhr.responseText;
+            } else {
+                console.error('Error occurred while fetching booking data.');
+            }
+        };
+        xhr.send();
+    }
+
+    // Set the interval to reload the table every second
+    setInterval(reloadBookingTable, 1000);
 </script>
 
 <?php require('./components/footer.php'); ?>
