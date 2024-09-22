@@ -45,7 +45,7 @@
                             <!-- <td><?php echo $row['gender'] ?></td> -->
                             <!-- <td><?php echo $row['age'] ?></td> -->
                             <td><?php echo $row['email'] ?></td>
-                            <td><?php echo $row['con_num'] ?></th>
+                            <td><?php echo $row['con_num'] ?></td>
                                 <!-- <th><?php echo $row['alt_num'] ?></td> -->
                             <td><?php echo $row['address'] ?></td>
                             <!-- <td><?php echo $row['pan_card'] ?></td> -->

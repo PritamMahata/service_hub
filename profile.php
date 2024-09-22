@@ -102,7 +102,7 @@ if ($emailID) {
                                     <input type="number" class="form-control" value="<?php echo $p_row['con_num'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">ALTERNET CONTACT NUMBER</label>
+                                    <label class="form-label">ALTERNATE CONTACT NUMBER</label>
                                     <input type="number" class="form-control" value="<?php echo $p_row['alt_num'] ?>">
                                 </div>
                                 <div class="form-group">
