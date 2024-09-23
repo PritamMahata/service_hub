@@ -138,3 +138,11 @@ javascript: (function () {  function F1(ele, val) {    if (document.getElementBy
 service engineers login
 
 javascript: (function () {  function F1(ele, val) {    if (document.getElementById(ele) && val != "") {      document.getElementById(ele).value = val;    }  }    F1("semail", "john.doe@tech.com");  F1("password", "123");})();
+
+
+pending 
+set options in sidebar for phone,
+random rateing on services,
+fix grid problem,
+confirm problem in provicet booking table for auto realod table
+image auto slide or button
