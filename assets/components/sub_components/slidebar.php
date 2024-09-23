@@ -94,9 +94,9 @@
 
                                 <div class="price-box">
                                     <del>
-                                        <p class="price">$<?php echo $row['sprice'] ?></p>
+                                        <p class="price">₹<?php echo $row['sprice'] ?></p>
                                     </del>
-                                    <?php echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?>
+                                    <?php echo "<p class='price'>₹" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?>
                                 </div>
                             </div>
                         </div>
