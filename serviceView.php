@@ -14,7 +14,6 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
     <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
     <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/relog.css">
     <link rel="stylesheet" href="./assets/css/option.css">
     <!-- google font link -->

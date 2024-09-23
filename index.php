@@ -15,7 +15,6 @@ $category_title = true;
     <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
     <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/relog.css">
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
