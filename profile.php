@@ -38,7 +38,6 @@ if ($emailID) {
     <!-- custom css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/relog.css">
     <link rel="stylesheet" href="./assets/css/profile.css">
     <!-- google font link -->
