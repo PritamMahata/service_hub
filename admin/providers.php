@@ -7,7 +7,7 @@
         </ol>
     </div>
     <div class="container-fluid px-4">
-        <!-- <h3 class="mb-0">All Provides</h3> -->
+        <h3 class="mb-0">All Provides</h3>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>

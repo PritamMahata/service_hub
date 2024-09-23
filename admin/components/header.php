@@ -62,21 +62,21 @@ if (empty($_SESSION['a_info'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <div class="sb-sidenav-menu-heading">Admin</div>
+                        <div class="sb-sidenav-menu-heading">Attributes</div>
                         <a class="nav-link" href="services.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-wrench"></i></div>
                             Services
                         </a>
                         <a class="nav-link" href="users.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
                             Users
                         </a>
                         <a class="nav-link" href="providers.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-handshake"></i></div>
                             Providers
                         </a>
                         <a class="nav-link" href="booking.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days"></i></div>
                             Bookings
                         </a>
                     </div>

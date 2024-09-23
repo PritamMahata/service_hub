@@ -42,7 +42,7 @@ if (isset($_GET['booking_id'])) {
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Services</li>
+            <li class="breadcrumb-item active">Bookings</li>
         </ol>
     </div>
     <div class="container-fluid px-4">
@@ -54,9 +54,9 @@ if (isset($_GET['booking_id'])) {
                     <th scope="col">Assigned Service Engineer</th>
                     <th scope="col">Service Name</th>
                     <th scope="col">Service Category</th>
-                    <th scope="col">Booking date</th>
+                    <th scope="col">Booking Date</th>
                     <th scope="col">Status</th>
-                    <th scope="col" colspan="2">operation</th>
+                    <th scope="col" colspan="2">Operations</th>
                 </tr>
             </thead>
             <tbody>
