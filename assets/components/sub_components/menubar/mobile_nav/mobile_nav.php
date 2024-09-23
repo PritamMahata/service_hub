@@ -18,7 +18,8 @@
         <li class="menu-category sidebyside">
             <a href="./category.php" class="menu-title"><span class="material-symbols-rounded">view_list</span>Category</a>
         </li>
-        <li class="menu-category">
+        
+        <!-- <li class="menu-category">
             <button class="accordion-menu" data-accordion-btn>
                 <p class="menu-title">option 1</p>
                 <div>
@@ -109,34 +110,13 @@
                     <a href="#" class="submenu-title">Lorem ipsum</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
         <li class="menu-category sidebyside">
-            <a href="./index.php" class="menu-title"><span class="material-symbols-rounded">home</span>Home</a>
+            <a href="./assets/components/logout.php" class="menu-title"><span class="material-symbols-rounded">contact_support</span>Contact Us</a>
+        </li>
+        <li class="menu-category sidebyside">
+            <a href="./assets/components/logout.php" class="menu-title"><span class="material-symbols-rounded">logout</span>Logout</a>
         </li>
     </ul>
-    <div class="menu-bottom">
-        <ul class="menu-social-container">
-            <?php
-            if ($isLoggedIn) { ?>
-                <li>
-                    <a href="./profile.php" class="social-link">
-                        <span class="material-symbols-rounded">account_circle</span>
-                    </a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a href="./login.php" class="social-link">
-                        <span class="material-symbols-rounded">login</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./signup.php" class="social-link">
-                        <span class="material-symbols-rounded">person_add</span>
-                    </a>
-                </li>
-            <?php }
-            ?>
-        </ul>
-    </div>
 </nav>

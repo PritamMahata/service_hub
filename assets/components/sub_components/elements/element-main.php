@@ -27,9 +27,7 @@
     <p class="showcase-badge angle pink">new</p> 
     -->
 
-    <div class="element-grid" <?php if (isset($is_category)) {
-                                    echo "style='grid-template-columns: repeat(4, 1fr);'";
-                                } ?>>
+    <div class="element-grid">
         <?php
         if ($result->num_rows > 0) {
             $count = 0;
@@ -49,9 +47,9 @@
                     // echo "<p class='showcase-badge'>" . gettype((int)($row['sdiscount'])) . "%" . "</p>";
                 }
                 echo "<div class='showcase-actions'>";
-                echo "<button class='btn-action'>";
-                echo "<ion-icon name='heart-outline'></ion-icon>";
-                echo "</button>";
+                // echo "<button class='btn-action'>";
+                // echo "<ion-icon name='heart-outline'></ion-icon>";
+                // echo "</button>";
                 echo "<button class='btn-action'>";
                 echo "<ion-icon name='eye-outline'></ion-icon>";
                 echo "</button>";
