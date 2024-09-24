@@ -77,6 +77,12 @@ button {
   cursor: pointer;
 }
 
+.table td,
+.table th {
+  vertical-align: unset;
+  text-align: center;
+}
+
 img,
 ion-icon,
 button,
@@ -1735,9 +1741,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-.cart-container{
+.cart-container {
   height: 100vh;
 }
+
 /*-----------------------------------*\
   #element GRID
 \*-----------------------------------*/

@@ -55,8 +55,12 @@ if (isset($_POST['ok'])) {
     $providerId = $row['created_by'];
     $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id,issue, baddress,bphone, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID','$issue','$baddress','$bphone','$date,$time', current_timestamp(), 'pending','$happyCode')";
     if ($conn->query($sql) === TRUE) {
-      // echo "<script>window.location='category.php';</script>";
       toast("success", "Booking Registered Sucessfully");
+      echo "<script>
+             setInterval(()=>{
+                window.location='serviceView.php?serviceId=$serviceID';
+              },3000);
+            </script>";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
