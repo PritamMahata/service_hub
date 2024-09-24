@@ -141,11 +141,11 @@ javascript: (function () {  function F1(ele, val) {    if (document.getElementBy
 
 
 pending 
-set options in sidebar for phone,
-random rateing on services,
-fix grid problem,
-confirm problem in provicet booking table for auto realod table
-image auto slide or button
-error in address input (signup)
-change footer
+set options in sidebar for phone, - done
+random rateing on services, - done
+fix grid problem, - done
+confirm problem in provicet booking table for auto realod table - done
+error in address input (signup) 
+change footer 
 fix logo 
+image auto slide or button
