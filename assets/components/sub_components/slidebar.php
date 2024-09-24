@@ -58,7 +58,6 @@
         ?>
     </div>
 
-
     <div class="product-showcase">
         <h3 class="showcase-heading">Bestselling Services</h3>
         <div class="showcase-wrapper">
@@ -68,18 +67,14 @@
                 $res = mysqli_query($conn, $sql);
                 for ($a = 1; $a <= 4; $a++) {
                     while ($row = mysqli_fetch_assoc($res)) { ?>
-
-                        <div class="showcase" onclick="window.location = './category.php?search=<?php echo $row['sname'] ?>'">
+                        <div class="showcase mini-showcase" onclick="window.location.href = './serviceView.php?serviceId=<?php echo $row['sid'] ?>'">
                             <a href="#" class="showcase-img-box">
-                                <img src="<?php echo $row['simage'] ?>" width="75" height="75"
-                                    class="showcase-img">
+                                <img src="<?php echo $row['simage'] ?>" width="75" height="75" class="showcase-img">
                             </a>
                             <div class="showcase-content">
-
                                 <a href="#">
                                     <h4 class="showcase-title"><?php echo $row['sname'] ?></h4>
                                 </a>
-
                                 <div class="showcase-rating">
                                     <?php
                                     $i = 0;
@@ -91,7 +86,6 @@
                                     }
                                     ?>
                                 </div>
-
                                 <div class="price-box">
                                     <del>
                                         <p class="price">₹<?php echo $row['sprice'] ?></p>
@@ -102,10 +96,7 @@
                         </div>
                 <?php }
                 } ?>
-
             </div>
         </div>
-
     </div>
-
 </div>

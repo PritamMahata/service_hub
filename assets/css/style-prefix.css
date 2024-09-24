@@ -1409,6 +1409,9 @@ body::-webkit-scrollbar-thumb:hover {
 /*-----------------------------------*\
   #element MINIMAL
 \*-----------------------------------*/
+.mini-showcase :hover {
+  cursor: pointer;
+}
 
 .element-minimal {
   margin-bottom: 30px;
@@ -2235,6 +2238,10 @@ body::-webkit-scrollbar-thumb:hover {
 .blog-card {
   min-width: 100%;
   scroll-snap-align: start;
+}
+
+.blog-card :hover {
+  cursor: pointer;
 }
 
 .blog-card img {

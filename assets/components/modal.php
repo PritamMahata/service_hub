@@ -85,7 +85,7 @@ if (isset($_POST['ok'])) {
         </div>
         <div class="row_field">
           <label class="newsletter-title">Name</label>
-          <input type="text" name="email" class="email-field" placeholder="Name" value="<?php echo $fname . " " . $mname . " " . $lname ?>" required>
+          <input type="text" name="email" class="email-field" placeholder="Name" autocomplete="on" value="<?php echo $fname . " " . $mname . " " . $lname ?>" required>
         </div>
         <div class="col_field">
           <div class="row_field">
@@ -99,11 +99,11 @@ if (isset($_POST['ok'])) {
         </div>
         <div class="row_field">
           <label class="newsletter-title">Issue (optional)</label>
-          <textarea id="w3review" name="issue" rows="4" cols="50"></textarea>
+          <textarea name="issue" rows="4" cols="50"></textarea>
         </div>
         <div class="row_field">
           <label class="newsletter-title">Address</label>
-          <textarea id="w3review" name="baddress" rows="4" cols="50" required></textarea>
+          <textarea name="baddress" rows="4" cols="50" required></textarea>
         </div>
 
         <div class="row_field">

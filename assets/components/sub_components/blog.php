@@ -7,9 +7,9 @@
       $res = mysqli_query($conn, $sql);
       for ($a = 1; $a <= 4; $a++) {
         while ($row = mysqli_fetch_assoc($res)) { ?>
-          <div class="blog-card">
-              <img loading="lazy" src="<?php echo $row['simage'] ?>"
-                width="300" class="blog-banner">
+          <div class="blog-card" onclick="window.location.href = './serviceView.php?serviceId=<?php echo $row['sid']?>'">
+            <img loading="lazy" src="<?php echo $row['simage'] ?>"
+              width="300" class="blog-banner">
             <div class="blog-content">
               <h3><a href="#" class="blog-category"><?php echo $row['sname'] ?></a></h3>
               <a href="#">
