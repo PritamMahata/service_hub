@@ -161,6 +161,7 @@
 </script> -->
 <script>
     let bookingIdToDelete = null;
+    let intervalId = null;
 
     // Function to set the booking ID for deletion
     function setDeleteId(bookingId) {
@@ -229,22 +230,29 @@
         }
     }
 
-    // Function to reload the booking table every 1 second
+    intervalId = setInterval(reloadBookingTable, 1000);
+    // Function to reload the booking table every 5 seconds
     function reloadBookingTable() {
         let xhr = new XMLHttpRequest();
         xhr.open('GET', './components/fetch_bookings.php', true);
         xhr.onload = function() {
             if (xhr.status === 200) {
                 document.querySelector('table tbody').innerHTML = xhr.responseText;
+                document.querySelectorAll('.form-select').forEach(selectElement => {
+                    selectElement.addEventListener('focus', () => {
+                        clearInterval(intervalId);
+                    });
+
+                    selectElement.addEventListener('blur', () => {
+                        intervalId = setInterval(reloadBookingTable, 1000);
+                    });
+                });
             } else {
                 console.error('Error occurred while fetching booking data.');
             }
         };
         xhr.send();
     }
-
-    // Set the interval to reload the table every second
-    setInterval(reloadBookingTable, 5000);
 </script>
 
 <?php require('./components/footer.php'); ?>
