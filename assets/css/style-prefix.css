@@ -1732,6 +1732,10 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: var(--fs-11);
 }
 
+
+.cart-container{
+  height: 100vh;
+}
 /*-----------------------------------*\
   #element GRID
 \*-----------------------------------*/
@@ -2461,6 +2465,7 @@ footer {
 }
 
 .copyright {
+  margin: 0;
   color: var(--sonic-silver);
   font-size: var(--fs-8);
   font-weight: var(--weight-500);
