@@ -59,6 +59,7 @@ function upload_image()
 
 if (isset($_POST['add'])) {
     $sname = $_POST['sname'];
+    $srating = rand(1,5);
     $scategory = $_POST['scategory'];
     $sduration = $_POST['sduration'];
     $sprice = $_POST['sprice'];
@@ -66,8 +67,8 @@ if (isset($_POST['add'])) {
     $sdes = $_POST['sdes'];
     $sfeatures = $_POST['sfeatures'];
     upload_image();
-    $sql = "INSERT INTO services (sname, sprice, sduration, sdes, sfeatures, scategory, simage, sdiscount,created_by) 
-            VALUES ('$sname', '$sprice', '$sduration', '$sdes', '$sfeatures', '$scategory', '$simage', '$sdiscount','$seID')";
+    $sql = "INSERT INTO services (sname,srating, sprice, sduration, sdes, sfeatures, scategory, simage, sdiscount,created_by) 
+            VALUES ('$sname','$srating', '$sprice', '$sduration', '$sdes', '$sfeatures', '$scategory', '$simage', '$sdiscount','$seID')";
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Service Added Successfully')</script>";
     } else {
