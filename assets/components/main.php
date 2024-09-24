@@ -9,7 +9,9 @@
         <?php
         require_once('sub_components/elements/element-main.php');
         // require_once('sub_components/elements/element-minimal.php');
-        require_once('sub_components/elements/element-featured.php');
+        if (!isset($_GET['search'])) {
+          require_once('sub_components/elements/element-featured.php');
+        }
         ?>
       </div>
     </div>
