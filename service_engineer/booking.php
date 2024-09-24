@@ -244,7 +244,7 @@
     }
 
     // Set the interval to reload the table every second
-    setInterval(reloadBookingTable, 1000);
+    setInterval(reloadBookingTable, 5000);
 </script>
 
 <?php require('./components/footer.php'); ?>

@@ -660,7 +660,9 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: flex-end;
 }
 
-/* .header-logo p {} */
+.header-logo p {
+  margin: 0;
+}
 
 .header-logo img {
   margin: auto;

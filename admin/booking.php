@@ -56,7 +56,7 @@ if (isset($_GET['booking_id'])) {
                     <th scope="col">Service Category</th>
                     <th scope="col">Booking Date</th>
                     <th scope="col">Status</th>
-                    <th scope="col" colspan="2">Operations</th>
+                    <th scope="col">Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,7 +90,6 @@ if (isset($_GET['booking_id'])) {
                             <th><?php echo $row['category_name'] ?></th>
                             <th><?php echo $row['booking_date'] ?></th>
                             <th><?php echo $row['status'] ?></th>
-                            <td><?php echo "<button class='btn btn-primary' onclick='goToDetails(" . $row['booking_id'] . ")'>Edit</button>"; ?></td>
                             <td>
                                 <button
                                     type='button'

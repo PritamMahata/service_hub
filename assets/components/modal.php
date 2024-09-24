@@ -10,7 +10,7 @@ $lname = isset($_SESSION['lname']) ? $_SESSION['lname'] : '';
 $serviceID = isset($_GET['serviceId']) ? $_GET['serviceId'] : '';
 
 
-function generateOrderID($length = 11)
+function generateOrderID($length = 8)
 {
   $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   $orderID = '';
@@ -21,6 +21,9 @@ function generateOrderID($length = 11)
   }
   return $orderID;
 }
+
+
+
 function generateHappyCode($length = 6)
 {
   $characters = '0123456789';

@@ -146,3 +146,6 @@ random rateing on services,
 fix grid problem,
 confirm problem in provicet booking table for auto realod table
 image auto slide or button
+error in address input (signup)
+change footer
+fix logo 
