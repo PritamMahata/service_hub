@@ -38,8 +38,8 @@ if ($result->num_rows > 0) {
                         // echo "<p class='price'>$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>";
                         // echo "<del>$" . htmlspecialchars($row['sprice']) . "</del>";
                         ?>
-                        <p class="price"><?php echo "$" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) ?></p>
-                        <del><?php echo "$" . $row['sprice'] ?></del>
+                        <p class="price"><?php echo "₹" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) ?></p>
+                        <del><?php echo "₹" . $row['sprice'] ?></del>
                     </div>
                     <div class="countdown-box">
                         <p class="countdown-desc">Date Available</p>

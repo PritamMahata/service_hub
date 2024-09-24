@@ -3,11 +3,11 @@
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">users</li>
+            <li class="breadcrumb-item active">Users</li>
         </ol>
     </div>
     <div class="container-fluid px-4">
-        <h3 class="mb-0">All users</h3>
+        <h3 class="mb-0">All Users</h3>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -19,7 +19,7 @@
                     <th scope="col">Ph No</th>
                     <th scope="col">Alt No</th>
                     <th scope="col">Address</th>
-                    <th scope="col">verified/Not</th>
+                    <th scope="col">Verified/Not</th>
                     <th scope="col">Creation Date</th>
                     <th scope="col">Status</th>
                 </tr>

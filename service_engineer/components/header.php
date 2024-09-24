@@ -27,7 +27,7 @@ if (empty($_SESSION['se_info'])) {
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Admin Pannel</a>
+        <a class="navbar-brand ps-3" href="index.html">Service Engineer Pannel</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -57,13 +57,13 @@ if (empty($_SESSION['se_info'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <div class="sb-sidenav-menu-heading">Admin</div>
+                        <div class="sb-sidenav-menu-heading">Attributes</div>
                         <a class="nav-link" href="modify.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-wrench"></i></div>
                             My Service
                         </a>
                         <a class="nav-link" href="booking.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days"></i></div>
                             Bookings
                         </a>
                     </div>

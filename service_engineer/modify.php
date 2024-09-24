@@ -97,9 +97,9 @@ if (isset($_POST['update'])) {
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Category</li>
+            <li class="breadcrumb-item active">My Service</li>
         </ol>
-        <h2 class="mt-4">My Service</h2>
+        <h2 class="mt-4">Service Details</h2>
         <div class="order-md-1 container">
             <form class="needs-validation" method="post" enctype="multipart/form-data">
                 <div class="row">

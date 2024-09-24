@@ -8760,7 +8760,7 @@ fieldset:disabled .btn {
 }
 
 .mb-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .mb-1 {
@@ -8860,6 +8860,7 @@ fieldset:disabled .btn {
 }
 
 .px-4 {
+  padding-top: 1.5rem !important;
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
@@ -13175,4 +13176,8 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
+}
+
+.svg-inline--fa {
+  margin-right: 0.3rem;
 }

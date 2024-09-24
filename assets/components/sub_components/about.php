@@ -68,7 +68,7 @@ $rec = mysqli_fetch_assoc($res);
                 <a href="#" class="cta-content">
                     <p class="discount"><?php echo $rec['sdiscount'] ?>% Discount</p>
                     <h2 class="cta-title"><?php echo $rec['sname'] ?></h2>
-                    <p class="cta-text">Starting @ $<?php echo $rec['sprice'] ?></p>
+                    <p class="cta-text">Starting @ ₹<?php echo $rec['sprice'] ?></p>
                     <button class="cta-btn">Book now</button>
                 </a>
             </div>
@@ -82,7 +82,7 @@ $rec = mysqli_fetch_assoc($res);
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">24/7 Service</h3>
-                            <p class="service-desc">For Order Over $100</p>
+                            <p class="service-desc">For Order Over ₹100</p>
                         </div>
                     </a>
                     <a href="#" class="service-item">
@@ -119,7 +119,7 @@ $rec = mysqli_fetch_assoc($res);
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">30% money back</h3>
-                            <p class="service-desc">For Order Over $100</p>
+                            <p class="service-desc">For Order Over ₹100</p>
                         </div>
                     </a>
                 </div>

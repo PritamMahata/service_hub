@@ -29,7 +29,7 @@
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Services</li>
+            <li class="breadcrumb-item active">Bookings</li>
         </ol>
     </div>
     <div class="container-fluid px-4">
@@ -39,10 +39,10 @@
                 <tr>
                     <th scope="col">Request Id</th>
                     <th scope="col">Customer Name</th>
-                    <th scope="col">Ph No.</th>
+                    <th scope="col">Ph. No.</th>
                     <th scope="col">Booking Address</th>
                     <th scope="col">Issue</th>
-                    <th scope="col">Booking date</th>
+                    <th scope="col">Booking Date</th>
                     <th scope="col">Status</th>
                     <th scope="col">Operation</th>
                 </tr>
@@ -244,7 +244,7 @@
     }
 
     // Set the interval to reload the table every second
-    setInterval(reloadBookingTable, 1000);
+    setInterval(reloadBookingTable, 5000);
 </script>
 
 <?php require('./components/footer.php'); ?>
