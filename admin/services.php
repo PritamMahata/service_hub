@@ -61,6 +61,7 @@ if (isset($_GET['sid'])) {
                     <th scope="col">Featurs</th>
                     <th scope="col">Price</th>
                     <th scope="col">Discount</th>
+                    <th scope="col" colspan="2">Operation</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,7 +80,6 @@ if (isset($_GET['sid'])) {
                             <td><?php echo "₹" . $row['sprice'] ?></td>
                             <td><?php echo $row['sdiscount'] . "%" ?></td>
                             <td><?php echo "<button class='btn btn-primary' onclick='goToDetails(" . $row['sid'] . ")'>Edit</button>"; ?></td>
-                            <td>
                             <td>
                                 <button
                                     type='button'
