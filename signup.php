@@ -1,4 +1,5 @@
-<?php require("./env/config.php");
+<?php
+require("./env/config.php");
 require_once('./assets/components/toast.php');
 include('./PHPMailer/mail.php');
 ?>
@@ -38,10 +39,10 @@ include('./PHPMailer/mail.php');
                 <h1 class="form_heading">Create Account</h1>
                 <div class="row_field">
                     <div class="sidebyside">
-                        <p class="nav-title"> Already have any account !</p> <a href="./login.php">Login</a>
+                        <p class="nav-title">Already have an account?</p> <a href="./login.php">Login</a>
                     </div>
                 </div>
-                
+
                 <!-- PHP Signup Logic -->
                 <?php
                 if (isset($_POST['ok'])) {
@@ -56,30 +57,32 @@ include('./PHPMailer/mail.php');
                     if (!empty($_POST['con_num']) && !preg_match('/^[0-9]{10}$/', $_POST['con_num'])) {
                         $errors[] = "Invalid contact number format";
                     }
-                    
+
                     if (empty($errors)) {
-                        $fname = $_POST['fname'];
-                        $mname = $_POST['mname'];
-                        $lname = $_POST['lname'];
-                        $email = $_POST['email'];
+                        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+                        $mname = mysqli_real_escape_string($conn, $_POST['mname']);
+                        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+                        $email = mysqli_real_escape_string($conn, $_POST['email']);
                         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                         $v_code = bin2hex(random_bytes(16));
-                        $con_num = $_POST['con_num'];
-                        $alt_num = $_POST['alt_num'];
-                        $address = $_POST['address'];
+                        $con_num = mysqli_real_escape_string($conn, $_POST['con_num']);
+                        $alt_num = mysqli_real_escape_string($conn, $_POST['alt_num']);
+                        $address = mysqli_real_escape_string($conn, $_POST['address']);
 
+                        // Use prepared statement for secure query execution
                         $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password, v_code) 
-                                VALUES ('$fname', '$mname', '$lname','$email', $con_num, $alt_num, '$address', '$hashed_password', '$v_code')";
-                        try {
-                            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                            if ($res == 1) {
-                                toast("success", send_mail($email, $v_code, $fname, $lname));
-                            } else {
-                                toast("danger", "Account Creation Failed");
-                            }
-                        } catch (Exception $e) {
-                            toast("danger", "Database error: " . $e->getMessage());
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("sssssssss", $fname, $mname, $lname, $email, $con_num, $alt_num, $address, $hashed_password, $v_code);
+
+                        if ($stmt->execute()) {
+                            toast("success", send_mail($email, $v_code, $fname, $lname));
+                        } else {
+                            toast("danger", "Account Creation Failed");
                         }
+
+                        $stmt->close();
                     } else {
                         foreach ($errors as $error) {
                             toast("danger", $error);
@@ -87,7 +90,7 @@ include('./PHPMailer/mail.php');
                     }
                 }
                 ?>
-                
+
                 <form method="POST" onsubmit="return validateForm();">
                     <div class="col_field">
                         <div class="row_field">
@@ -106,7 +109,7 @@ include('./PHPMailer/mail.php');
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
                         <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required>
-                        <div id="emailError" style="color: red;"></div>
+                        <div id="msg"></div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
@@ -213,6 +216,21 @@ include('./PHPMailer/mail.php');
                 eyeIcon.innerHTML = "visibility_off";
             }
         }
+
+        // Email validation via AJAX
+        document.getElementById('email').addEventListener('blur', function() {
+            let email = this.value;
+            $.ajax({
+                method: "POST",
+                url: "db/checkEmail.php",
+                data: {
+                    email: email
+                },
+                success: function(result) {
+                    $("#msg").html(result);
+                }
+            });
+        });
     </script>
 </body>
 

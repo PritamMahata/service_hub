@@ -1,4 +1,5 @@
-<?php require("./env/config.php");
+<?php
+require("./env/config.php");
 require_once('./assets/components/toast.php');
 include('./PHPMailer/mail.php');
 ?>
@@ -16,21 +17,21 @@ include('./PHPMailer/mail.php');
     <link rel="stylesheet" href="./assets/css/style-prefix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0">
 </head>
 
 <body>
     <div class="overlay" data-overlay></div>
+
     <?php
     require_once('./assets/components/header.php');
     require_once('./assets/components/sub_components/slidebar.php');
 
-    // Fetch categories from the database
-    $sql = "SELECT * FROM category";
-    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+    // Fetch categories safely using prepared statements
+    $stmt = $conn->prepare("SELECT * FROM category");
+    $stmt->execute();
+    $result = $stmt->get_result();
     ?>
 
     <div class="container">
@@ -49,8 +50,9 @@ include('./PHPMailer/mail.php');
                 </div>
 
                 <?php
-                if (isset($_POST['ok'])) {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ok'])) {
                     $errors = [];
+
                     // Server-side validation
                     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                         $errors[] = "Invalid email format";
@@ -67,36 +69,35 @@ include('./PHPMailer/mail.php');
                     if (!preg_match('/^[A-Z]{4}0[A-Z0-9]{6}$/', $_POST['ifsc'])) {
                         $errors[] = "Invalid IFSC code format";
                     }
+
                     if (empty($errors)) {
-                        // Insert data into the database
-                        $fname = $_POST['fname'];
-                        $mname = $_POST['mname'];
-                        $lname = $_POST['lname'];
-                        $gender = $_POST['gender'];
-                        $age = $_POST['age'];
-                        $email = $_POST['email'];
-                        $con_num = $_POST['con_num'];
-                        $alt_num = $_POST['alt_num'];
-                        $address = $_POST['address'];
+                        // Sanitize user inputs
+                        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+                        $mname = mysqli_real_escape_string($conn, $_POST['mname']);
+                        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+                        $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+                        $age = mysqli_real_escape_string($conn, $_POST['age']);
+                        $email = mysqli_real_escape_string($conn, $_POST['email']);
+                        $con_num = mysqli_real_escape_string($conn, $_POST['con_num']);
+                        $alt_num = mysqli_real_escape_string($conn, $_POST['alt_num']);
+                        $address = mysqli_real_escape_string($conn, $_POST['address']);
                         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                        $pan_card = $_POST['pan_card'];
-                        $aadhaar = $_POST['aadhaar'];
-                        $acc_num = $_POST['acc_num'];
-                        $ifsc = $_POST['ifsc'];
-                        $provider_category_id = $_POST['category'];
+                        $pan_card = mysqli_real_escape_string($conn, $_POST['pan_card']);
+                        $aadhaar = mysqli_real_escape_string($conn, $_POST['aadhaar']);
+                        $acc_num = mysqli_real_escape_string($conn, $_POST['acc_num']);
+                        $ifsc = mysqli_real_escape_string($conn, $_POST['ifsc']);
+                        $provider_category_id = mysqli_real_escape_string($conn, $_POST['category']);
 
-                        $sql = "INSERT INTO provider (provider_category_id, fname, mname, lname, gender, age, email, con_num, alt_num, address, password, pan_card, acc_num, ifsc, aadhaar, created_at, updated_at, is_deleted, is_verified, is_banned) 
-                        VALUES ('$provider_category_id', '$fname', '$mname', '$lname', '$gender', '$age', '$email', '$con_num', '$alt_num', '$address', '$password', '$pan_card', '$acc_num', '$ifsc', '$aadhaar', current_timestamp(), current_timestamp(), '0', '0', '0')";
+                        // Prepared statement to insert data
+                        $stmt = $conn->prepare("INSERT INTO provider (provider_category_id, fname, mname, lname, gender, age, email, con_num, alt_num, address, password, pan_card, acc_num, ifsc, aadhaar, created_at, updated_at, is_deleted, is_verified, is_banned) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), current_timestamp(), '0', '0', '0')");
+                        $stmt->bind_param("isssisssssssss", $provider_category_id, $fname, $mname, $lname, $gender, $age, $email, $con_num, $alt_num, $address, $password, $pan_card, $acc_num, $ifsc, $aadhaar);
+                        $res = $stmt->execute();
 
-                        try {
-                            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                            if ($res == 1) {
-                                toast("success", "Account Created Successfully, we will contact you soon");
-                            } else {
-                                toast("danger", "Account Creation Failed");
-                            }
-                        } catch (Exception $e) {
-                            toast("danger", "Database error: " . $e->getMessage());
+                        if ($res) {
+                            toast("success", "Account Created Successfully, we will contact you soon");
+                        } else {
+                            toast("danger", "Account Creation Failed");
                         }
                     } else {
                         foreach ($errors as $error) {
@@ -201,17 +202,16 @@ include('./PHPMailer/mail.php');
                             <option value="" disabled selected>Select Category</option>
                             <?php
                             // Populate the categories in the select field
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            while ($row = $result->fetch_assoc()) {
                                 echo "<option value='" . $row['cid'] . "'>" . $row['cname'] . "</option>";
                             }
                             ?>
                         </select>
                     </div>
 
-                    <br>
                     <div class="col_field">
                         <div class="container flex_div">
-                            <button name="ok" class="btn-newsletter disable" onclick="window.history.back();">Back</button>
+                            <button type="button" class="btn-newsletter disable" onclick="window.history.back();">Back</button>
                         </div>
                         <div class="container flex_div">
                             <button type="submit" name="ok" class="btn-newsletter">Sign Up</button>
@@ -251,7 +251,7 @@ include('./PHPMailer/mail.php');
             let email = this.value;
             $.ajax({
                 method: "POST",
-                url: "db/checkEmail.php",
+                url: "db/provider_checkEmail.php",
                 data: {
                     email: email
                 },
