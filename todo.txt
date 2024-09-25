@@ -145,7 +145,7 @@ set options in sidebar for phone, - done
 random rateing on services, - done
 fix grid problem, - done
 confirm problem in provicet booking table for auto realod table - done
-error in address input (signup) 
+error in address input (signup)  - done
 change footer 
 fix logo 
 image auto slide or button
