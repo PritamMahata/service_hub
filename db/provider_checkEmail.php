@@ -5,7 +5,7 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
 
     // Prepare a statement to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT * FROM provider WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
