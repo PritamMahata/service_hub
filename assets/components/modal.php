@@ -5,8 +5,6 @@ $uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : '';
 $fname = isset($_SESSION['fname']) ? $_SESSION['fname'] : '';
 $mname = isset($_SESSION['mname']) ? $_SESSION['mname'] : '';
 $lname = isset($_SESSION['lname']) ? $_SESSION['lname'] : '';
-// $con_num = isset($_SESSION['con_num']) ? $_SESSION['con_num'] : '';
-// $address = isset($_SESSION['address']) ? $_SESSION['address'] : '';
 $serviceID = isset($_GET['serviceId']) ? $_GET['serviceId'] : '';
 
 
@@ -35,14 +33,32 @@ function generateHappyCode($length = 6)
   }
   return $happyCode;
 }
-
+$error = false;
 if (isset($_POST['ok'])) {
   if ($_SESSION['isLogin']) {
     $issue = $_POST['issue'];
-    $baddress = $_POST['baddress'];
-    $bphone = $_POST['bphone'];
-    $date = $_POST['rd1'];
-    $time = $_POST['rd2'];
+
+    if (!isset($_POST['bphone']) || strlen($_POST['bphone']) != 10 || !is_numeric($_POST['bphone'])) {
+      toast("danger", "Invalid Phone Number");
+      $error = true;
+    } else {
+      $bphone = $_POST['bphone'];
+    }
+
+    if (!isset($_POST['baddress']) || strlen($_POST['baddress']) < 5) {
+      toast("danger", "Invalid Address");
+      $error = true;
+    } else {
+      $baddress = $_POST['baddress'];
+    }
+
+    if (!isset($_POST['rd1']) || !isset($_POST['rd2'])) {
+      toast("danger", "Please Select Date and Time");
+      $error = true;
+    } else {
+      $date = $_POST['rd1'];
+      $time = $_POST['rd2'];
+    }
     $orderID = generateOrderID();
     $happyCode = generateHappyCode();
     $sql = "SELECT * FROM services WHERE sid = '$serviceID'";
@@ -53,16 +69,18 @@ if (isset($_POST['ok'])) {
       echo "0 results";
     }
     $providerId = $row['created_by'];
-    $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id,issue, baddress,bphone, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID','$issue','$baddress','$bphone','$date,$time', current_timestamp(), 'pending','$happyCode')";
-    if ($conn->query($sql) === TRUE) {
-      toast("success", "Booking Registered Sucessfully");
-      echo "<script>
-             setInterval(()=>{
-                window.location='serviceView.php?serviceId=$serviceID';
-              },3000);
-            </script>";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+    if (!$error) {
+      $sql = "INSERT INTO bookings (order_id, user_id, provider_id, service_id,issue, baddress,bphone, arrival_date, booking_date, status ,happy_code) VALUES ('$orderID', '$uid', '$providerId', '$serviceID','$issue','$baddress','$bphone','$date,$time', current_timestamp(), 'pending','$happyCode')";
+      if ($conn->query($sql) === TRUE) {
+        toast("success", "Booking Registered Sucessfully");
+        echo "<script>
+        setInterval(()=>{
+          window.location='serviceView.php?serviceId=$serviceID';
+          },3000);
+          </script>";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
     }
   } else {
     echo '<script> window.location = "login.php"</script>';
@@ -81,7 +99,6 @@ if (isset($_POST['ok'])) {
       <form method="POST">
         <div class="newsletter-header">
           <h3 class="newsletter-title">SCHEDULE YOUR SERVICE</h3>
-          <!-- <p class="newsletter-desc"> Subscribe the <b>service hub</b> to get latest service and discount update. </p> -->
         </div>
         <div class="row_field">
           <label class="newsletter-title">Name</label>
@@ -114,20 +131,23 @@ if (isset($_POST['ok'])) {
               <?php
               $count = date("j");
               $date = new DateTime();
-              $stopDay = 9;
+              $date->modify('+1 day');
+              $stopDay = 10;
               $startDayOfYear = (int)$date->format('z') + 1;
               $targetDayOfYear = $startDayOfYear + $stopDay - 1;
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
-                echo '<input type="radio" name="rd1" id="_' . $date->format('j') + 1 . '" value = "' . $date->format('j') + 1 . $date->format('S') . " " . $date->format('M') . '" required>';
+                echo '<input type="radio" name="rd1" id="_' . $date->format('j') . '" value = "' . $date->format('j') . $date->format('S') . " " . $date->format('M') . '" required>';
                 $date->modify('+1 day');
                 $count++;
               }
+
               $date = new DateTime();
+              $date->modify('+1 day');
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
                 echo
-                '<label for="_' . $date->format('j') + 1 . '" class="box __' . $date->format('j') + 1 . '">
+                '<label for="_' . $date->format('j') . '" class="box __' . $date->format('j') . '">
                 <div class="plan">
-                <div class="yearly">' . $date->format('j') + 1 . $date->format('S') . '</div>
+                <div class="yearly">' . $date->format('j') . $date->format('S') . '</div>
                 <div class="yearly">' . $date->format('M') . '</div>
                 </div> 
                 </label>';

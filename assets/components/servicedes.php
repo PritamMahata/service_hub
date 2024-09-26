@@ -45,15 +45,13 @@ if ($result->num_rows > 0) {
                         <p class="countdown-desc">Date Available</p>
                         <div class="countdown">
                             <?php
-                            $count = date("j");
                             $date = new DateTime();
+                            $date->modify('+1 day');
                             $stopDay = 9;
-                            $startDayOfYear = (int)$date->format('z') + 1;
-                            $targetDayOfYear = $startDayOfYear + $stopDay - 1;
-                            while ((int)$date->format('z') + 1 != $targetDayOfYear) {
+                            for ($i = 0; $i < $stopDay; $i++) {
                                 echo '
                                 <div class="countdown-content">
-                                    <p class="display-number">' . $date->format('j') + 1 . $date->format('S') . '</p>
+                                    <p class="display-number">' . $date->format('j') . $date->format('S') . '</p>
                                     <p class="display-text">' . $date->format('M') . '</p>
                                 </div>
                                 ';
