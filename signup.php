@@ -2,6 +2,10 @@
 require("./env/config.php");
 require_once('./assets/components/toast.php');
 include('./PHPMailer/mail.php');
+if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
+    header("Location: profile.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +58,7 @@ include('./PHPMailer/mail.php');
                     if ($_POST['password'] !== $_POST['scpassword']) {
                         $errors[] = "Passwords do not match";
                     }
-                    if (!empty($_POST['con_num']) && !preg_match('/^[0-9]{10}$/', $_POST['con_num'])) {
+                    if (!empty($_POST['con_num']) && !preg_match('/^[6-9]{10}$/', $_POST['con_num'])) {
                         $errors[] = "Invalid contact number format";
                     }
 
@@ -95,7 +99,7 @@ include('./PHPMailer/mail.php');
                     <div class="col_field">
                         <div class="row_field">
                             <label class="newsletter-title">First Name</label>
-                            <input type="text" name="fname" class="email-field" placeholder="First Name" required>
+                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onchange="checkName()">
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Middle Name</label>
@@ -103,12 +107,12 @@ include('./PHPMailer/mail.php');
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Last Name</label>
-                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required>
+                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onchange="checkName()">
                         </div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required>
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onchange="checkName()">
                         <div id="msg"></div>
                     </div>
                     <div class="row_field">
@@ -171,6 +175,20 @@ include('./PHPMailer/mail.php');
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var namePattern = /^[a-zA-Z\s-]+$/;
+
+            function checkName() {
+                console.log("Hello world");
+                
+                if (!firstName || !lastName) {
+                    return "First name and last name are required.";
+                }
+
+                if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+                    return "Invalid first name or last name.";
+                }
+            }
+
             if (!emailRegex.test(email)) {
                 document.getElementById('emailError').innerText = 'Invalid email address';
                 valid = false;

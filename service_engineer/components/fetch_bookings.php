@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
                         <option selected disabled value="pending" ' . ($row['status'] == 'pending' ? 'selected' : '') . '>Pending</option>
                         <option value="confirmed" ' . ($row['status'] == 'confirmed' ? 'selected' : '') . '>Confirmed</option>
                         <option value="cancelled" ' . ($row['status'] == 'cancelled' ? 'selected' : '') . '>Cancelled</option>
+                        <option value="cancelled" ' . ($row['status'] == 'completed' ? 'selected' : '') . '>Completed</option>
                     </select>
                 </th>
                 <th>

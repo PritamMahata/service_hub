@@ -14,7 +14,7 @@ if (isset($_POST['booking_id']) && isset($_POST['happyCode'])) {
 
     if ($result->num_rows > 0) {
         // If the happy code is correct, proceed with deletion
-        $deleteQuery = "DELETE FROM bookings WHERE booking_id = ?";
+        $deleteQuery = "UPDATE bookings SET status = 'completed' WHERE booking_id = ?";
         $deleteStmt = $conn->prepare($deleteQuery);
         $deleteStmt->bind_param("i", $bookingId);
         if ($deleteStmt->execute()) {

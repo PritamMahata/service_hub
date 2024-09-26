@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
                             while ((int)$date->format('z') + 1 != $targetDayOfYear) {
                                 echo '
                                 <div class="countdown-content">
-                                    <p class="display-number">' . $date->format('jS') . '</p>
+                                    <p class="display-number">' . $date->format('j') + 1 . $date->format('S') . '</p>
                                     <p class="display-text">' . $date->format('M') . '</p>
                                 </div>
                                 ';

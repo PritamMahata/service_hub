@@ -19,7 +19,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" onclick="deleteService()">Delete</button>
+                <button type="button" class="btn btn-primary" onclick="deleteService()">Apply</button>
             </div>
         </div>
     </div>
@@ -72,6 +72,7 @@
                                     <option selected disabled value="pending" <?php if ($row['status'] == 'pending') echo 'selected'; ?>>Pending</option>
                                     <option value="confirmed" <?php if ($row['status'] == 'confirmed') echo 'selected'; ?>>Confirmed</option>
                                     <option value="cancelled" <?php if ($row['status'] == 'cancelled') echo 'selected'; ?>>Cancelled</option>
+                                    <option value="cancelled" <?php if ($row['status'] == 'completed') echo 'selected'; ?>>Completed</option>
                                 </select>
                             </th>
                             <th>
@@ -89,76 +90,6 @@
     </div>
 </main>
 
-<!-- <script>
-    let bookingIdToDelete = null;
-
-    // Function to set the booking ID for deletion
-    function setDeleteId(bookingId) {
-        bookingIdToDelete = bookingId;
-        document.getElementById('deleteServiceText').innerText = "Service ID: " + bookingId; // Update modal text
-    }
-
-    // Function to delete the service after confirmation
-    function deleteService() {
-        if (bookingIdToDelete) {
-            window.location.href = `services.php?booking_id=${bookingIdToDelete}`;
-        }
-    }
-
-    // AJAX function to change the status of the booking
-    function changeStatus(bookingId, newStatus) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'components/update_status.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                console.log('Status updated successfully');
-            } else {
-                console.error('Error occurred while updating status.');
-            }
-        };
-        if (newStatus === 'completed') {
-            modal();
-        }
-        xhr.send('booking_id=' + bookingId + '&status=' + newStatus);
-    }
-
-    function modal(bookingId) {
-        bookingIdToDelete = bookingId;
-        var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-        deleteModal.show();
-    }
-
-    function deleteService() {
-        let happyCode = document.getElementById('inp_happyCode').value;
-        if (bookingIdToDelete && happyCode) {
-            // Make AJAX request to validate happy code and delete service if valid
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', 'components/validate_happy_code.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    let response = JSON.parse(xhr.responseText);
-                    if (response.status === "success") {
-                        alert(response.message);
-                        // Redirect or refresh the page to update the services list
-                        window.location.reload();
-                    } else {
-                        alert(response.message);
-                    }
-                } else {
-                    alert('An error occurred while processing your request.');
-                }
-            };
-
-            // Send the booking ID and happy code to the server
-            xhr.send('booking_id=' + bookingIdToDelete + '&happyCode=' + happyCode);
-        } else {
-            alert('Please enter the happy code.');
-        }
-    }
-</script> -->
 <script>
     let bookingIdToDelete = null;
     let intervalId = null;

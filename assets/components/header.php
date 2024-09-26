@@ -84,7 +84,7 @@ $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     function typePlaceholder() {
         const currentPlaceholder = placeholders[placeholderIndex];
-        searchField.placeholder = "Search For: " + currentPlaceholder.substring(0, charIndex); // Display part of the placeholder text
+        searchField.placeholder = currentPlaceholder.substring(0, charIndex); // Display part of the placeholder text
 
         if (charIndex < currentPlaceholder.length) {
             charIndex++;

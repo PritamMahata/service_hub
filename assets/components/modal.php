@@ -85,7 +85,7 @@ if (isset($_POST['ok'])) {
         </div>
         <div class="row_field">
           <label class="newsletter-title">Name</label>
-          <input type="text" name="email" class="email-field" placeholder="Name" autocomplete="on" value="<?php echo $fname . " " . $mname . " " . $lname ?>" required>
+          <input type="text" name="email" class="email-field " placeholder="Name" autocomplete="on" value="<?php echo $fname . " " . $mname . " " . $lname ?>" readonly>
         </div>
         <div class="col_field">
           <div class="row_field">
@@ -118,16 +118,16 @@ if (isset($_POST['ok'])) {
               $startDayOfYear = (int)$date->format('z') + 1;
               $targetDayOfYear = $startDayOfYear + $stopDay - 1;
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
-                echo '<input type="radio" name="rd1" id="_' . $date->format('j') . '" value = "' . $date->format('j') . $date->format('S') . " " . $date->format('M') . '" required>';
+                echo '<input type="radio" name="rd1" id="_' . $date->format('j') + 1 . '" value = "' . $date->format('j') + 1 . $date->format('S') . " " . $date->format('M') . '" required>';
                 $date->modify('+1 day');
                 $count++;
               }
               $date = new DateTime();
               while ((int)$date->format('z') + 1 != $targetDayOfYear) {
                 echo
-                '<label for="_' . $date->format('j') . '" class="box __' . $date->format('j') . '">
+                '<label for="_' . $date->format('j') + 1 . '" class="box __' . $date->format('j') + 1 . '">
                 <div class="plan">
-                <div class="yearly">' . $date->format('jS') . '</div>
+                <div class="yearly">' . $date->format('j') + 1 . $date->format('S') . '</div>
                 <div class="yearly">' . $date->format('M') . '</div>
                 </div> 
                 </label>';

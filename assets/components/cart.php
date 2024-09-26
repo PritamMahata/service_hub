@@ -4,7 +4,9 @@ require_once('./env/config.php');
 
 <div class="container">
     <div class="cart-container">
-        <b> <h3>BOOKING HISTORY</h3> </b> <br>
+        <b>
+            <h3>BOOKING HISTORY</h3>
+        </b> <br>
         <div class="col-md-9 container">
             <div class="tab-content">
                 <div class="tab-pane fade active show" id="account-connections">
@@ -61,7 +63,7 @@ require_once('./env/config.php');
                                                 <td><?php echo $row['happy_code']; ?></td>
                                                 <td>
                                                     <?php
-                                                    if (!(($row['status'] == 'confirmed') || ($row['status'] == 'cancelled'))) {
+                                                    if (!(($row['status'] == 'confirmed') || ($row['status'] == 'cancelled') || ($row['status'] == 'completed'))) {
                                                     ?>
                                                         <button type="button" class="btn btn-danger" onclick="window.location = './assets/components/cancel_order.php?order_id=<?php echo $row['order_id']; ?>'">CANCEL</button>
                                                     <?php
@@ -74,9 +76,8 @@ require_once('./env/config.php');
                                             </tr>
                                 <?php
                                         }
-                                    }else {
+                                    } else {
                                         echo "<tr rowspan = '6'><td>No orders found.</td></tr>";
-                                        
                                     }
                                 }
                                 ?>
