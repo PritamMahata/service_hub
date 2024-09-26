@@ -23,14 +23,14 @@ function send_mail($email, $v_code, $fname, $lname)
         $mail->Port       = 587;                                    // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('servicehub36@gmail.com', 'Service Hub PvLtd.');         // Sender's email address and name
-        $mail->addAddress("$email", "$fname" . "$lname"); // Add a recipient
+        $mail->setFrom($mailConfig['username'], 'Service Hub PvLtd.');         // Sender's email address and name
+        $mail->addAddress("$email", "$fname" . "$lname");                       // Add a recipient
 
         // Content
         $mail->isHTML(true);                                        // Set email format to HTML
         $mail->Subject = 'Here is the subject';                     // Email subject
         $mail->Body    = "click on this link to verify 
-                            <a href = 'http://localhost/learn/php_project/PHPMailer/verify.php?email=$email&v_code=$v_code'>click</a>";          // Email body in HTML format
+                            <a href = 'http://127.0.0.1/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code'>click</a>";          // Email body in HTML format
         $mail->AltBody = 'This is the plain text message body.';    // Plain text body for non-HTML email clients
 
 
