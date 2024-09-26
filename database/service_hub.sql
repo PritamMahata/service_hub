@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2024 at 06:36 PM
+-- Generation Time: Sep 26, 2024 at 07:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -133,7 +133,7 @@ CREATE TABLE `provider` (
 --
 
 INSERT INTO `provider` (`pid`, `provider_category_id`, `fname`, `mname`, `lname`, `gender`, `age`, `email`, `con_num`, `alt_num`, `address`, `password`, `pan_card`, `acc_num`, `ifsc`, `experience`, `photo`, `certificate`, `aadhaar`, `created_at`, `updated_at`, `is_deleted`, `is_verified`, `is_banned`) VALUES
-(1, 1, 'John', 'A.', 'Doe', 'Male', 35, 'john.doe@tech.com', 9876543210, 9123456789, '123 Tech Street', '123', 'ABCD1234P', 987654321012, 'IFSC1234567', '10 years', 'photo1.jpg', 'cert1.pdf', 1234567890, '2024-09-20 10:18:20', '2024-09-21 16:14:54', 0, 1, 0),
+(1, 1, 'John', 'A.', 'Doe', 'Male', 35, 'john.doe@tech.com', 9876543210, 9123456789, '123 Tech Street', '123', 'ABCD1234P', 987654321012, 'IFSC1234567', '10 years', 'photo1.jpg', 'cert1.pdf', 1234567890, '2024-09-20 10:18:20', '2024-09-26 11:57:00', 0, 1, 0),
 (2, 2, 'Sarah', 'B.', 'Johnson', 'Female', 29, 'sarah.j@health.com', 8765432109, 9987654321, '456 Health Ave', '123', 'BCDE2345Q', 876543210987, 'IFSC9876543', '5 years', 'photo2.jpg', 'cert2.pdf', 2345678901, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (3, 3, 'Michael', 'C.', 'Smith', 'Male', 42, 'mike.smith@edu.com', 7654321098, 9765432108, '789 Education Blvd', '123', 'CDEF3456R', 765432109876, 'IFSC5432189', '15 years', 'photo3.jpg', 'cert3.pdf', 3456789012, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (4, 4, 'Patricia', 'D.', 'Lee', 'Female', 38, 'pat.lee@finance.com', 6543210987, 8654321097, '101 Finance Road', '123', 'DEFG4567S', 654321098765, 'IFSC4321987', '12 years', 'photo4.jpg', 'cert4.pdf', 4567890123, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
@@ -142,21 +142,7 @@ INSERT INTO `provider` (`pid`, `provider_category_id`, `fname`, `mname`, `lname`
 (7, 7, 'Robert', 'G.', 'Wilson', 'Male', 47, 'robert.w@medicenter.com', 9213457890, 9356789012, '567 Healthway', '123', 'GHIJ7890V', 921345789012, 'IFSC7890234', '20 years', 'photo7.jpg', 'cert7.pdf', 7890123456, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (8, 8, 'Sophia', 'H.', 'Brown', 'Female', 31, 'sophia.b@schoolwise.com', 9102345678, 9234567891, '123 Academy Lane', '123', 'HIJK8901W', 910234567891, 'IFSC8901345', '6 years', 'photo8.jpg', 'cert8.pdf', 8901234567, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (9, 9, 'James', 'I.', 'Taylor', 'Male', 36, 'james.t@finwise.com', 9012345678, 9123456789, '456 Money Ave', '123', 'IJKL9012X', 901234567890, 'IFSC9012456', '9 years', 'photo9.jpg', 'cert9.pdf', 9012345678, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
-(10, 10, 'Linda', 'J.', 'Anderson', 'Female', 40, 'linda.a@transitlink.com', 8901234567, 8976543210, '789 Roadway Blvd', '123', 'JKLM0123Y', 890123456789, 'IFSC0123567', '12 years', 'photo10.jpg', 'cert10.pdf', 9123456789, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
-(17, 7, 'qwe', 'qwe', 'qqwe', 'Male', 21, 'aeqweqwe@fh.com', 123, 123, '123', '123', '123', 123, '123', NULL, NULL, NULL, 123, '2024-09-21 14:12:58', '2024-09-21 14:38:52', 0, 1, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `providertask`
---
-
-CREATE TABLE `providertask` (
-  `pt_id` int(11) NOT NULL,
-  `provider_id` int(11) NOT NULL,
-  `sub_category_id` int(11) NOT NULL,
-  `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(10, 10, 'Linda', 'J.', 'Anderson', 'Female', 40, 'linda.a@transitlink.com', 8901234567, 8976543210, '789 Roadway Blvd', '123', 'JKLM0123Y', 890123456789, 'IFSC0123567', '12 years', 'photo10.jpg', 'cert10.pdf', 9123456789, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -195,8 +181,7 @@ INSERT INTO `services` (`sid`, `sname`, `srating`, `sprice`, `sduration`, `sdes`
 (7, 'Deluxe Car Wash', 5, 800, '2 hr', 'Includes wax and tire shine.', '', 3, 'assets\\images\\services\\img_13.jpg', 'sale', 20, '2024-09-02 01:00:00', 7, 7),
 (8, 'Deep House Cleaning', 4, 2500, '6 hr', 'Comprehensive deep cleaning for your home.', '', 5, 'assets/images/services/img_17.jpg', 'sale', 15, '2024-09-05 01:00:00', 8, 8),
 (9, 'Full Body Massage', 5, 2000, '1.5 hr', 'Relaxing full-body massage with essential oils.', '', 4, 'assets/images/services/img_12.jpg', 'popular', 10, '2024-09-06 01:00:00', 9, 9),
-(10, 'Facial Treatment', 4, 1200, '1 hr', 'Rejuvenating facial for all skin types.', '', 4, 'assets/images/services/img_13.jpg', NULL, 5, '2024-09-07 01:00:00', 10, 10),
-(11, 'hello test', 0, 123, '1 hr', 'hello hello', 'hello, hello,hello', 7, 'assets/images/services/Pet Groomer.jpg', NULL, 3, '2024-09-21 15:24:30', 17, NULL);
+(10, 'Facial Treatment', 4, 1200, '1 hr', 'Rejuvenating facial for all skin types.', '', 4, 'assets/images/services/img_13.jpg', NULL, 5, '2024-09-07 01:00:00', 10, 10);
 
 -- --------------------------------------------------------
 
@@ -268,10 +253,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `isverified`, `is_deleted`, `ucreate`, `v_code`) VALUES
-(1, 'Pritam', NULL, 'Mahata', 'test@gmail.com', '$2y$10$xBh05JMX.BzOfwz7gGgHuOrQB/X5keE4C59t41L26Jpx4Lm4Ro2bC', 312312313, 123123123, 'qweqweds asd as', 1, 0, '2024-09-15 22:10:34', 'f138c66bf86f285a11e6f89de5847de2'),
-(2, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2'),
-(3, 'qwe', 'qwe', 'qwe', 'temp.token.co@gmail.com', '$2y$10$yvrNT1XOMdlehJNBmZHyzujyG3QDyZAaHRfxUPZE7gMYt8EfgQoTm', 123, 123, 'Earth', 1, 0, '2024-09-09 10:37:37', 'a26f1c1b5d7ee822a48e6b494949b4c2'),
-(4, '123', '123', '123', 'pritammahata12@gmail.com', '$2y$10$5JgYcooUkiR/hufqeGN8ROmMdCtSzzEm7sUEKUALmbFL7EoqfwBRW', 123, 123, '1231313131', 1, 0, '2024-09-09 10:43:47', '4e5e750155da623ce65359985e4f9600');
+(1, 'Pritam', '', 'Mahata', 'test@gmail.com', '$2y$10$fobeFSw5qKH4dptGo7d68.vIVZIM.U.Kel82DGD97JzmYEELBXhNK', 9654325678, NULL, '43/A, Sonarpur, Ghasiara', 1, 0, '2024-09-26 16:47:57', 'f138c66bf86f285a11e6f89de5847de2'),
+(2, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2');
 
 --
 -- Indexes for dumped tables
@@ -302,14 +285,6 @@ ALTER TABLE `provider`
   ADD PRIMARY KEY (`pid`),
   ADD UNIQUE KEY `email` (`email`),
   ADD KEY `fk_provider_category` (`provider_category_id`);
-
---
--- Indexes for table `providertask`
---
-ALTER TABLE `providertask`
-  ADD PRIMARY KEY (`pt_id`),
-  ADD KEY `provider_id` (`provider_id`),
-  ADD KEY `sub_category_id` (`sub_category_id`);
 
 --
 -- Indexes for table `services`
@@ -345,19 +320,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `provider`
 --
 ALTER TABLE `provider`
   MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `providertask`
---
-ALTER TABLE `providertask`
-  MODIFY `pt_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -369,7 +338,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -388,13 +357,6 @@ ALTER TABLE `bookings`
 --
 ALTER TABLE `provider`
   ADD CONSTRAINT `fk_provider_category` FOREIGN KEY (`provider_category_id`) REFERENCES `category` (`cid`);
-
---
--- Constraints for table `providertask`
---
-ALTER TABLE `providertask`
-  ADD CONSTRAINT `providertask_ibfk_1` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`pid`),
-  ADD CONSTRAINT `providertask_ibfk_2` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_category` (`subcat`);
 
 --
 -- Constraints for table `sub_category`
