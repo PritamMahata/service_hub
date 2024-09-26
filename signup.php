@@ -99,7 +99,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     <div class="col_field">
                         <div class="row_field">
                             <label class="newsletter-title">First Name</label>
-                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onchange="checkName()">
+                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onkeyup="checkName()">
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Middle Name</label>
@@ -107,12 +107,13 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Last Name</label>
-                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onchange="checkName()">
+                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onkeyup="checkName()">
                         </div>
                     </div>
+                    <div id="nameMsg" style="color: red;"></div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onchange="checkName()">
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onkeyup="checkName()">
                         <div id="msg"></div>
                     </div>
                     <div class="row_field">
@@ -165,6 +166,20 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
 
     <!-- Client-Side Validation -->
     <script>
+        function checkName() {
+            let fname = document.querySelector('input[name="fname"]').value;
+            let lname = document.querySelector('input[name="lname"]').value;
+            var namePattern = /^[a-zA-Z\s-]+$/;
+            let message = '';
+            if (!namePattern.test(fname) || !namePattern.test(lname)) {
+                message = 'Invalid name format. Only letters are allowed';
+            } else if (!fname || !lname) {
+                message = 'First Name and Last Name cannot be empty';
+            }
+            document.getElementById('nameMsg').innerText = message;
+        }
+
+
         function validateForm() {
             let email = document.getElementById('email').value;
             let password = document.getElementById('spassword').value;
@@ -175,20 +190,6 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var namePattern = /^[a-zA-Z\s-]+$/;
-
-            function checkName() {
-                console.log("Hello world");
-                
-                if (!firstName || !lastName) {
-                    return "First name and last name are required.";
-                }
-
-                if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
-                    return "Invalid first name or last name.";
-                }
-            }
-
             if (!emailRegex.test(email)) {
                 document.getElementById('emailError').innerText = 'Invalid email address';
                 valid = false;
