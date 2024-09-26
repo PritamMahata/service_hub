@@ -60,17 +60,19 @@
 2. Navigate into the project directory:
 
     ```bash
-    cd service-hub
+    cd service_hub
     ```
 
-3. Start `Apache server`
+3. replace with your gmail id and gmail app password in `env/mail_config.php`
 
-4. Access the app via [http://127.0.0.1/service_hub].
+4. Start `Apache server`
 
 5. To create database
    1. Goto [http://127.0.0.1/service_hub/database/update.php]
 
    2. click on `Create database` and then `add data` button.
+
+6. Access the app via [http://127.0.0.1/service_hub].
 
 ### Prerequisites
 
