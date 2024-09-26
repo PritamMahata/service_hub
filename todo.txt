@@ -146,6 +146,8 @@ random rateing on services, - done
 fix grid problem, - done
 confirm problem in provicet booking table for auto realod table - done
 error in address input (signup)  - done
+Validation in Name field - done
+Whenever service is completed then should show a toast - done
 change footer 
 fix logo 
 image auto slide or button

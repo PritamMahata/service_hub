@@ -1745,7 +1745,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 .cart-container {
-  height: 100vh;
+  height: 100%;
+  min-height: 600px;
 }
 
 /*-----------------------------------*\

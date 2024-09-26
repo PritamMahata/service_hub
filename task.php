@@ -1,5 +1,6 @@
 <?php
 require_once('./env/config.php');
+require_once('./assets/components/toast.php')
 ?>
 
 <!DOCTYPE html>
