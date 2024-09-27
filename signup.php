@@ -58,7 +58,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     if ($_POST['password'] !== $_POST['scpassword']) {
                         $errors[] = "Passwords do not match";
                     }
-                    if (!empty($_POST['con_num']) && !preg_match('/^[6-9]{10}$/', $_POST['con_num'])) {
+                    if (!empty($_POST['con_num']) && !preg_match('/^[0-9]{10}$/', $_POST['con_num'])) {
                         $errors[] = "Invalid contact number format";
                     }
 
@@ -79,10 +79,15 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
 
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param("sssssssss", $fname, $mname, $lname, $email, $con_num, $alt_num, $address, $hashed_password, $v_code);
-
-                        if ($stmt->execute()) {
-                            toast("success", send_mail($email, $v_code, $fname, $lname));
-                        } else {
+                        try {
+                            if ($stmt->execute()) {
+                                if (send_mail($email, $v_code, $fname, $lname)) {
+                                    toast("success", "verify your email");
+                                } else {
+                                    toast("danger", "Something went wrong");
+                                }
+                            }
+                        } catch (Exception $e) {
                             toast("danger", "Account Creation Failed");
                         }
 
@@ -99,7 +104,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     <div class="col_field">
                         <div class="row_field">
                             <label class="newsletter-title">First Name</label>
-                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onkeyup="checkName()">
+                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onblur="checkName()">
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Middle Name</label>
@@ -107,13 +112,13 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                         </div>
                         <div class="row_field">
                             <label class="newsletter-title">Last Name</label>
-                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onkeyup="checkName()">
+                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onblur="checkName()">
                         </div>
                     </div>
                     <div id="nameMsg" style="color: red;"></div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onkeyup="checkName()">
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onblur="checkName()">
                         <div id="msg"></div>
                     </div>
                     <div class="row_field">

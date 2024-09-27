@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST['execute_sql'])) {
-    $sql = "DROP DATABASE service_hub;";
+    $sql = "DROP DATABASE IF EXISTS service_hub;";
     $result = $conn->query($sql);
     // if ($result) {
     //     echo "Database dropped successfully!<br>";

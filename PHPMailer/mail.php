@@ -35,8 +35,8 @@ function send_mail($email, $v_code, $fname, $lname)
 
 
         $mail->send();
-        return 'verify your email';
+        return true;
     } catch (Exception $e) {
-        return 'Something went wrong';
+        return '';
     }
 }
