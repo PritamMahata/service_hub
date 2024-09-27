@@ -1,21 +1,21 @@
 # Service Hub
 
-*Service Hub* is a comprehensive web platform that connects users with a variety of home and personal service providers, from cleaning and automotive care to beauty and wellness. The platform offers seamless service booking. Providers can list their services, and clients can easily search, book, and review these services.
+*Service Hub* is a comprehensive web platform that connects users with various home and personal service providers, from cleaning and automotive care to beauty and wellness. The platform offers seamless service booking. Providers can list their services, and clients can easily search and book.
 
 ## Table of Contents
 
 - [Service Hub](#service-hub)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-    - [For Service Providers](#for-service-providers)
-    - [For Clients](#for-clients)
-  - [Tech Stack](#tech-stack)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-  - [Database Schema](#database-schema)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+    - [For Service Providers](#for-service-providers)
+    - [For Clients](#for-clients)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+  - [Database Schema](#database-schema)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Features
 
@@ -29,7 +29,7 @@
 
 ### For Service Providers
 
-- *Service Listing*: Providers can create, update, and delete their service listings.
+- *Service Listing*: Providers can create, update, and delete service listings.
 - *Dashboard*: Providers can manage bookings, view earnings, and analyze performance.
 - *Profile Management*: Providers can update their profiles and set availability.
 - *Reviews and Ratings*: Providers can view client feedback and improve their services.
@@ -51,26 +51,25 @@
 
 ## Installation
 
-1. Clone the repository inside `xampp\htdocs` folder:
+1. Clone the repository inside the `xampp\htdocs` folder:
 
-    ```bash
-    git clone https://github.com/PritamMahata/service_hub.git
-    ```
+ ```bash
+    git clone https://github.com/PritamMahata/service_hub.git
+ ```
 
 2. Navigate into the project directory:
 
-    ```bash
-    cd service_hub
-    ```
+ ```bash
+    cd service_hub
+ ```
 
-3. replace with your gmail id and gmail app password in `env/mail_config.php`
+3. Replace with your Gmail ID and Gmail app password in `env/mail_config.php`
 
 4. Start `Apache server`
 
-5. To create database
-   1. Goto [http://127.0.0.1/service_hub/database/update.php]
-
-   2. click on `Create database` and then `add data` button.
+5. To create a database
+   1. Goto [http://127.0.0.1/service_hub/database_dump/index.php]
+   2. click the `Create database` and then `add data` button.
 
 6. Access the app via [http://127.0.0.1/service_hub].
 
