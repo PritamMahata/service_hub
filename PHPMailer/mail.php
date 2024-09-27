@@ -4,7 +4,7 @@ require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 
-$mailConfig = require '../env/mail_config.php'; // Load config file
+$mailConfig = require 'mail_config.php'; // Load config file
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
