@@ -44,7 +44,7 @@
 ## Tech Stack
 
 - **Backend**: PHP
-- **Frontend**: Blade, HTML5, CSS3, JavaScript
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Database**: MariaDB/MySQL
 - **Version Control**: Git
 - **Web Server**: Apache
