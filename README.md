@@ -51,7 +51,7 @@
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository inside `xampp\htdocs` folder:
 
     ```bash
     git clone https://github.com/PritamMahata/service_hub.git
