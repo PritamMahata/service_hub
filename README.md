@@ -63,7 +63,7 @@
     cd service_hub
  ```
 
-3. Replace with your Gmail ID and Gmail app password in `env/mail_config.php`
+3. Replace with your Gmail ID and Gmail app password in `PHPMailer/mail_config.php`
 
 4. Start `Apache server`
 
