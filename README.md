@@ -5,17 +5,17 @@
 ## Table of Contents
 
 - [Service Hub](#service-hub)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-    - [For Service Providers](#for-service-providers)
-    - [For Clients](#for-clients)
-  - [Tech Stack](#tech-stack)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-  - [Database Schema](#database-schema)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+    - [For Service Providers](#for-service-providers)
+    - [For Clients](#for-clients)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+  - [Database Schema](#database-schema)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Features
 
