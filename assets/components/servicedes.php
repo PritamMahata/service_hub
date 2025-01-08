@@ -90,7 +90,11 @@ if ($result->num_rows > 0) {
                         </ul>
                     </div>
                     <div class="sidebyside" style="justify-content: center; margin-top: 16px; ">
-                        <button class="add-cart-btn" name="book_btn" id="book_btn">Book now</button>
+                        <?php if (!isset($_SESSION['email'])) { ?>
+                            <button class="add-cart-btn" name="book_btn" id="book_btn" onclick="window.location.href = './login.php'">Book now</button>
+                        <?php } else { ?>
+                            <button class="add-cart-btn" name="book_btn" id="book_btn">Book now</button>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

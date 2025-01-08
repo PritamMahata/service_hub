@@ -2,7 +2,7 @@
 require_once 'env/config.php';
 require_once('./assets/components/toast.php');
 $showAlert = false;
-if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
+if (isset($_SESSION['isLogin']) && $_SESSION['isLogin']) {
     header("Location: profile.php");
     exit();
 }
