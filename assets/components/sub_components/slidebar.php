@@ -87,9 +87,12 @@
                                     ?>
                                 </div>
                                 <div class="price-box">
-                                    <del>
-                                        <p class="price">₹<?php echo $row['sprice'] ?></p>
-                                    </del>
+                                    <?php
+                                    if ($row['sdiscount'] != 0) { ?>
+                                        <del>
+                                            <p class="price">₹<?php echo $row['sprice'] ?></p>
+                                        </del>
+                                    <?php } ?>
                                     <?php echo "<p class='price'>₹" . (($row['sprice']) - ((int)($row['sdiscount']) / 100) * (int)($row['sprice'])) . "</p>"; ?>
                                 </div>
                             </div>
