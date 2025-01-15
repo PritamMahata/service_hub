@@ -18,7 +18,7 @@
         <li class="menu-category sidebyside">
             <a href="./category.php" class="menu-title"><span class="material-symbols-rounded">view_list</span>Category</a>
         </li>
-        
+
         <!-- <li class="menu-category">
             <button class="accordion-menu" data-accordion-btn>
                 <p class="menu-title">option 1</p>
@@ -113,10 +113,20 @@
         </li> -->
 
         <li class="menu-category sidebyside">
-            <a href="./assets/components/logout.php" class="menu-title"><span class="material-symbols-rounded">contact_support</span>Contact Us</a>
+            <a href="" class="menu-title"><span class="material-symbols-rounded">contact_support</span>Contact Us</a>
         </li>
         <li class="menu-category sidebyside">
-            <a href="./assets/components/logout.php" class="menu-title"><span class="material-symbols-rounded">logout</span>Logout</a>
+            <?php if (isset($_SESSION['isLogin']) && $_SESSION['isLogin']) { ?>
+                <a href="./assets/components/logout.php" class="menu-title">
+                    <span class="material-symbols-rounded">logout</span>Logout
+                </a>
+
+            <?php } else { ?>
+                <a href="./assets/components/logout.php" class="menu-title">
+                    <span class="material-symbols-rounded">login</span>Login
+                </a>
+            <?php } ?>
+
         </li>
     </ul>
 </nav>
