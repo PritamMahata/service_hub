@@ -4,6 +4,7 @@ require("../../env/config.php");
 if (isset($_POST['booking_id']) && isset($_POST['happyCode'])) {
     $bookingId = $_POST['booking_id'];
     $happyCode = $_POST['happyCode'];
+    $status = $_POST['status'];
 
     // Check if the happy code matches the one in the database
     $query = "SELECT * FROM bookings WHERE booking_id = ? AND happy_code = ?";
@@ -14,7 +15,7 @@ if (isset($_POST['booking_id']) && isset($_POST['happyCode'])) {
 
     if ($result->num_rows > 0) {
         // If the happy code is correct, proceed with deletion
-        $deleteQuery = "UPDATE bookings SET status = 'completed' WHERE booking_id = ?";
+        $deleteQuery = "UPDATE bookings SET status = '$status',is_done = 1 WHERE booking_id = ?";
         $deleteStmt = $conn->prepare($deleteQuery);
         $deleteStmt->bind_param("i", $bookingId);
         if ($deleteStmt->execute()) {

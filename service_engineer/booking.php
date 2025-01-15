@@ -48,43 +48,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $sql = "SELECT * 
-                FROM bookings 
-                INNER JOIN services ON bookings.service_id = services.sid
-                INNER JOIN users ON users.uid = bookings.user_id 
-                WHERE bookings.provider_id = " . $_SESSION['se_info']['pid'] . ";";
 
-                $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                ?>
-                        <tr>
-                            <th><?php echo $row['order_id']; ?></th>
-                            <th><?php echo $row['fname'] . " " . $row['lname']; ?></th>
-                            <th><?php echo $row['bphone']; ?></th>
-                            <th><?php echo $row['baddress']; ?></th>
-                            <th><?php echo $row['issue']; ?></th>
-                            <th><?php echo $row['arrival_date']; ?></th>
-                            <th>
-                                <select class="form-select" onchange="changeStatus(<?php echo $row['booking_id']; ?>, this.value)">
-                                    <option selected disabled value="pending" <?php if ($row['status'] == 'pending') echo 'selected'; ?>>Pending</option>
-                                    <option value="confirmed" <?php if ($row['status'] == 'confirmed') echo 'selected'; ?>>Confirmed</option>
-                                    <option value="cancelled" <?php if ($row['status'] == 'cancelled') echo 'selected'; ?>>Cancelled</option>
-                                    <option value="cancelled" <?php if ($row['status'] == 'completed') echo 'selected'; ?>>Completed</option>
-                                </select>
-                            </th>
-                            <th>
-                                <button class="btn btn-success" onclick="modal(<?php echo $row['booking_id'] ?>)">Completed</button>
-                            </th>
-                        </tr>
-                <?php
-                    }
-                } else {
-                    echo "<tr><td colspan='8'>No records found</td></tr>";
-                }
-                ?>
             </tbody>
         </table>
     </div>
@@ -93,19 +57,8 @@
 <script>
     let bookingIdToDelete = null;
     let intervalId = null;
+    let state = '';
 
-    // Function to set the booking ID for deletion
-    function setDeleteId(bookingId) {
-        bookingIdToDelete = bookingId;
-        document.getElementById('deleteServiceText').innerText = "Service ID: " + bookingId; // Update modal text
-    }
-
-    // Function to delete the service after confirmation
-    function deleteService() {
-        if (bookingIdToDelete) {
-            window.location.href = `services.php?booking_id=${bookingIdToDelete}`;
-        }
-    }
 
     // AJAX function to change the status of the booking
     function changeStatus(bookingId, newStatus) {
@@ -134,6 +87,7 @@
     function deleteService() {
         let happyCode = document.getElementById('inp_happyCode').value;
         if (bookingIdToDelete && happyCode) {
+            state = document.getElementById(bookingIdToDelete).value;
             // Make AJAX request to validate happy code and delete service if valid
             let xhr = new XMLHttpRequest();
             xhr.open('POST', 'components/validate_happy_code.php', true);
@@ -155,7 +109,7 @@
             };
 
             // Send the booking ID and happy code to the server
-            xhr.send('booking_id=' + bookingIdToDelete + '&happyCode=' + happyCode);
+            xhr.send('booking_id=' + bookingIdToDelete + '&happyCode=' + happyCode + '&status=' + state);
         } else {
             alert('Please enter the happy code.');
         }
