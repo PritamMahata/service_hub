@@ -11,15 +11,13 @@
         <div class="slider-item">
           <img loading="lazy" src="./assets/images/banner-2.jpg" class="banner-img">
           <div class="banner-content">
-            <h2 class="banner-title" id="hotline">
-              <h2>
+            <h2 class="banner-title" id="hotline"></h2>
           </div>
         </div>
         <div class="slider-item">
           <img loading="lazy" src="./assets/images/banner-3.jpg" class="banner-img">
           <div class="banner-content">
-            <h2 class="banner-title" id="hotline">
-              <h2>
+            <h2 class="banner-title" id="hotline"></h2>
           </div>
         </div>
       </div>

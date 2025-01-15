@@ -83,10 +83,9 @@
                 $count++;
             }
         }
-        // else {
-        //     echo "No services found.";
-        // }
-        // $conn->close();
+        else {
+            echo "No services found.";
+        }
         ?>
     </div>
 

@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password_from_db = $user['password'];
         if ($user['isverified'] == 0) {
             toast('danger', 'Email not verified');
-            // exit();
         } else {
             if (password_verify($password, $hashed_password_from_db)) {
                 $_SESSION['email'] = $email;
