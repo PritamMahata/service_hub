@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2024 at 07:14 PM
+-- Generation Time: Jan 17, 2025 at 02:39 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -60,8 +60,16 @@ CREATE TABLE `bookings` (
   `arrival_date` varchar(255) NOT NULL,
   `booking_date` datetime NOT NULL DEFAULT current_timestamp(),
   `status` enum('pending','confirmed','completed','cancelled') NOT NULL DEFAULT 'pending',
-  `happy_code` int(11) NOT NULL
+  `happy_code` int(11) NOT NULL,
+  `is_done` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`booking_id`, `order_id`, `user_id`, `provider_id`, `service_id`, `issue`, `baddress`, `bphone`, `arrival_date`, `booking_date`, `status`, `happy_code`, `is_done`) VALUES
+(81, 'Z071VSJ7', 1, 2, 2, 'JKH KH', 'HJG G JH JK K', 7898776666, '12th Jan,9:00 AM - 12:00 PM', '2025-01-10 19:10:43', 'cancelled', 230074, 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +141,7 @@ CREATE TABLE `provider` (
 --
 
 INSERT INTO `provider` (`pid`, `provider_category_id`, `fname`, `mname`, `lname`, `gender`, `age`, `email`, `con_num`, `alt_num`, `address`, `password`, `pan_card`, `acc_num`, `ifsc`, `experience`, `photo`, `certificate`, `aadhaar`, `created_at`, `updated_at`, `is_deleted`, `is_verified`, `is_banned`) VALUES
-(1, 1, 'John', 'A.', 'Doe', 'Male', 35, 'john.doe@tech.com', 9876543210, 9123456789, '123 Tech Street', '123', 'ABCD1234P', 987654321012, 'IFSC1234567', '10 years', 'photo1.jpg', 'cert1.pdf', 1234567890, '2024-09-20 10:18:20', '2024-09-26 11:57:00', 0, 1, 0),
+(1, 1, 'John', 'A.', 'Doe', 'Male', 35, 'john.doe@tech.com', 9876543210, 9123456789, '123 Tech Street', '123', 'ABCD1234P', 987654321012, 'IFSC1234567', '10 years', 'photo1.jpg', 'cert1.pdf', 1234567890, '2024-09-20 10:18:20', '2024-09-27 11:05:27', 0, 0, 0),
 (2, 2, 'Sarah', 'B.', 'Johnson', 'Female', 29, 'sarah.j@health.com', 8765432109, 9987654321, '456 Health Ave', '123', 'BCDE2345Q', 876543210987, 'IFSC9876543', '5 years', 'photo2.jpg', 'cert2.pdf', 2345678901, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (3, 3, 'Michael', 'C.', 'Smith', 'Male', 42, 'mike.smith@edu.com', 7654321098, 9765432108, '789 Education Blvd', '123', 'CDEF3456R', 765432109876, 'IFSC5432189', '15 years', 'photo3.jpg', 'cert3.pdf', 3456789012, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
 (4, 4, 'Patricia', 'D.', 'Lee', 'Female', 38, 'pat.lee@finance.com', 6543210987, 8654321097, '101 Finance Road', '123', 'DEFG4567S', 654321098765, 'IFSC4321987', '12 years', 'photo4.jpg', 'cert4.pdf', 4567890123, '2024-09-20 10:18:20', '2024-09-20 10:18:20', 0, 1, 0),
@@ -173,7 +181,7 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`sid`, `sname`, `srating`, `sprice`, `sduration`, `sdes`, `sfeatures`, `scategory`, `simage`, `sattraction`, `sdiscount`, `screate`, `created_by`, `updated_by`) VALUES
 (1, 'Car wash', 4, 900, '2 hr', 'Basic Car Wash', 'Special Car wash, Using high quality product', 3, 'assets/images/services/img_11.jpg', 'discount', 5, '2024-09-01 01:00:00', 1, 1),
-(2, 'House Cleaning - Standard', 3, 1000, '4 hr', 'Basic cleaning for your home.', '', 5, 'assets\\images\\services\\img_2.jpg', NULL, 5, '2024-09-01 01:00:00', 2, 2),
+(2, 'House Cleaning - Standard', 3, 1000, '4 hr', 'Basic cleaning for your home.', 'Vacuuming carpets and rugs to remove dust and debris, Spot cleaning of smudges or stains on walls or doors.', 5, 'assets/images/services/img_2.jpg', NULL, 5, '2024-09-01 01:00:00', 2, 2),
 (3, 'Men\'s Haircut', 5, 500, '30 min', 'Classic and modern men\'s haircuts.', '', 2, 'assets\\images\\services\\img_7.jpg', 'bestseller', 0, '2024-09-01 03:00:00', 3, 3),
 (4, 'Women\'s Haircut', 4, 800, '1 hr', 'Stylish women\'s haircuts for all hair types.', '', 2, 'assets\\images\\services\\img_8.jpg', 'new', 10, '2024-09-02 03:00:00', 4, 4),
 (5, 'Bridal Makeup', 5, 5000, '2 hr', 'Complete bridal makeup with hairstyling.', '', 2, 'assets\\images\\services\\img_9.jpg', 'exclusive', 15, '2024-09-03 01:00:00', 5, 5),
@@ -254,7 +262,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `email`, `password`, `con_num`, `alt_num`, `address`, `isverified`, `is_deleted`, `ucreate`, `v_code`) VALUES
 (1, 'Pritam', '', 'Mahata', 'test@gmail.com', '$2y$10$fobeFSw5qKH4dptGo7d68.vIVZIM.U.Kel82DGD97JzmYEELBXhNK', 9654325678, NULL, '43/A, Sonarpur, Ghasiara', 1, 0, '2024-09-26 16:47:57', 'f138c66bf86f285a11e6f89de5847de2'),
-(2, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2');
+(2, 'Pritam', '', 'Mahata', 'pritammahata20@gmail.com', '$2y$10$gSnTUpngtRn.qIreNyD.XOx2tAdD9BdVk0UBJpKTWs.BSZkqrfazC', 1234567890, 1234567890, 'wrhewherh', 1, 0, '2024-09-06 12:56:29', 'f138c66bf86f285a11e6f89de5847de2'),
+(13, 'Pritam', '', 'Mahata', 'pritammahata12@gmail.com', '$2y$10$GvA3MMAfurbBev2yLVwjKO/Z.aRe2/nXNPaGYNL6XCGi4B4S1V982', 9876543218, 0, 'jkas dklsadjlaksj dlkas dad ', 0, 0, '2024-09-27 13:07:20', 'd243a9f7b5d2c2ff4501e643d153e321'),
+(14, 'Pritam', '', 'Mahata', 'temptoken.co@gmail.com', '$2y$10$Fzqlqn.NxnuM.YqSYJbf..wx/VW7MK7cJCf74vzaajCwyCsyApTK6', 1234567890, 0, 'asa\\r\\nsdf\\r\\nas\\r\\nf\\r\\nas\\r\\nf', 0, 0, '2024-12-26 11:10:48', 'a9d74264cb2d4a1c459e6cbfaa9ce66f'),
+(15, '234234rwerwerwe', '', '', 'temp.token.co@gmail.com', '$2y$10$Pr3OQJF7DQxQNDkvp3p.v.U7fmp/T9BUvbE/k1K3zyEZCmap2xivy', 56754667745674575, 56456456456456456, 'sdfjsf\\r\\nasf\\r\\nas\\r\\nfas\\r\\ndf', 1, 0, '2024-12-26 11:19:31', '5fb5ad6dc37166eaf166d306b1184827');
 
 --
 -- Indexes for dumped tables
@@ -270,7 +281,10 @@ ALTER TABLE `admin`
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`booking_id`);
+  ADD PRIMARY KEY (`booking_id`),
+  ADD KEY `bookings_ibfk_1` (`user_id`),
+  ADD KEY `bookings_ibfk_2` (`provider_id`),
+  ADD KEY `bookings_ibfk_3` (`service_id`);
 
 --
 -- Indexes for table `category`
@@ -320,7 +334,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `provider`
@@ -338,7 +352,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
