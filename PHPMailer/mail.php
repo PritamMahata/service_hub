@@ -86,7 +86,7 @@ function send_mail($email, $v_code, $fname, $lname)
                                 href=''
                                 target='_blank'
                                 ><img
-                                  src='https://i.ibb.co/1T6Xfw3/logo.png'
+                                  src='https://raw.githubusercontent.com/PritamMahata/service_hub/refs/heads/main/assets/images/logo/logo1.png'
                                   alt='Service HUB'
                                   style='
                                     border: none;
