@@ -8,6 +8,6 @@ return [
     // "Kindly use these credentials responsibly."
     'username' => 'servicehub36@gmail.com', // Replace with Your Gmail address
     'password' => 'hvle olnf kffi huae', // Replace with Your Gmail app password
-    'server_ip' => $server_ip, // Replace with server ip password
+    'server_url' => $server_ip, // Replace with server ip password
 ];
 ?>

@@ -26,7 +26,7 @@ function send_mail($email, $v_code, $fname, $lname)
         $mail->setFrom($mailConfig['username'], 'Service Hub PvLtd.');         // Sender's email address and name
         $mail->addAddress("$email", "$fname" . "$lname");                       // Add a recipient
 
-        $server_ip = $mailConfig['server_ip'];
+        $server_url = $mailConfig['server_url'];
         // http://127.0.0.1/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code
         
         // Content
@@ -290,7 +290,7 @@ function send_mail($email, $v_code, $fname, $lname)
                                                                     >
                                                                       <u></u>
                                                                       <a
-                                                                        href='$server_ip/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code'
+                                                                        href='$server_url/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code'
                                                                         style='
                                                                           padding: 8px
                                                                             20px;
@@ -447,9 +447,9 @@ function send_mail($email, $v_code, $fname, $lname)
                                                                 word-break: break-all;
                                                               '
                                                               ><a
-                                                                href='$server_ip/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code'
+                                                                href='$server_url/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code'
                                                                 target='_blank'
-                                                                >href='$server_ip/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code</a></span
+                                                                >href='$server_url/service_hub/PHPMailer/verify.php?email=$email&v_code=$v_code</a></span
                                                             >
                                                           </td>
                                                         </tr>
