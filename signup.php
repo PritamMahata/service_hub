@@ -240,7 +240,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     input.classList.remove("error-border");
                 }
             } else if (fieldId === "alt_num") {
-                if (input.value.length !== 10) {
+                if (input.value.length !== 10 && input.value.trim() !== "") {
                     errorDiv.textContent = "Contact number must be 10 digits.";
                     input.classList.add("error-border");
                 } else {
