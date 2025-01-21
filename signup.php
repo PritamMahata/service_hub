@@ -159,8 +159,13 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                         <div id="contactError" class="error-message"></div>
                     </div>
                     <div class="row_field">
+                        <label class="newsletter-title">Alternate Number</label>
+                        <input type="number" name="alt_num" id="alt_num" class="email-field" placeholder="Alternate Number" oninput="validateInput('alt_num')">
+                        <div id="alt_numError" class="error-message"></div>
+                    </div>
+                    <div class="row_field">
                         <label class="newsletter-title">Address</label>
-                        <textarea id="address" name="address" rows="4" cols="50" class="email-field" oninput="validateInput('address')"></textarea>
+                        <textarea id="address" name="address" rows="4" cols="50" class="email-field" oninput="validateInput('address')" required></textarea>
                         <div id="addressError" class="error-message"></div>
                     </div>
                     <br>
@@ -192,9 +197,18 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     errorDiv.textContent = "";
                     input.classList.remove("error-border");
                 }
-            } else if (["fname", "mname", "lname"].includes(fieldId)) {
+            } else if (["fname", "lname"].includes(fieldId)) {
                 const nameRegex = /^[a-zA-Z]+$/;
                 if (!nameRegex.test(input.value)) {
+                    errorDiv.textContent = "Only letters are allowed.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (["mname"].includes(fieldId)) {
+                const nameRegex = /^[a-zA-Z]+$/;
+                if (!nameRegex.test(input.value) && input.value.trim() !== "") {
                     errorDiv.textContent = "Only letters are allowed.";
                     input.classList.add("error-border");
                 } else {
@@ -218,6 +232,14 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     input.classList.remove("error-border");
                 }
             } else if (fieldId === "contact") {
+                if (input.value.length !== 10) {
+                    errorDiv.textContent = "Contact number must be 10 digits.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (fieldId === "alt_num") {
                 if (input.value.length !== 10) {
                     errorDiv.textContent = "Contact number must be 10 digits.";
                     input.classList.add("error-border");
