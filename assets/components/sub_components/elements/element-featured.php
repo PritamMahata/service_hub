@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT *FROM SERVICES WHERE srating >= 3";
+$sql = "SELECT *FROM services WHERE srating >= 3";
 $res = mysqli_query($conn, $sql);
 $rec = mysqli_fetch_assoc($res);
 ?>

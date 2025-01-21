@@ -3,7 +3,7 @@
     <div class="blog-container has-scrollbar">
 
       <?php
-      $sql = "SELECT *FROM SERVICES WHERE sdiscount >= 15 LIMIT 4";
+      $sql = "SELECT *FROM services WHERE sdiscount >= 15 LIMIT 4";
       $res = mysqli_query($conn, $sql);
       for ($a = 1; $a <= 4; $a++) {
         while ($row = mysqli_fetch_assoc($res)) { ?>

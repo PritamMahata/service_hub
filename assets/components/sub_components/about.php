@@ -1,5 +1,5 @@
 <?php
-$src = "SELECT *FROM SERVICES WHERE sdiscount = 20";
+$src = "SELECT *FROM services WHERE sdiscount = 20";
 $res = mysqli_query($conn, $src);
 $rec = mysqli_fetch_assoc($res);
 ?>

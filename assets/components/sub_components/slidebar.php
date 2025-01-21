@@ -63,7 +63,7 @@
         <div class="showcase-wrapper">
             <div class="showcase-container">
                 <?php
-                $sql = "SELECT *FROM SERVICES WHERE srating >= 4 LIMIT 4";
+                $sql = "SELECT * FROM services WHERE srating >= 4 LIMIT 4";
                 $res = mysqli_query($conn, $sql);
                 for ($a = 1; $a <= 4; $a++) {
                     while ($row = mysqli_fetch_assoc($res)) { ?>
