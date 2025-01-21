@@ -1,16 +1,3 @@
-function test() {
-  let e = document.getElementById("acc_type");
-  let check = document.getElementById("check");
-  let value = e.value;
-  let text = e.options[e.selectedIndex].text;
-  // console.log(value);
-  // console.log(text);
-  if (value == 2) {
-    check.style.display = "block";
-  } else {
-    check.style.display = "none";
-  }
-}
 //password show hide
 let leye_btn = document.getElementById("leye_btn");
 let password = document.getElementById("password");
@@ -24,34 +11,6 @@ function lshowHide() {
     leye_btn.innerText = "visibility_off";
   }
 };
-
-let spassword = document.getElementById("spassword");
-let scpassword = document.getElementById("scpassword");
-let seye_btn = document.getElementById("seye_btn");
-
-//Show/Hide Password
-function sshowHide() {
-  let passwordField = document.getElementById('spassword');
-  let eyeIcon = document.getElementById('seye_btn');
-  if (passwordField.type === "password") {
-    passwordField.type = "text";
-    eyeIcon.innerHTML = "visibility";
-  } else {
-    passwordField.type = "password";
-    eyeIcon.innerHTML = "visibility_off";
-  }
-}
-function scshowHide() {
-  let confirmPasswordField = document.getElementById('scpassword');
-  let eyeIconc = document.getElementById('sceye_btn');
-  if (confirmPasswordField.type === "password") {
-    confirmPasswordField.type = "text";
-    eyeIconc.innerHTML = "visibility";
-  } else {
-    confirmPasswordField.type = "password";
-    eyeIconc.innerHTML = "visibility_off";
-  }
-}
 
 
 const mobileMenuOpenBtn = document.querySelectorAll(

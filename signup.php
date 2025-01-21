@@ -25,6 +25,17 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+    <style>
+        .error-border {
+            border: 3px solid red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -70,19 +81,19 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                         $v_code = bin2hex(random_bytes(16));
                         $con_num = mysqli_real_escape_string($conn, $_POST['con_num']);
-                        $alt_num = mysqli_real_escape_string($conn, $_POST['alt_num']);
-                        $address = mysqli_real_escape_string($conn, $_POST['address']);
+                        $alt_num = isset($_POST['alt_num']) ? mysqli_real_escape_string($conn, $_POST['alt_num']) : null; // Check if alt_num is set
+                        $address = isset($_POST['address']) ? mysqli_real_escape_string($conn, $_POST['address']) : null; // Check if address is set
 
                         // Use prepared statement for secure query execution
                         $sql = "INSERT INTO users (fname, mname, lname, email, con_num, alt_num, address, password, v_code) 
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param("sssssssss", $fname, $mname, $lname, $email, $con_num, $alt_num, $address, $hashed_password, $v_code);
                         try {
                             if ($stmt->execute()) {
                                 if (send_mail($email, $v_code, $fname, $lname)) {
-                                    toast("success", "verify your email");
+                                    toast("success", "Verify your email");
                                 } else {
                                     toast("danger", "Something went wrong");
                                 }
@@ -100,62 +111,57 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                 }
                 ?>
 
+
                 <form method="POST" onsubmit="return validateForm();">
                     <div class="row_field">
-
-
                         <div class="col_field">
                             <div class="row_field">
                                 <label class="newsletter-title">First Name</label>
-                                <input type="text" name="fname" class="email-field" placeholder="First Name" required onchange="checkName()">
+                                <input type="text" name="fname" id="fname" class="email-field" placeholder="First Name" required oninput="validateInput('fname')">
+                                <div id="fnameError" class="error-message"></div>
                             </div>
                             <div class="row_field">
                                 <label class="newsletter-title">Middle Name</label>
-                                <input type="text" name="mname" class="email-field" placeholder="Middle Name">
+                                <input type="text" name="mname" id="mname" class="email-field" placeholder="Middle Name" oninput="validateInput('mname')">
+                                <div id="mnameError" class="error-message"></div>
                             </div>
                             <div class="row_field">
                                 <label class="newsletter-title">Last Name</label>
-                                <input type="text" name="lname" class="email-field" placeholder="Last Name" required onchange="checkName()">
+                                <input type="text" name="lname" id="lname" class="email-field" placeholder="Last Name" required oninput="validateInput('lname')">
+                                <div id="lnameError" class="error-message"></div>
                             </div>
-
                         </div>
-                        <div id="nameMsg" style="color: red;"></div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onchange="checkName()">
-                        <div id="msg"></div>
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required oninput="validateInput('email')">
+                        <div id="emailError" class="error-message"></div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
                         <div class="sidebyside">
-                            <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" autocomplete="on" required>
+                            <input type="password" name="password" id="password" class="email-field" placeholder="Password" required oninput="validateInput('password')">
                             <span class="material-symbols-rounded" id="seye_btn" onclick="sshowHide();" style="margin-right: 10px;">visibility_off</span>
-                        </div><small>Password must be at least 8 characters long</small>
+                        </div>
+                        <div id="passwordError" class="error-message"></div>
                     </div>
-
                     <div class="row_field">
                         <label class="newsletter-title">Confirm Password</label>
                         <div class="sidebyside">
-                            <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" autocomplete="on" required>
+                            <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" required oninput="validateInput('scpassword')">
                             <span class="material-symbols-rounded" id="sceye_btn" onclick="scshowHide();" style="margin-right: 10px;">visibility_off</span>
                         </div>
+                        <div id="scpasswordError" class="error-message"></div>
                     </div>
-
-                    <div class="col_field">
-                        <div class="row_field">
-                            <label class="newsletter-title">Contact Number</label>
-                            <input type="number" name="con_num" id="contact" class="email-field" placeholder="Contact Number" required>
-                            <div id="contactError" style="color: red;"></div>
-                        </div>
-                        <div class="row_field">
-                            <label class="newsletter-title">Alternate Number</label>
-                            <input type="number" name="alt_num" class="email-field" placeholder="Alternate Number">
-                        </div>
+                    <div class="row_field">
+                        <label class="newsletter-title">Contact Number</label>
+                        <input type="number" name="con_num" id="contact" class="email-field" placeholder="Contact Number" required oninput="validateInput('contact')">
+                        <div id="contactError" class="error-message"></div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Address</label>
-                        <textarea id="w3review" name="address" rows="4" cols="50"></textarea>
+                        <textarea id="address" name="address" rows="4" cols="50" class="email-field" oninput="validateInput('address')"></textarea>
+                        <div id="addressError" class="error-message"></div>
                     </div>
                     <br>
                     <div class="col_field">
@@ -172,62 +178,106 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
     </div>
     <?php require_once('./assets/components/footer.php') ?>
     <script>
-        function checkName() {
-            let fname = document.querySelector('input[name="fname"]').value;
-            let mname = document.querySelector('input[name="mname"]').value;
-            let lname = document.querySelector('input[name="lname"]').value;
-            var namePattern = /^[a-zA-Z\s-]+$/;
-            let message = '';
-            if (!namePattern.test(fname) || !namePattern.test(mname) || !namePattern.test(lname)) {
-                message = 'Invalid name format. Only letters are allowed';
-            } else if (!fname || !mname || !lname) {
-                message = 'First Name and Last Name cannot be empty';
+        // Validate input fields and show errors dynamically
+        function validateInput(fieldId) {
+            const input = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(`${fieldId}Error`);
+
+            if (fieldId === "email") {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value)) {
+                    errorDiv.textContent = "Please enter a valid email address.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (["fname", "mname", "lname"].includes(fieldId)) {
+                const nameRegex = /^[a-zA-Z]+$/;
+                if (!nameRegex.test(input.value)) {
+                    errorDiv.textContent = "Only letters are allowed.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (fieldId === "password") {
+                if (input.value.length < 8) {
+                    errorDiv.textContent = "Password must be at least 8 characters long.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (fieldId === "scpassword") {
+                if (input.value !== document.getElementById('password').value) {
+                    errorDiv.textContent = "Passwords do not match";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else if (fieldId === "contact") {
+                if (input.value.length !== 10) {
+                    errorDiv.textContent = "Contact number must be 10 digits.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
+            } else {
+                // Generic validation for non-empty input
+                if (input.value.trim() === "") {
+                    errorDiv.textContent = "This field is required.";
+                    input.classList.add("error-border");
+                } else {
+                    errorDiv.textContent = "";
+                    input.classList.remove("error-border");
+                }
             }
-            document.getElementById('nameMsg').innerText = message;
         }
 
-
+        // Prevent form submission if there are errors
         function validateForm() {
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('spassword').value;
-            let confirmPassword = document.getElementById('scpassword').value;
-            let contact = document.getElementById('contact').value;
+            const inputs = document.querySelectorAll(".email-field");
+            let isValid = true;
 
-            let valid = true;
+            inputs.forEach((input) => {
+                validateInput(input.id);
+                if (input.classList.contains("error-border")) {
+                    isValid = false;
+                }
+            });
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('emailError').innerText = 'Invalid email address';
-                valid = false;
-            } else {
-                document.getElementById('emailError').innerText = '';
-            }
-
-            // Password length check
-            if (password.length < 8) {
-                alert('Password must be at least 8 characters long');
-                valid = false;
-            }
-
-            // Confirm password check
-            if (password !== confirmPassword) {
-                alert('Passwords do not match');
-                valid = false;
-            }
-
-            // Contact number check
-            if (contact.length !== 10 || isNaN(contact)) {
-                document.getElementById('contactError').innerText = 'Contact number must be 10 digits';
-                valid = false;
-            } else {
-                document.getElementById('contactError').innerText = '';
-            }
-
-            return valid;
+            return isValid; // Submit only if all inputs are valid
         }
 
 
+        //Show/Hide Password
+        function sshowHide() {
+            let spassword = document.getElementById("password");
+            let seye_btn = document.getElementById("seye_btn");
+
+            if (spassword.type === "password") {
+                spassword.type = "text";
+                seye_btn.innerHTML = "visibility";
+            } else {
+                spassword.type = "password";
+                seye_btn.innerHTML = "visibility_off";
+            }
+        }
+
+        function scshowHide() {
+            let scpassword = document.getElementById('scpassword');
+            let eyeIconc = document.getElementById('sceye_btn');
+            if (scpassword.type === "password") {
+                scpassword.type = "text";
+                eyeIconc.innerHTML = "visibility";
+            } else {
+                scpassword.type = "password";
+                eyeIconc.innerHTML = "visibility_off";
+            }
+        }
 
         // Email validation via AJAX
         document.getElementById('email').addEventListener('blur', function() {
@@ -239,7 +289,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                     email: email
                 },
                 success: function(result) {
-                    $("#msg").html(result);
+                    $("#emailError").html(result);
                 }
             });
         });
@@ -248,7 +298,6 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <!-- Client-Side Validation -->
 
 </body>
