@@ -101,37 +101,44 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
                 ?>
 
                 <form method="POST" onsubmit="return validateForm();">
-                    <div class="col_field">
-                        <div class="row_field">
-                            <label class="newsletter-title">First Name</label>
-                            <input type="text" name="fname" class="email-field" placeholder="First Name" required onblur="checkName()">
+                    <div class="row_field">
+
+
+                        <div class="col_field">
+                            <div class="row_field">
+                                <label class="newsletter-title">First Name</label>
+                                <input type="text" name="fname" class="email-field" placeholder="First Name" required onchange="checkName()">
+                            </div>
+                            <div class="row_field">
+                                <label class="newsletter-title">Middle Name</label>
+                                <input type="text" name="mname" class="email-field" placeholder="Middle Name">
+                            </div>
+                            <div class="row_field">
+                                <label class="newsletter-title">Last Name</label>
+                                <input type="text" name="lname" class="email-field" placeholder="Last Name" required onchange="checkName()">
+                            </div>
+
                         </div>
-                        <div class="row_field">
-                            <label class="newsletter-title">Middle Name</label>
-                            <input type="text" name="mname" class="email-field" placeholder="Middle Name">
-                        </div>
-                        <div class="row_field">
-                            <label class="newsletter-title">Last Name</label>
-                            <input type="text" name="lname" class="email-field" placeholder="Last Name" required onblur="checkName()">
-                        </div>
+                        <div id="nameMsg" style="color: red;"></div>
                     </div>
-                    <div id="nameMsg" style="color: red;"></div>
                     <div class="row_field">
                         <label class="newsletter-title">E-mail ID </label>
-                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onblur="checkName()">
+                        <input type="email" name="email" id="email" class="email-field" placeholder="E-mail ID" required onchange="checkName()">
                         <div id="msg"></div>
                     </div>
                     <div class="row_field">
                         <label class="newsletter-title">Password</label>
-                        <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" autocomplete="on" required>
-                        <small>Password must be at least 8 characters long</small>
+                        <div class="sidebyside">
+                            <input type="password" name="password" id="spassword" class="email-field" placeholder="Password" autocomplete="on" required>
+                            <span class="material-symbols-rounded" id="seye_btn" onclick="sshowHide();" style="margin-right: 10px;">visibility_off</span>
+                        </div><small>Password must be at least 8 characters long</small>
                     </div>
 
                     <div class="row_field">
                         <label class="newsletter-title">Confirm Password</label>
                         <div class="sidebyside">
                             <input type="password" name="scpassword" id="scpassword" class="email-field" placeholder="Confirm Password" autocomplete="on" required>
-                            <span class="material-symbols-rounded" id="seye_btn" onclick="sshowHide();" style="margin-right: 10px;">visibility_off</span>
+                            <span class="material-symbols-rounded" id="sceye_btn" onclick="scshowHide();" style="margin-right: 10px;">visibility_off</span>
                         </div>
                     </div>
 
@@ -164,21 +171,16 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
         </div>
     </div>
     <?php require_once('./assets/components/footer.php') ?>
-    <script src="./assets/js/relog.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- Client-Side Validation -->
     <script>
         function checkName() {
             let fname = document.querySelector('input[name="fname"]').value;
+            let mname = document.querySelector('input[name="mname"]').value;
             let lname = document.querySelector('input[name="lname"]').value;
             var namePattern = /^[a-zA-Z\s-]+$/;
             let message = '';
-            if (!namePattern.test(fname) || !namePattern.test(lname)) {
+            if (!namePattern.test(fname) || !namePattern.test(mname) || !namePattern.test(lname)) {
                 message = 'Invalid name format. Only letters are allowed';
-            } else if (!fname || !lname) {
+            } else if (!fname || !mname || !lname) {
                 message = 'First Name and Last Name cannot be empty';
             }
             document.getElementById('nameMsg').innerText = message;
@@ -225,21 +227,7 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
             return valid;
         }
 
-        // Show/Hide Password
-        function sshowHide() {
-            let passwordField = document.getElementById('spassword');
-            let confirmPasswordField = document.getElementById('scpassword');
-            let eyeIcon = document.getElementById('seye_btn');
-            if (passwordField.type === "password" || confirmPasswordField.type === "password") {
-                passwordField.type = "text";
-                confirmPasswordField.type = "text";
-                eyeIcon.innerHTML = "visibility";
-            } else {
-                passwordField.type = "password";
-                confirmPasswordField.type = "password";
-                eyeIcon.innerHTML = "visibility_off";
-            }
-        }
+
 
         // Email validation via AJAX
         document.getElementById('email').addEventListener('blur', function() {
@@ -256,6 +244,13 @@ if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
             });
         });
     </script>
+    <script src="./assets/js/relog.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Client-Side Validation -->
+
 </body>
 
 </html>

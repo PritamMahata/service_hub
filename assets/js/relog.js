@@ -29,15 +29,27 @@ let spassword = document.getElementById("spassword");
 let scpassword = document.getElementById("scpassword");
 let seye_btn = document.getElementById("seye_btn");
 
+//Show/Hide Password
 function sshowHide() {
-  if (spassword.type === "password" && scpassword.type === "password") {
-    spassword.type = "text";
-    scpassword.type = "text";
-    seye_btn.innerText = "visibility_off";
+  let passwordField = document.getElementById('spassword');
+  let eyeIcon = document.getElementById('seye_btn');
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    eyeIcon.innerHTML = "visibility";
   } else {
-    spassword.type = "password";
-    scpassword.type = "password";
-    seye_btn.innerText = "visibility";
+    passwordField.type = "password";
+    eyeIcon.innerHTML = "visibility_off";
+  }
+}
+function scshowHide() {
+  let confirmPasswordField = document.getElementById('scpassword');
+  let eyeIconc = document.getElementById('sceye_btn');
+  if (confirmPasswordField.type === "password") {
+    confirmPasswordField.type = "text";
+    eyeIconc.innerHTML = "visibility";
+  } else {
+    confirmPasswordField.type = "password";
+    eyeIconc.innerHTML = "visibility_off";
   }
 }
 
